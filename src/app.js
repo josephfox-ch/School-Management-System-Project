@@ -1,4 +1,4 @@
- import { renderNavbar } from './functions.js';
+ import { renderNavbar,renderFooter } from './functions.js';
 document.getElementById("app").innerHTML = `
     <header>
         ${renderNavbar()} 
@@ -6,5 +6,6 @@ document.getElementById("app").innerHTML = `
     <main id="main-content">
     </main>
     <footer>
+    ${renderFooter()}
     </footer>
 `;

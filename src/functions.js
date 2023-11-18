@@ -28,3 +28,22 @@ export function renderNavbar() {
 </nav>
 `;
 }
+
+export function renderFooter() {
+  return `<nav class="navbar navbar-expand fixed-bottom bg-secondary">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            About Us
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            Contact
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>`
+}
