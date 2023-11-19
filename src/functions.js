@@ -30,12 +30,12 @@ export function renderNavbar() {
                 <a id="studentsLink" class="nav-link" href="#">Students</a>
               </li>
             </ul>
-            <a href=""><i class="far fa-user-circle fa-3x"></i></a>
+            <a href=""><i class="far fa-user-circle fa-2x"></i></a>
           </div>
         </div>
       </nav> `);
 }
-export function renderContent(contentId = "home-content") {
+export function renderContent(contentId = "classes-content") {
   homeContent.style.display = "none";
   classesContent.style.display = "none";
   teachersContent.style.display = "none";
@@ -48,7 +48,7 @@ export function renderContent(contentId = "home-content") {
 }
 
 export function renderFooter() {
-  return (footer.innerHTML = ` <nav class="navbar navbar-expand fixed-bottom bg-secondary">
+  return (footer.innerHTML = ` <nav class="navbar navbar-expand fixed-bottom bg-secondary p-3">
       <div class="container-fluid">
         <ul class="navbar-nav">
           <li class="nav-item">
