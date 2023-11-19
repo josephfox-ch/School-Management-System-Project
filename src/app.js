@@ -1,11 +1,2 @@
- import { renderNavbar,renderFooter } from './functions.js';
-document.getElementById("app").innerHTML = `
-    <header>
-        ${renderNavbar()} 
-    </header>
-    <main id="main-content">
-    </main>
-    <footer>
-    ${renderFooter()}
-    </footer>
-`;
+ import { renderApp} from './functions.js';
+document.addEventListener("DOMContentLoaded",renderApp)
