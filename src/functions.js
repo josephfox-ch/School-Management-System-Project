@@ -1,5 +1,11 @@
 const header = document.getElementById("header");
 const footer = document.getElementById("footer");
+const homeContent = document.getElementById("home-content");
+const classesContent = document.getElementById("classes-content");
+const teachersContent = document.getElementById("teachers-content");
+const studentsContent = document.getElementById("students-content");
+
+
 
 export function renderNavbar() {
   return (header.innerHTML = `
