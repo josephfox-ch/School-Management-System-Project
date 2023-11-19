@@ -1,11 +1,10 @@
 const header = document.getElementById("header");
 const footer = document.getElementById("footer");
+
 const homeContent = document.getElementById("home-content");
 const classesContent = document.getElementById("classes-content");
 const teachersContent = document.getElementById("teachers-content");
 const studentsContent = document.getElementById("students-content");
-
-
 
 export function renderNavbar() {
   return (header.innerHTML = `
@@ -19,7 +18,7 @@ export function renderNavbar() {
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-sm-0">
               <li class="nav-item">
-                <a id="homeLink" class="nav-link active" aria-current="page" href="#">Home</a>
+                <a id="homeLink" class="nav-link" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
                 <a id ="classesLink" class="nav-link" href="#" >Classes</a>
@@ -35,6 +34,17 @@ export function renderNavbar() {
           </div>
         </div>
       </nav> `);
+}
+export function renderContent(contentId = "home-content") {
+  homeContent.style.display = "none";
+  classesContent.style.display = "none";
+  teachersContent.style.display = "none";
+  studentsContent.style.display = "none";
+
+  const visibleContent = document.getElementById(contentId);
+  if (visibleContent) {
+    visibleContent.style.display = "block";
+  }
 }
 
 export function renderFooter() {
