@@ -1,6 +1,6 @@
 import { renderApp, renderContent } from "./functions.js";
 
-document.addEventListener("DOMContentLoaded", ()=>{
+document.addEventListener("DOMContentLoaded", () => {
   renderApp();
 
   document.getElementById("homeLink").addEventListener("click", () => {
@@ -26,7 +26,4 @@ document.addEventListener("DOMContentLoaded", ()=>{
   document.getElementById("contactLink").addEventListener("click", () => {
     renderContent("contact");
   });
-
-} );
-
-
+});
