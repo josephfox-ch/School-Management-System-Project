@@ -31,16 +31,10 @@ export function renderNavbar() {
       </nav> `);
 }
 
-export function renderContent(contentId = "classes-content") {
-  homeContent.style.display = "none";
-  classesContent.style.display = "none";
-  teachersContent.style.display = "none";
-  studentsContent.style.display = "none";
-
-  const visibleContent = document.getElementById(contentId);
-  if (visibleContent) {
-    visibleContent.style.display = "block";
-  }
+export function renderContent(page = "home") {
+  fetch(`./templates/${page}.html`)
+    .then((response) => response.text())
+    .then((data) => (document.getElementById("main-content").innerHTML = data));
 }
 
 export function renderFooter() {
