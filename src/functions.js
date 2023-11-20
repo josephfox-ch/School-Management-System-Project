@@ -42,12 +42,12 @@ export function renderFooter() {
       <div class="container-fluid">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a id="aboutLink" class="nav-link" href="#">
               About Us
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a id="contactLink" class="nav-link" href="#">
               Contact
             </a>
           </li>

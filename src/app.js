@@ -18,6 +18,15 @@ document.addEventListener("DOMContentLoaded", ()=>{
   document.getElementById("studentsLink").addEventListener("click", () => {
     renderContent("students");
   });
+
+  document.getElementById("aboutLink").addEventListener("click", () => {
+    renderContent("about");
+  });
+
+  document.getElementById("contactLink").addEventListener("click", () => {
+    renderContent("contact");
+  });
+
 } );
 
 
