@@ -1,26 +1,23 @@
 import { renderApp, renderContent } from "./functions.js";
 
-document.addEventListener("DOMContentLoaded", renderApp);
+document.addEventListener("DOMContentLoaded", ()=>{
+  renderApp();
 
-document.addEventListener("DOMContentLoaded", () => {
-  const homeLink = document.getElementById("homeLink");
-  const classesLink = document.getElementById("classesLink");
-  const teachersLink = document.getElementById("teachersLink");
-  const studentsLink = document.getElementById("studentsLink");
-
-  homeLink.addEventListener("click", () => {
-    renderContent("home-content");
+  document.getElementById("homeLink").addEventListener("click", () => {
+    renderContent("home");
   });
 
-  classesLink.addEventListener("click", () => {
-    renderContent("classes-content");
+  document.getElementById("classesLink").addEventListener("click", () => {
+    renderContent("classes");
   });
 
-  teachersLink.addEventListener("click", () => {
-    renderContent("teachers-content");
+  document.getElementById("teachersLink").addEventListener("click", () => {
+    renderContent("teachers");
   });
 
-  studentsLink.addEventListener("click", () => {
-    renderContent("students-content");
+  document.getElementById("studentsLink").addEventListener("click", () => {
+    renderContent("students");
   });
-});
+} );
+
+
