@@ -1,4 +1,12 @@
+import { homeContent } from "../templates/home.js";
+import { classesContent } from "../templates/classes.js";
+import { teachersContent } from "../templates/teachers.js";
+import { studentsContent } from "../templates/students.js";
+import { aboutContent } from "../templates/about.js";
+import { contactContent } from "../templates/contact.js";
+
 const header = document.getElementById("header");
+const mainContent = document.getElementById("main-content");
 const footer = document.getElementById("footer");
 
 export function renderNavbar() {
@@ -20,10 +28,28 @@ export function renderNavbar() {
   </nav> `);
 }
 
-export function renderContent(page = "home") {
-  fetch(`./templates/${page}.html`)
-    .then((response) => response.text())
-    .then((data) => (document.getElementById("main-content").innerHTML = data));
+export function renderContent(content = "home") {
+  switch (content) {
+    case "home":
+      content = homeContent;
+      break;
+    case "classes":
+      content = classesContent;
+      break;
+    case "teachers":
+      content = teachersContent;
+      break;
+    case "students":
+      content = studentsContent;
+      break;
+    case "about":
+      content = aboutContent;
+      break;
+    case "contact":
+      content = contactContent;
+      break;
+  }
+  mainContent.innerHTML = content;
 }
 
 export function renderFooter() {
