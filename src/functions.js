@@ -3,32 +3,21 @@ const footer = document.getElementById("footer");
 
 export function renderNavbar() {
   return (header.innerHTML = `
-    
-      <nav class="navbar navbar-expand-sm bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">LMS</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav me-auto mb-2 mb-sm-0">
-              <li class="nav-item">
-                <a id="homeLink" class="nav-link" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a id ="classesLink" class="nav-link" href="#" >Classes</a>
-              </li>
-              <li class="nav-item">
-                <a id="teachersLink" class="nav-link" href="#" >Teachers</a>
-              </li>
-              <li class="nav-item">
-                <a id="studentsLink" class="nav-link" href="#">Students</a>
-              </li>
-            </ul>
-            <a href=""><i class="far fa-user-circle fa-2x"></i></a>
-          </div>
-        </div>
-      </nav> `);
+
+  <nav class="navbar navbar-expand bg-body-tertiary ">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">LMS</span>
+      <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+    <div class="navbar-nav mx-5 ">
+      <a id="homeLink" class="nav-link" aria-current="page" href="#">Home</a>
+      <a id ="classesLink" class="nav-link" href="#">Classes</a>
+      <a id="teachersLink" class="nav-link" href="#">Teachers</a>
+      <a id="studentsLink" class="nav-link" href="#">Students</a> 
+    </div>
+  </div>
+    </div>
+    <a id="userLink" href ="#" class ="mx-2"> <i class="far fa-user-circle fa-3x"></i></a>
+  </nav> `);
 }
 
 export function renderContent(page = "home") {
@@ -63,6 +52,3 @@ export function renderApp() {
 
   renderFooter();
 }
-
-
-
