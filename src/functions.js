@@ -1,9 +1,9 @@
-import { homeContent } from "../templates/home.js";
-import { classesContent } from "../templates/classes.js";
-import { teachersContent } from "../templates/teachers.js";
-import { studentsContent } from "../templates/students.js";
-import { aboutContent } from "../templates/about.js";
-import { contactContent } from "../templates/contact.js";
+import { homeContent } from "./page/home/home.js";
+import { classesContent } from "./page/classes/classes.js";
+import { teachersContent } from "./page/teachers/teachers.js";
+import { studentsContent } from "./page/students/students.js";
+import { aboutContent } from "./page/about/about.js";
+import { contactContent } from "./page/contact/contact.js";
 
 const header = document.getElementById("header");
 const mainContent = document.getElementById("main-content");
