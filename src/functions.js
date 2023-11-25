@@ -5,6 +5,7 @@ import { studentsContent } from "./pages/students/students.js";
 import { aboutContent } from "./pages/about/about.js";
 import { contactContent } from "./pages/contact/contact.js";
 import { handleHeader } from "./components/header/header.js";
+import { handleFooter } from "./components/footer/footer.js";
 
 const app = document.getElementById("app");
 const mainContent = document.getElementById("main-content");
@@ -38,23 +39,9 @@ export function renderContent(content = "home") {
   mainContent.innerHTML = content;
 }
 
-export function renderFooter() {
-  return (app.innerHTML += ` <nav class="navbar navbar-expand fixed-bottom bg-secondary p-3">
-      <div class="container-fluid">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a id="aboutLink" class="nav-link" href="#">
-              About Us
-            </a>
-          </li>
-          <li class="nav-item">
-            <a id="contactLink" class="nav-link" href="#">
-              Contact
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav> `);
+function renderFooter() {
+  app.appendChild(handleFooter())
+  
 }
 
 export function renderApp() {
