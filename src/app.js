@@ -1,4 +1,4 @@
-import { renderApp, renderContent } from "./functions.js";
+import { renderApp,renderContent} from "./functions.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   renderApp();

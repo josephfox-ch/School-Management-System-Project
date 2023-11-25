@@ -1,17 +1,18 @@
+import { handleHeader } from "./components/header/header.js";
+import { handleFooter } from "./components/footer/footer.js";
 import { homeContent } from "./pages/home/home.js";
 import { classesContent } from "./pages/classes/classes.js";
 import { teachersContent } from "./pages/teachers/teachers.js";
 import { studentsContent } from "./pages/students/students.js";
 import { aboutContent } from "./pages/about/about.js";
 import { contactContent } from "./pages/contact/contact.js";
-import { handleHeader } from "./components/header/header.js";
-import { handleFooter } from "./components/footer/footer.js";
+import { handleAdditionalContent } from "./components/additional-content/additional-content.js";
 
 const app = document.getElementById("app");
 const mainContent = document.getElementById("main-content");
 
 function renderHeader() {
-  return (app.innerHTML = `${handleHeader()}`);
+  app.appendChild(handleHeader());
 }
 
 export function renderContent(content = "home") {
@@ -37,6 +38,9 @@ export function renderContent(content = "home") {
   }
   mainContent.innerHTML = content;
 }
+function renderAdditionalContent() {
+  app.appendChild(handleAdditionalContent());
+}
 
 function renderFooter() {
   app.appendChild(handleFooter());
@@ -46,6 +50,8 @@ export function renderApp() {
   renderHeader();
 
   renderContent();
+
+  renderAdditionalContent();
 
   renderFooter();
 }

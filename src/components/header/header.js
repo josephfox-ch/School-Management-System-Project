@@ -1,5 +1,8 @@
 import { handleNavbar } from "./componenets/navbar.js";
 
 export function handleHeader() {
-  return ` <header>  ${handleNavbar()} </header>`;
+
+  const headerContainer = document.createElement("header")
+  headerContainer.innerHTML = handleNavbar()
+  return headerContainer;
 }
