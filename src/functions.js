@@ -1,9 +1,9 @@
-import { homeContent } from "./page/home/home.js";
-import { classesContent } from "./page/classes/classes.js";
-import { teachersContent } from "./page/teachers/teachers.js";
-import { studentsContent } from "./page/students/students.js";
-import { aboutContent } from "./page/about/about.js";
-import { contactContent } from "./page/contact/contact.js";
+import { homeContent } from "./pages/home/home.js";
+import { classesContent } from "./pages/classes/classes.js";
+import { teachersContent } from "./pages/teachers/teachers.js";
+import { studentsContent } from "./pages/students/students.js";
+import { aboutContent } from "./pages/about/about.js";
+import { contactContent } from "./pages/contact/contact.js";
 
 const header = document.getElementById("header");
 const mainContent = document.getElementById("main-content");
@@ -24,7 +24,7 @@ export function renderNavbar() {
     </div>
   </div>
     </div>
-    <a id="userLink" href ="#" class ="mx-2"> <i class="far fa-user-circle fa-3x"></i></a>
+    <a id="userLink" href ="#" class ="mx-2"> <i class="far fa-user-circle fa-2x"></i></a>
   </nav> `);
 }
 
