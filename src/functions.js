@@ -4,14 +4,14 @@ import { teachersContent } from "./pages/teachers/teachers.js";
 import { studentsContent } from "./pages/students/students.js";
 import { aboutContent } from "./pages/about/about.js";
 import { contactContent } from "./pages/contact/contact.js";
-import {handleNavbar} from "./components/header/navbar.js"
+import { handleHeader } from "./components/header/header.js";
 
-const header = document.getElementById("header");
+const app = document.getElementById("app");
 const mainContent = document.getElementById("main-content");
-const footer = document.getElementById("footer");
 
-export function renderNavbar() {
-  return header.innerHTML = `${handleNavbar()}`
+
+function renderHeader() {
+  return (app.innerHTML = `${handleHeader()}`);
 }
 
 export function renderContent(content = "home") {
@@ -39,7 +39,7 @@ export function renderContent(content = "home") {
 }
 
 export function renderFooter() {
-  return (footer.innerHTML = ` <nav class="navbar navbar-expand fixed-bottom bg-secondary p-3">
+  return (app.innerHTML += ` <nav class="navbar navbar-expand fixed-bottom bg-secondary p-3">
       <div class="container-fluid">
         <ul class="navbar-nav">
           <li class="nav-item">
@@ -58,7 +58,7 @@ export function renderFooter() {
 }
 
 export function renderApp() {
-  renderNavbar();
+  renderHeader();
 
   renderContent();
 
