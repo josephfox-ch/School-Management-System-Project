@@ -10,7 +10,6 @@ import { handleFooter } from "./components/footer/footer.js";
 const app = document.getElementById("app");
 const mainContent = document.getElementById("main-content");
 
-
 function renderHeader() {
   return (app.innerHTML = `${handleHeader()}`);
 }
@@ -40,8 +39,7 @@ export function renderContent(content = "home") {
 }
 
 function renderFooter() {
-  app.appendChild(handleFooter())
-  
+  app.appendChild(handleFooter());
 }
 
 export function renderApp() {

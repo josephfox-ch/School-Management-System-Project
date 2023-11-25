@@ -1,5 +1,5 @@
-export function handleFooterLinks(){
-    return `<ul class="navbar-nav">
+export function handleFooterLinks() {
+  return `<ul class="navbar-nav">
     <li class="nav-item">
       <a id="aboutLink" class="nav-link" href="#">
         About Us
@@ -10,5 +10,5 @@ export function handleFooterLinks(){
         Contact
       </a>
     </li>
-  </ul>`
+  </ul>`;
 }
