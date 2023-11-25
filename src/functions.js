@@ -4,28 +4,14 @@ import { teachersContent } from "./pages/teachers/teachers.js";
 import { studentsContent } from "./pages/students/students.js";
 import { aboutContent } from "./pages/about/about.js";
 import { contactContent } from "./pages/contact/contact.js";
+import {handleNavbar} from "./components/header/navbar.js"
 
 const header = document.getElementById("header");
 const mainContent = document.getElementById("main-content");
 const footer = document.getElementById("footer");
 
 export function renderNavbar() {
-  return (header.innerHTML = `
-
-  <nav class="navbar navbar-expand bg-body-tertiary ">
-    <div class="container-fluid">
-      <span class="navbar-brand mb-0 h1">LMS</span>
-      <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-    <div class="navbar-nav mx-5 ">
-      <a id="homeLink" class="nav-link" aria-current="page" href="#">Home</a>
-      <a id ="classesLink" class="nav-link" href="#">Classes</a>
-      <a id="teachersLink" class="nav-link" href="#">Teachers</a>
-      <a id="studentsLink" class="nav-link" href="#">Students</a> 
-    </div>
-  </div>
-    </div>
-    <a id="userLink" href ="#" class ="mx-2"> <i class="far fa-user-circle fa-2x"></i></a>
-  </nav> `);
+  return header.innerHTML = `${handleNavbar()}`
 }
 
 export function renderContent(content = "home") {
