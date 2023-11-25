@@ -31,7 +31,7 @@ export const classesContent = `<section id="classes-content">
     </div>
   </div>
 
-  <div class="container text-center my-5">
+  <div class="container text-center my-3">
     <div>
       <a href="#">
         <img class="text-white" src="./assets/images/plus-circle-icon.png" alt="Add New Class"></img>
