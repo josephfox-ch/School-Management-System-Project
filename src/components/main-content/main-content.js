@@ -11,29 +11,30 @@ const mainContainer = document.createElement("main");
 export function mainContentFragment(content) {
   const customizedAddNewButton = addNewButtonFragment(content);
 
+  let contentHTML;
+
   switch (content) {
     case "home":
-      content = homeContent;
+      contentHTML = homeContent;
       break;
     case "class":
-      content = classesContent;
+      contentHTML = classesContent;
       break;
     case "teacher":
-      content = teachersContent;
+      contentHTML = teachersContent;
       break;
     case "student":
-      content = studentsContent;
+      contentHTML = studentsContent;
       break;
     case "about":
-      content = aboutContent;
+      contentHTML = aboutContent;
       break;
     case "contact":
-      content = contactContent;
+      contentHTML = contactContent;
       break;
   }
-  mainContainer.innerHTML = content;
 
-  mainContainer.appendChild(customizedAddNewButton);
+  mainContainer.innerHTML = contentHTML + customizedAddNewButton.innerHTML;
 
   return mainContainer;
 }

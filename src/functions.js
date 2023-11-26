@@ -6,16 +6,18 @@ import { additionalContainer } from "./components/additional-content/additional-
 const app = document.getElementById("app");
 
 function renderHeader() {
-  app.appendChild(headerFragment());
+  app.innerHTML = headerFragment().innerHTML;
 }
 
 export function renderContent(content = "home") {
-  app.appendChild(mainContentFragment(content));
-  app.appendChild(additionalContainer);
+  renderHeader();
+  app.innerHTML +=
+    mainContentFragment(content).innerHTML + additionalContainer.innerHTML;
+  renderFooter();
 }
 
 function renderFooter() {
-  app.appendChild(footerFragment());
+  app.innerHTML += footerFragment().innerHTML;
 }
 
 export function renderApp() {

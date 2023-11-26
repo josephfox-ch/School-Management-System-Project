@@ -3,27 +3,14 @@ import { renderApp, renderContent } from "./functions.js";
 document.addEventListener("DOMContentLoaded", () => {
   renderApp();
 
-  document.getElementById("homeLink").addEventListener("click", () => {
-    renderContent("home");
-  });
+  document.getElementById("app").addEventListener("click", (event) => {
+    const target = event.target;
 
-  document.getElementById("classesLink").addEventListener("click", () => {
-    renderContent("class");
-  });
+    const linkClass = "nav-link";
 
-  document.getElementById("teachersLink").addEventListener("click", () => {
-    renderContent("teacher");
-  });
-
-  document.getElementById("studentsLink").addEventListener("click", () => {
-    renderContent("student");
-  });
-
-  document.getElementById("aboutLink").addEventListener("click", () => {
-    renderContent("about");
-  });
-
-  document.getElementById("contactLink").addEventListener("click", () => {
-    renderContent("contact");
+    if (target.tagName === "A" && target.classList.contains(linkClass)) {
+      const contentId = target.dataset.contentId;
+      renderContent(contentId);
+    }
   });
 });
