@@ -1,6 +1,6 @@
 import { renderApp, renderContent } from "./functions.js";
 
-document.addEventListener("DOMContentLoaded", ()=>{
+document.addEventListener("DOMContentLoaded", () => {
   renderApp();
 
   document.getElementById("homeLink").addEventListener("click", () => {
@@ -8,16 +8,22 @@ document.addEventListener("DOMContentLoaded", ()=>{
   });
 
   document.getElementById("classesLink").addEventListener("click", () => {
-    renderContent("classes");
+    renderContent("class");
   });
 
   document.getElementById("teachersLink").addEventListener("click", () => {
-    renderContent("teachers");
+    renderContent("teacher");
   });
 
   document.getElementById("studentsLink").addEventListener("click", () => {
-    renderContent("students");
+    renderContent("student");
   });
-} );
 
+  document.getElementById("aboutLink").addEventListener("click", () => {
+    renderContent("about");
+  });
 
+  document.getElementById("contactLink").addEventListener("click", () => {
+    renderContent("contact");
+  });
+});
