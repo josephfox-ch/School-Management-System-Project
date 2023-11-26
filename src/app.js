@@ -8,15 +8,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.getElementById("classesLink").addEventListener("click", () => {
-    renderContent("classes");
+    renderContent("class");
   });
 
   document.getElementById("teachersLink").addEventListener("click", () => {
-    renderContent("teachers");
+    renderContent("teacher");
   });
 
   document.getElementById("studentsLink").addEventListener("click", () => {
-    renderContent("students");
+    renderContent("student");
   });
 
   document.getElementById("aboutLink").addEventListener("click", () => {
