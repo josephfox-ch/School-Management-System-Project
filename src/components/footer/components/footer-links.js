@@ -1,4 +1,4 @@
-export function handleFooterLinks() {
+export function footerLinksFragment() {
   return `<ul class="navbar-nav">
     <li class="nav-item">
       <a id="aboutLink" class="nav-link" href="#">

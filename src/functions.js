@@ -1,5 +1,5 @@
-import { handleHeader } from "./components/header/header.js";
-import { handleFooter } from "./components/footer/footer.js";
+import { headerFragment } from "./components/header/header.js";
+import { footerFragment } from "./components/footer/footer.js";
 import { homeContent } from "./pages/home/home.js";
 import { classesContent } from "./pages/classes/classes.js";
 import { teachersContent } from "./pages/teachers/teachers.js";
@@ -12,7 +12,7 @@ const app = document.getElementById("app");
 const mainContent = document.getElementById("main-content");
 
 function renderHeader() {
-  app.appendChild(handleHeader());
+  app.appendChild(headerFragment());
 }
 
 export function renderContent(content = "home") {
@@ -43,7 +43,7 @@ function renderAdditionalContent() {
 }
 
 function renderFooter() {
-  app.appendChild(handleFooter());
+  app.appendChild(footerFragment());
 }
 
 export function renderApp() {

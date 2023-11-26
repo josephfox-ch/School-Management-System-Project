@@ -1,7 +1,7 @@
-import { handleFooterNavbar } from "./footer-navbar.js";
+import { footerNavbarFragment } from "./components/footer-navbar.js";
 
-export function handleFooter() {
+export function footerFragment() {
   const footerContainer = document.createElement("footer");
-  footerContainer.innerHTML = handleFooterNavbar();
+  footerContainer.innerHTML = footerNavbarFragment();
   return footerContainer;
 }

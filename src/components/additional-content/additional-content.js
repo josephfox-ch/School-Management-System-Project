@@ -1,4 +1,4 @@
-import { handleAdditionalContentBody } from "./additional-content-body.js";
+import { handleAdditionalContentBody } from "./components/additional-content-body.js";
 
 export function handleAdditionalContent() {
   const additionalContainer = document.createElement("section");

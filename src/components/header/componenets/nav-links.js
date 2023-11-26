@@ -1,4 +1,4 @@
-export function handleNavLinks() {
+export function navLinksFragment() {
   return `<div class="collapse navbar-collapse " id="navbarNavAltMarkup">
     <div class="navbar-nav mx-5 ">
       <a id="homeLink" class="nav-link" aria-current="page" href="#">Home</a>

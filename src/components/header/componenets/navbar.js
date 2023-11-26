@@ -1,14 +1,14 @@
-import { handleNavbarBrand } from "./navbar-brand.js";
-import { handleNavLinks } from "./nav-links.js";
-import { handleUserLoginIcon } from "./user-login-icon.js";
+import { navbarBrandFragment } from "./navbar-brand.js";
+import { navLinksFragment } from "./nav-links.js";
+import { userIconFragment } from "./user-login-icon.js";
 
-export const handleNavbar = function () {
+export const navbarFragment = function () {
   return `
     <nav class="navbar navbar-expand bg-body-tertiary ">
       <div class="container-fluid">
-        ${handleNavbarBrand()}
-       ${handleNavLinks()} 
+        ${navbarBrandFragment()}
+       ${navLinksFragment()} 
       </div>
-      ${handleUserLoginIcon()}
+      ${userIconFragment()}
     </nav> `;
 };

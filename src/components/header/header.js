@@ -1,8 +1,8 @@
-import { handleNavbar } from "./componenets/navbar.js";
+import { navbarFragment } from "./componenets/navbar.js";
 
-export function handleHeader() {
+export function headerFragment() {
 
   const headerContainer = document.createElement("header")
-  headerContainer.innerHTML = handleNavbar()
+  headerContainer.innerHTML = navbarFragment()
   return headerContainer;
 }
