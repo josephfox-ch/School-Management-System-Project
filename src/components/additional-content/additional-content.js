@@ -1,13 +1,15 @@
-import { handleAdditionalContentBody } from "./components/additional-content-body.js";
+import { additionalSectBodyFragment } from "./components/additional-content-body.js";
 
-export function handleAdditionalContent() {
+function additionalSectionFragment() {
   const additionalContainer = document.createElement("section");
   additionalContainer.innerHTML = ` <div class="mb-5" id="additional-content">
     <div class="card">
       <div class="card-body p-4">
-        ${handleAdditionalContentBody()}
+        ${additionalSectBodyFragment()}
       </div>
     </div>
   </div>`;
   return additionalContainer;
 }
+
+export const additionalContainer = additionalSectionFragment();
