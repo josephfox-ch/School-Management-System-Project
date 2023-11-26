@@ -4,12 +4,12 @@ import { teachersContent } from "/src/pages/teachers/teachers.js";
 import { studentsContent } from "/src/pages/students/students.js";
 import { aboutContent } from "/src/pages/about/about.js";
 import { contactContent } from "/src/pages/contact/contact.js";
-import { createAddNewButtonContainer } from "../add-new-button/add-button.js";
+import { addNewButtonFragment } from "../add-button-section/add-button.js";
 
 const mainContainer = document.createElement("main");
 
 export function mainContentFragment(content) {
-  const customAddNewButton = createAddNewButtonContainer(content);
+  const customizedAddNewButton = addNewButtonFragment(content);
 
   switch (content) {
     case "home":
@@ -33,7 +33,7 @@ export function mainContentFragment(content) {
   }
   mainContainer.innerHTML = content;
 
-  mainContainer.appendChild(customAddNewButton);
+  mainContainer.appendChild(customizedAddNewButton);
 
   return mainContainer;
 }
