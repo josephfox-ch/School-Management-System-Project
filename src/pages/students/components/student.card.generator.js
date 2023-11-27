@@ -1,23 +1,4 @@
-const studentsData = [
-  {
-    name: "Joseph FOX",
-    class: "FullStack",
-    data: "This is the students data  template for  checkpoint project .",
-    grades: [99, 90, 95, 89, 100],
-  },
-  {
-    name: "Joseph FOX",
-    class: "FullStack",
-    data: "This is the students data  template for  checkpoint project .",
-    grades: [99, 90, 95, 89, 100],
-  },
-  {
-    name: "Joseph FOX",
-    class: "FullStack",
-    data: "This is the students data  template for  checkpoint project .",
-    grades: [99, 90, 95, 89, 100],
-  },
-];
+import { studentsData } from "../../../service/data.js";
 
 function generateStudentCardsHTML(studentsData) {
   let cardsHTML = "";

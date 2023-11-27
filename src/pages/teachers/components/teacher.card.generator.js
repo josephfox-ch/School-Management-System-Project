@@ -1,20 +1,4 @@
-const teachersData = [
-  {
-    instructor: "Mustafa Unlu",
-    profession: "JavaScript Expert",
-    data: "This is the class data  template for  checkpoint project .",
-  },
-  {
-    instructor: "Mustafa Unlu",
-    profession: "JavaScript Expert",
-    data: "This is the class data  template for  checkpoint project .",
-  },
-  {
-    instructor: "Mustafa Unlu",
-    profession: "JavaScript Expert",
-    data: "This is the class data  template for  checkpoint project .",
-  },
-];
+import { teachersData } from "../../../service/data.js";
 
 function generateTeacherCardsHTML(teachersData) {
   let cardsHTML = "";
