@@ -1,0 +1,41 @@
+const teachersData = [
+  {
+    instructor: "Mustafa Unlu",
+    profession: "JavaScript Expert",
+    data: "This is the class data  template for  checkpoint project .",
+  },
+  {
+    instructor: "Mustafa Unlu",
+    profession: "JavaScript Expert",
+    data: "This is the class data  template for  checkpoint project .",
+  },
+  {
+    instructor: "Mustafa Unlu",
+    profession: "JavaScript Expert",
+    data: "This is the class data  template for  checkpoint project .",
+  },
+];
+
+function generateTeacherCardsHTML(teachersData) {
+  let cardsHTML = "";
+
+  teachersData.forEach((teacherData) => {
+    cardsHTML += `
+        <div class="col mb-3 mx-auto">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">${teacherData.instructor}</h5>
+              <h6 class="card-subtitle mb-2 text-body-secondary">${teacherData.profession}</h6>
+              <p class="card-text">${teacherData.data}</p>
+              <a href="#" class="card-link">Students</a>
+              <a href="#" class="card-link">Classes</a>
+            </div>
+          </div>
+        </div>
+      `;
+  });
+
+  return cardsHTML;
+}
+
+export const teachersCards = generateTeacherCardsHTML(teachersData);
