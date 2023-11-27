@@ -1,11 +1,23 @@
-
 const classesData = [
-  { className: "FullStack", instructor: "Mustafa Unlu", data: "This is the class data  template for  checkpoint project ." },{ className: "FullStack", instructor: "Mustafa Unlu", data: "This is the class data  template for  checkpoint project ." },{ className: "FullStack", instructor: "Mustafa Unlu", data: "This is the class data  template for  checkpoint project ." }
+  {
+    className: "FullStack",
+    instructor: "Mustafa Unlu",
+    data: "This is the class data  template for  checkpoint project .",
+  },
+  {
+    className: "FullStack",
+    instructor: "Mustafa Unlu",
+    data: "This is the class data  template for  checkpoint project .",
+  },
+  {
+    className: "FullStack",
+    instructor: "Mustafa Unlu",
+    data: "This is the checkpoint project class data  template.",
+  },
 ];
 
-
 function generateClassCardsHTML(classesData) {
-  let cardsHTML = '';
+  let cardsHTML = "";
 
   classesData.forEach((classData) => {
     cardsHTML += `
@@ -25,6 +37,5 @@ function generateClassCardsHTML(classesData) {
 
   return cardsHTML;
 }
-
 
 export const classesCards = generateClassCardsHTML(classesData);
