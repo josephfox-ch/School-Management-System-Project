@@ -10,3 +10,7 @@ h6,
   font-weight: bold;
   font-family: Rowdies;
 }
+
+.card-link {
+  text-decoration: none;
+}
