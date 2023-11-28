@@ -1,4 +1,5 @@
 import { renderApp, renderContent } from "./functions.js";
+import { createNewObject } from "./components/add-new-object/add.new.object.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   renderApp();
@@ -15,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document
         .getElementById("add-new-button")
         .addEventListener("click", () => {
-          console.log("button clicked");
+          createNewObject();
         });
     }
   });
