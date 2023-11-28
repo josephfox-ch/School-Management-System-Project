@@ -2,6 +2,7 @@ import { headerFragment } from "./components/header/header.js";
 import { footerFragment } from "./components/footer/footer.js";
 import { mainContentFragment } from "./components/main-content/main-content.js";
 import { additionalContainer } from "./components/additional-content/additional-content.js";
+import { modalFragment } from "./components/modal/modal.manager.js";
 
 const app = document.getElementById("app");
 

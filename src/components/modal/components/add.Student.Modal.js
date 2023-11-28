@@ -1,4 +1,4 @@
-const addStudentModal = `
+export const addNewStudent = `
     <div class="modal-header">
       <h5 class="modal-title">Add New Class</h5>
       <button
