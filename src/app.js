@@ -11,6 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (target.tagName === "A" && target.classList.contains(linkClass)) {
       const contentId = target.dataset.contentId;
       renderContent(contentId);
+
+      document
+        .getElementById("add-new-button")
+        .addEventListener("click", () => {
+          console.log("button clicked");
+        });
     }
   });
 });
