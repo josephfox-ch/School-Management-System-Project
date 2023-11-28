@@ -14,3 +14,7 @@ h6,
 .card-link {
   text-decoration: none;
 }
+
+#add-new-button {
+  cursor: cell;
+}
