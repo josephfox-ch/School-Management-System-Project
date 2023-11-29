@@ -1,22 +1,14 @@
-import {addNewClass} from "./components/add.Class.Modal.js";
-import {addNewStudent} from "./components/add.Student.Modal.js";
-import {addNewTeacher} from "./components/add.Teacher.Modal.js";
+const modal = document.createElement("section");
+document.body.appendChild(modal);
 
-
-
-
-export function modalFragment(objectModal) {
-  const modal = document.createElement("section");
-  modal.innerHTML = `
-    <div class="modal" tabindex="-1">
-    <div class="modal-dialog">
+export function generateModalFragment(objectModal) {
+  return (modal.innerHTML = `
+  <div class="modal fade" id="dynamicModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="dynamicModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
     <div class="modal-content">
-${objectModal.innerHTML}
-    </div>
-    </div>
-    </div>
-    `;
-  return modal;
+    ${objectModal.innerHTML}
+
+</div>
+</div>
+</div>`);
 }
-
-
