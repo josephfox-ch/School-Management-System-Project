@@ -11,8 +11,10 @@ function generateTeacherCardsHTML(teachersData) {
               <h5 class="card-title">${teacherData.instructor}</h5>
               <h6 class="card-subtitle mb-2 text-body-secondary">${teacherData.profession}</h6>
               <p class="card-text">${teacherData.data}</p>
+              <div class= " d-flex justify-content-around">
               <a href="#" class="card-link">Students</a>
               <a href="#" class="card-link">Classes</a>
+              </div>
             </div>
           </div>
         </div>

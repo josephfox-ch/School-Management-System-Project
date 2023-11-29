@@ -13,10 +13,12 @@ function generateStudentCardsHTML(studentsData) {
                 student.class
               }</h6>
               <p class="card-text">${student.data}</p>
+              <div class="d-flex justify-content-start ">
               <a href="#" class="card-link">Average Grade:</a>
               <a href="#" class="card-link">${findAverageGradeOfStudent(
                 student.grades
               )}</a>
+              </div>
             </div>
           </div>
         </div>
