@@ -9,7 +9,7 @@ export function generateNewObject() {
   switch (action) {
     case "addNewClass":
       generateModalFragment(addNewClass);
-      console.log(action);
+
       break;
     case "addNewTeacher":
       generateModalFragment(addNewTeacher);
