@@ -1,4 +1,4 @@
-import { footerNavbarFragment } from "./components/footer-navbar.js";
+import { footerNavbarFragment } from "./components/footer.navbar.js";
 
 export function footerFragment() {
   const footerContainer = document.createElement("footer");

@@ -18,3 +18,9 @@ h6,
 #add-new-button {
   cursor: cell;
 }
+.modal-header {
+  background-color: rgb(240, 223, 108);
+}
+.modal-footer {
+  background-color: rgb(240, 223, 108);
+}

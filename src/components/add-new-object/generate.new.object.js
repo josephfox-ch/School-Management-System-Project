@@ -1,7 +1,7 @@
-import { generateModalFragment } from "../modal/modal.manager.js";
-import { addNewClass } from "../modal/templates-modal/add.class.modal.js";
-import { addNewTeacher } from "../modal/templates-modal/add.teacher.modal.js";
-import { addNewStudent } from "../modal/templates-modal/add.student.modal.js";
+import { generateModalFragment } from "../modals/modal.manager.js";
+import { addNewClass } from "../modals/templates-modal/add.class.modal.js";
+import { addNewTeacher } from "../modals/templates-modal/add.teacher.modal.js";
+import { addNewStudent } from "../modals/templates-modal/add.student.modal.js";
 
 export function generateNewObject() {
   const pEl = document.getElementById("add-text");
