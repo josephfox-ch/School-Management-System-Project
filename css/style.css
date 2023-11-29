@@ -19,8 +19,9 @@ h6,
   cursor: cell;
 }
 .modal-header {
-  background-color: rgb(240, 223, 108);
+  background-color: rgb(252, 243, 185);
 }
-.modal-footer {
-  background-color: rgb(240, 223, 108);
+#j-link{
+  text-decoration: none;
+  color:white;
 }
