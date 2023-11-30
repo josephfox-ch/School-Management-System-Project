@@ -2,7 +2,7 @@ export const addNewClass = document.createElement("div");
 
 addNewClass.innerHTML = `
   <div class="modal-header">
-    <h5 class="modal-title">Add New Class</h5>
+    <h5 class="modal-title ">Add New Class</h5>
     <button
       type="button"
       class="btn-close"
@@ -15,10 +15,10 @@ addNewClass.innerHTML = `
       <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
       <label class="form-check-label" for="flexRadioDefault1">
         <select
-          class="form-select form-select-sm mb-2"
+          class="form-select form-select-sm mb-2 bg-primary text-white"
           aria-label="Small select example"
         >
-          <option selected>Select Class</option>
+          <option selected >Select Class</option>
           <option value="FullStack">FullStack</option>
           <option value="AWS/Cloud Engineering">AWS/Cloud Engineering</option>
           <option value="Software Testing">Software Testing</option>
@@ -29,12 +29,12 @@ addNewClass.innerHTML = `
       <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
       <label class="form-check-label" for="flexRadioDefault2">
         <div class="input-group input-group-sm mb-2">
-          <span class="input-group-text" id="inputGroup-sizing-sm"> Add New Class</span>
+          <span class="input-group-text bg-danger text-white" id="inputGroup-sizing-sm"> Add New Class</span>
           <input id="classNameInput" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
         </div>
       </label>
       <div class="input-group input-group-sm mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-sm">Instructor </span>
+          <span class="input-group-text bg-warning text-white" id="inputGroup-sizing-sm">Instructor </span>
           <input id="instructorNameInput" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
       </div>
     </div>

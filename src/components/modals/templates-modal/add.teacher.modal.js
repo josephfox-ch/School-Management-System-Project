@@ -12,11 +12,11 @@ addNewTeacher.innerHTML = `
     </div>
     <div class="modal-body">
      <div class="input-group input-group-sm mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-sm">Instructor</span>
+            <span class="input-group-text bg-warning text-white" id="inputGroup-sizing-sm">Instructor</span>
             <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
      </div>
      <div class="input-group input-group-sm mb-3">
-     <span class="input-group-text" id="inputGroup-sizing-sm">Expertise</span>
+     <span class="input-group-text fw-bold" id="inputGroup-sizing-sm">Expertise</span>
      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
  </div>
     <div class="mb-3">
