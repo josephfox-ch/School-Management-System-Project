@@ -3,7 +3,7 @@ import { classesBodyContainerFragment } from "./components/classes.content.body.
 export const classesContentFragment = () => {
   return `<section id="classes-content">
   <div class="container mt-5 mx-5 my-3">
-    <h4>Classes</h4>
+    <h4 class ="text-danger">Classes</h4>
   </div>
 
 ${classesBodyContainerFragment()}
