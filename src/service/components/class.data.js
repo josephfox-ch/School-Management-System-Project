@@ -1,4 +1,4 @@
-import { saveNewClassData } from "./localstorage.js";
+let allClassData = [];
 
 export function getNewClassData() {
   const radio1 = document.getElementById("flexRadioDefault1");
@@ -22,5 +22,6 @@ export function getNewClassData() {
     data: classDataInput.value,
   };
 
-saveNewClassData(newClassObject)
+  allClassData.push(newClassObject);
+  return allClassData;
 }
