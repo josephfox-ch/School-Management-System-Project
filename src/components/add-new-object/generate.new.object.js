@@ -4,7 +4,7 @@ import { addNewTeacher } from "../modals/templates-modal/add.teacher.modal.js";
 import { addNewStudent } from "../modals/templates-modal/add.student.modal.js";
 import { saveNewClassData } from "../../service/components/localstorage.js";
 
-export function generateNewObject() {
+export function generateNewObjectModal() {
   const pEl = document.getElementById("add-text");
   const action = pEl.getAttribute("data-action");
   switch (action) {
