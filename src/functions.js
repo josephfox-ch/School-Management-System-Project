@@ -13,7 +13,7 @@ export function renderContent(content = "home") {
   renderHeader();
   app.innerHTML +=
     mainContentFragment(content).innerHTML + additionalContainer.innerHTML;
-  renderFooter()
+  renderFooter();
 }
 
 function renderFooter() {

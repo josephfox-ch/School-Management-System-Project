@@ -1,9 +1,10 @@
-import { classesData } from "../../../service/data.js";
+ import { getAllClassData } from "../../../service/components/localstorage.js";
 
-function generateClassCardsHTML(classesData) {
+ const allClassData = getAllClassData()
   let cardsHTML = "";
+ function generateClassCardsHTML() {
 
-  classesData.forEach((classData) => {
+  allClassData.forEach((classData) => {
     cardsHTML += `
       <div class="col mb-3 mx-auto">
         <div class="card" style="width: 18rem;">
@@ -25,4 +26,4 @@ function generateClassCardsHTML(classesData) {
   return cardsHTML;
 }
 
-export const classesCards = generateClassCardsHTML(classesData);
+export const classesCards = generateClassCardsHTML(allClassData);

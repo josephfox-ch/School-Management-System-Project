@@ -1,20 +1,3 @@
-export const classesData = [
-  {
-    className: "FullStack",
-    instructor: "Mustafa Unlu",
-    data: "This is the class data  template for  checkpoint project .",
-  },
-  {
-    className: "FullStack",
-    instructor: "Mustafa Unlu",
-    data: "This is the class data  template for  checkpoint project .",
-  },
-  {
-    className: "FullStack",
-    instructor: "Mustafa Unlu",
-    data: "This is the checkpoint project class data  template.",
-  },
-];
 
 export const teachersData = [
   {
