@@ -6,10 +6,10 @@ function generateStudentCardsHTML(studentsData) {
   studentsData.forEach((student) => {
     cardsHTML += `
         <div class="col mb-3 mx-auto">
-          <div class="card" style="width: 18rem;">
+          <div class="card border-info" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title">${student.name}</h5>
-              <h6 class="card-subtitle mb-2 text-body-secondary">${
+              <h5 class="card-title text-info">${student.name}</h5>
+              <h6 class="card-subtitle mb-2 text-danger">${
                 student.class
               }</h6>
               <p class="card-text">${student.data}</p>
