@@ -1,5 +1,4 @@
 import { getNewClassData } from "./class.data.js";
-import { generateClassCardsHTML } from "../../pages/classes/components/class.card.generator.js";
 
 export function saveNewClassData() {
   let newClassData = getNewClassData();
@@ -12,7 +11,7 @@ export function saveNewClassData() {
   } else {
     localStorage.setItem("allClassesData", JSON.stringify(newClassData));
   }
-  generateClassCardsHTML();
+  location.reload();
 }
 
 export function getAllClassData() {

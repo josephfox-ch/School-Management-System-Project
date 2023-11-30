@@ -2,7 +2,6 @@ import { generateModalFragment } from "../modals/modal.manager.js";
 import { addNewClass } from "../modals/templates-modal/add.class.modal.js";
 import { addNewTeacher } from "../modals/templates-modal/add.teacher.modal.js";
 import { addNewStudent } from "../modals/templates-modal/add.student.modal.js";
-import { getNewClassData } from "../../service/components/class.data.js";
 import { saveNewClassData } from "../../service/components/localstorage.js";
 
 export function generateNewObject() {
@@ -30,7 +29,6 @@ export function generateNewObject() {
   dynamicModal.show();
 
   document.getElementById("saveClassChanges").addEventListener("click", () => {
-    getNewClassData();
     saveNewClassData();
   });
 }
