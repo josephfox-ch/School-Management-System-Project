@@ -22,17 +22,12 @@ function renderFooter() {
   app.innerHTML += footerFragment().innerHTML;
 }
 
-export function Class(className, instructor) {
-  this.className = className;
-  this.instructor = instructor;
-  this.students = [];
-  this.data = [];
-}
+export function renderApp() {
+  renderHeader();
 
-export function Teacher(teacherName, expertise) {
-  this.teacherName = teacherName;
-  this.expertise = expertise;
-  this.data = [];
+  renderContent();
+
+  renderFooter();
 }
 
 export function saveDataToLocalStorage(data) {
@@ -49,10 +44,32 @@ export function saveDataToLocalStorage(data) {
   }
 }
 
-export function renderApp() {
-  renderHeader();
+export function findNumbersOf() {
+  this.classes = function () {
+    const classesData = JSON.parse(localStorage.getItem("classes"));
+    return classesData ? classesData.length : 0;
+  };
 
-  renderContent();
+  this.teachers = function () {
+    const teachersData = JSON.parse(localStorage.getItem("teachers"));
+    return teachersData ? teachersData.length : 0;
+  };
 
-  renderFooter();
+  this.students = function () {
+    const studentsData = JSON.parse(localStorage.getItem("students"));
+    return studentsData ? studentsData.length : 0;
+  };
+}
+
+export function Class(className, instructor) {
+  this.className = className;
+  this.instructor = instructor;
+  this.students = [];
+  this.data = [];
+}
+
+export function Teacher(teacherName, expertise) {
+  this.teacherName = teacherName;
+  this.expertise = expertise;
+  this.data = [];
 }

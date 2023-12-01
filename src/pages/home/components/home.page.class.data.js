@@ -1,3 +1,7 @@
+import { findNumbersOf } from "../../../functions.js";
+
+const numberOfClasses = new findNumbersOf();
+
 export const homePageClassesDataFragment = () => {
   return `
     <div class="col mb-3 mx-auto">
@@ -5,12 +9,11 @@ export const homePageClassesDataFragment = () => {
         <div class="card-header">
           <h5 class="text-danger">Number of Classes</h5>
         </div>
-        <div class="card-body text-danger">
-          <h5 class="card-title">Info Classes</h5>
+        <div class="card-body">
+          <h5 class="card-title text-center">${numberOfClasses.classes()}</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
       </div>
     </div>
   `;
 };
-
