@@ -1,5 +1,4 @@
-
-export const teachersData = [
+const teachersData = [
   {
     instructor: "Mustafa Unlu",
     profession: "JavaScript Expert",

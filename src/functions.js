@@ -2,7 +2,8 @@ import { headerFragment } from "./components/header/header.js";
 import { footerFragment } from "./components/footer/footer.js";
 import { mainContentFragment } from "./components/main-content/main-content.js";
 import { additionalContainer } from "./components/additional-content/additional-content.js";
-import { saveNewClassData } from "./service/components/class.data.js";
+import { saveNewClassData } from "./service/components/save.class.data.js";
+import { saveNewTeacherData } from "./service/components/save.teacher.data.js";
 
 const app = document.getElementById("app");
 
@@ -28,8 +29,8 @@ export function Class(className, instructor) {
   this.data = [];
 }
 
-export function Instructor(instructorName, expertise) {
-  this.instructorName = instructorName;
+export function Teacher(teacherName, expertise) {
+  this.teacherName = teacherName;
   this.expertise = expertise;
   this.data = [];
 }
