@@ -37,7 +37,7 @@ addNewStudent.innerHTML = `
       <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">
         Close
       </button>
-      <button type="button" class="btn btn-outline-success">
+      <button id="saveNewStudent" type="button" class="btn btn-outline-success saveChanges">
         Save changes
       </button>
     </div>

@@ -2,7 +2,7 @@ import { generateModalFragment } from "../modals/modal.manager.js";
 import { addNewClass } from "../modals/templates-modal/add.class.modal.js";
 import { addNewTeacher } from "../modals/templates-modal/add.teacher.modal.js";
 import { addNewStudent } from "../modals/templates-modal/add.student.modal.js";
-import { saveNewClassData } from "../../service/components/localstorage.js";
+import { renderContent, saveDataToLocalStorage } from "../../functions.js";
 
 export function generateNewObjectModal() {
   const pEl = document.getElementById("add-text");
@@ -28,7 +28,16 @@ export function generateNewObjectModal() {
   );
   dynamicModal.show();
 
-  document.getElementById("saveClassChanges").addEventListener("click", () => {
-    saveNewClassData();
+  const saveChangesButtons = [
+    ...document.getElementsByClassName("saveChanges"),
+  ];
+
+  saveChangesButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const dataType = event.target.id;
+      console.log("CHECKPOINT",dataType);
+      saveDataToLocalStorage(dataType);
+      
+    });
   });
 }

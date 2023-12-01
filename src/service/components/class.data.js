@@ -1,6 +1,6 @@
-let allClassData = [];
+import { Class } from "../../functions.js";
 
-export function getNewClassData() {
+export function saveNewClassData() {
   const radio1 = document.getElementById("flexRadioDefault1");
   const radio2 = document.getElementById("flexRadioDefault2");
   const selectElement = document.querySelector(".form-select");
@@ -9,19 +9,29 @@ export function getNewClassData() {
 
   const selectedRadio = radio1.checked ? radio1 : radio2;
 
-  let className;
+  let newClassInput = new Class();
+
   if (selectedRadio === radio1) {
-    className = selectElement.value;
+    newClassInput.className = selectElement.value;
   } else {
-    className = document.querySelector(".form-control").value;
+    newClassInput.className = document.querySelector(".form-control").value;
+  }
+  newClassInput.instructor = instructorInput.value;
+  newClassInput.data = classDataInput.value;
+
+  let existingData = localStorage.getItem("classes");
+  if (existingData) {
+    existingData = JSON.parse(existingData);
+
+    if (!Array.isArray(existingData)) {
+      existingData = []; 
+    }
+  } else {
+    existingData = [];
   }
 
-  const newClassObject = {
-    className: className,
-    instructor: instructorInput.value,
-    data: classDataInput.value,
-  };
-
-  allClassData.push(newClassObject);
-  return allClassData;
+  existingData.push(newClassInput);
+  localStorage.setItem("classes", JSON.stringify(existingData));
+  console.log("checkpoint");
 }
+
