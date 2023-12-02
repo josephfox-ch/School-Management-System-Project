@@ -65,6 +65,10 @@ export class School{
   constructor(){
     this.classes =[];
   }
+
+  addClass(newClass){
+    this.classes.push(newClass)
+  }
 }
 
 
