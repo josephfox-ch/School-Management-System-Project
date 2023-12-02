@@ -93,3 +93,10 @@ export class Teacher {
   }
 }
 
+export class Student{
+  constructor(studentName,className){
+    this.studentName=studentName;
+    this.className=className;
+    this.grades=[]
+  }
+}
