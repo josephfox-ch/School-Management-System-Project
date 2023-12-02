@@ -2,7 +2,6 @@ import { generateModalFragment } from "../modals/modal.manager.js";
 import { addNewClass } from "../modals/templates-modal/add.class.modal.js";
 import { addNewTeacher } from "../modals/templates-modal/add.teacher.modal.js";
 import { addNewStudent } from "../modals/templates-modal/add.student.modal.js";
-import { renderContent, saveDataToLocalStorage } from "../../functions.js";
 
 export function generateNewObjectModal() {
   const pEl = document.getElementById("add-text");
@@ -35,9 +34,8 @@ export function generateNewObjectModal() {
   saveChangesButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
       const dataType = event.target.id;
-      console.log("CHECKPOINT",dataType);
+      console.log("CHECKPOINT", dataType);
       saveDataToLocalStorage(dataType);
-      
     });
   });
 }

@@ -1,7 +1,7 @@
 import { homeContent } from "/src/pages/home/home.js";
 import { classesContentFragment } from "/src/pages/classes/classes.js";
-import { teachersContent } from "/src/pages/teachers/teachers.js";
-import { studentsContent } from "/src/pages/students/students.js";
+import { teachersContentFragment } from "/src/pages/teachers/teachers.js";
+import { studentsContentFragment } from "/src/pages/students/students.js";
 import { aboutContent } from "/src/pages/about/about.js";
 import { contactContent } from "/src/pages/contact/contact.js";
 import { addNewButtonFragment } from "../add-button-section/add.button.js";
@@ -21,10 +21,10 @@ export function mainContentFragment(content) {
       contentHTML = classesContentFragment();
       break;
     case "teacher":
-      contentHTML = teachersContent;
+      contentHTML = teachersContentFragment();
       break;
     case "student":
-      contentHTML = studentsContent;
+      contentHTML = studentsContentFragment();
       break;
     case "about":
       contentHTML = aboutContent;
