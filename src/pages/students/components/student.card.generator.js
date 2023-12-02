@@ -9,7 +9,7 @@ function generateStudentCardsHTML(studentsData) {
           <div class="card border-info" style="width: 18rem;">
             <div class="card-body">
             <div class="d-flex justify-content-end mb-2">
-                <a href="#" class="text-primary mx-2"><i class="fas fa-edit"></i></a>
+                <a href="#" class="text-primary mx-3"><i class="fas fa-edit"></i></a>
                 <a href="#" class="text-danger"><i class="fas fa-trash-alt"></i></a>
               </div>
               <h5 class="card-title text-info">${student.name}</h5>
