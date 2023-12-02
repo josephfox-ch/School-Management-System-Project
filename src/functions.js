@@ -61,6 +61,15 @@ export function findNumbersOf() {
   };
 }
 
+export class School{
+  constructor(){
+    this.classes =[];
+  }
+}
+
+
+
+
 export function Class(className, instructor) {
   this.className = className;
   this.instructor = instructor;
