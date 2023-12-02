@@ -61,42 +61,45 @@ export function findNumbersOf() {
   };
 }
 
-export class School{
-  constructor(){
-    this.classes =[];
+export function capitalizeFirstLetter(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+export class School {
+  constructor() {
+    this.classes = [];
   }
 
-  addClass(newClass){
-    this.classes.push(newClass)
+  addClass(newClass) {
+    this.classes.push(newClass);
   }
 }
 
-
-export class Class{
+export class Class {
   constructor(className, teacher) {
-  this.className = className;
-  this.teacher = teacher;
-  this.students = [];
-  this.data = [];
-}
+    this.className = className;
+    this.teacher = teacher;
+    this.students = [];
+    this.data = [];
+  }
 
-addStudent(newStudent){
-  this.students.push(newStudent);
-}
+  addStudent(newStudent) {
+    this.students.push(newStudent);
+  }
 }
 
 export class Teacher {
-  constructor(teacherName,expertise){
+  constructor(teacherName, expertise) {
     this.teacherName = teacherName;
     this.expertise = expertise;
-    this.data =[]
+    this.data = [];
   }
 }
 
-export class Student{
-  constructor(studentName,className){
-    this.studentName=studentName;
-    this.className=className;
-    this.grades=[]
+export class Student {
+  constructor(studentName, className) {
+    this.studentName = studentName;
+    this.className = className;
+    this.grades = [];
   }
 }

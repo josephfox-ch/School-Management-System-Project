@@ -1,6 +1,6 @@
-export const addNewClass = document.createElement("div");
+export const addNewClassModal = document.createElement("div");
 
-addNewClass.innerHTML = `
+addNewClassModal.innerHTML = `
   <div class="modal-header">
     <h5 class="modal-title ">Add New Class</h5>
     <button
