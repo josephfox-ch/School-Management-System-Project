@@ -8,10 +8,12 @@ function generateStudentCardsHTML(studentsData) {
         <div class="col mb-3 mx-auto">
           <div class="card border-info" style="width: 18rem;">
             <div class="card-body">
+            <div class="d-flex justify-content-end mb-2">
+                <a href="#" class="text-primary mx-2"><i class="fas fa-edit"></i></a>
+                <a href="#" class="text-danger"><i class="fas fa-trash-alt"></i></a>
+              </div>
               <h5 class="card-title text-info">${student.name}</h5>
-              <h6 class="card-subtitle mb-2 text-danger">${
-                student.class
-              }</h6>
+              <h6 class="card-subtitle mb-2 text-danger">${student.class}</h6>
               <p class="card-text">${student.data}</p>
               <div class="d-flex justify-content-start ">
               <a href="#" class="card-link">Average Grade:</a>

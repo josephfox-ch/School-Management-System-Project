@@ -92,3 +92,4 @@ export class Teacher {
     this.data =[]
   }
 }
+
