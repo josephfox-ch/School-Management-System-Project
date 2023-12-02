@@ -74,14 +74,22 @@ export class School{
 
 
 
-export function Class(className, instructor) {
+export class Class{
+  constructor(className, teacher) {
   this.className = className;
-  this.instructor = instructor;
+  this.teacher = teacher;
   this.students = [];
   this.data = [];
 }
 
-export function Teacher(teacherName, expertise) {
+addStudent(newStudent){
+  this.students.push(newStudent);
+}
+}
+
+
+
+Teacher(teacherName, expertise) {
   this.teacherName = teacherName;
   this.expertise = expertise;
   this.data = [];
