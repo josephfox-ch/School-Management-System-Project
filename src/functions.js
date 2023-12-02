@@ -72,8 +72,6 @@ export class School{
 }
 
 
-
-
 export class Class{
   constructor(className, teacher) {
   this.className = className;
@@ -87,10 +85,10 @@ addStudent(newStudent){
 }
 }
 
-
-
-Teacher(teacherName, expertise) {
-  this.teacherName = teacherName;
-  this.expertise = expertise;
-  this.data = [];
+export class Teacher {
+  constructor(teacherName,expertise){
+    this.teacherName = teacherName;
+    this.expertise = expertise;
+    this.data =[]
+  }
 }
