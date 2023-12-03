@@ -2,6 +2,7 @@ import { generateModalFragment } from "../modals/modal.manager.js";
 import { addNewClassModal } from "../modals/templates-modal/add.class.modal.js";
 import { addNewTeacherModal } from "../modals/templates-modal/add.teacher.modal.js";
 import { addNewStudentModal } from "../modals/templates-modal/add.student.modal.js";
+import { saveDataToLocalStorage } from "../../functions.js";
 
 export function generateNewObjectModal() {
   const pEl = document.getElementById("add-text");
@@ -26,7 +27,6 @@ export function generateNewObjectModal() {
     document.getElementById("dynamicModal")
   );
   dynamicModal.show();
-
   const saveChangesButtons = [
     ...document.getElementsByClassName("saveChanges"),
   ];
@@ -38,4 +38,5 @@ export function generateNewObjectModal() {
       saveDataToLocalStorage(dataType);
     });
   });
+  
 }

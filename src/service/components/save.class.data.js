@@ -1,37 +1,30 @@
 import { Class } from "../../functions.js";
 
 export function saveNewClassData() {
-  const radio1 = document.getElementById("flexRadioDefault1");
-  const radio2 = document.getElementById("flexRadioDefault2");
-  const selectElement = document.querySelector(".form-select");
-  const instructorInput = document.querySelector("#instructorNameInput");
-  const classDataInput = document.getElementById("classDataTextArea");
+  try {
+    const classNameInput = document.getElementById("classNameInput");
+    const teacherNameInput = document.querySelector("#teacherNameInput");
+    const classDataInput = document.getElementById("classDataTextArea");
 
-  const selectedRadio = radio1.checked ? radio1 : radio2;
+    let LMSchool = JSON.parse(localStorage.getItem("school"));
+    console.log("Local Storage Data:", LMSchool);
 
-  let newClassInput = new Class();
+    let newClassInput = new Class();
+    newClassInput.className = classNameInput.value;
+    newClassInput.teacher = teacherNameInput.value;
+    newClassInput.data = classDataInput.value;
 
-  if (selectedRadio === radio1) {
-    newClassInput.className = selectElement.value;
-  } else {
-    newClassInput.className = document.querySelector(".form-control").value;
-  }
-  newClassInput.instructor = instructorInput.value;
-  newClassInput.data = classDataInput.value;
-
-  let existingData = localStorage.getItem("classes");
-  if (existingData) {
-    existingData = JSON.parse(existingData);
-
-    if (!Array.isArray(existingData)) {
-      existingData = []; 
+    if (LMSchool) {
+      LMSchool.push(newClassInput);
+    } else {
+      LMSchool = [];
+      LMSchool.push(newClassInput);
     }
-  } else {
-    existingData = [];
+
+    localStorage.setItem("school", JSON.stringify(LMSchool));
+
+    console.log("checkpoint:data saved successfully");
+  } catch (error) {
+    console.error("error!!- while saving data:", error);
   }
-
-  existingData.push(newClassInput);
-  localStorage.setItem("classes", JSON.stringify(existingData));
-  console.log("checkpoint");
 }
-

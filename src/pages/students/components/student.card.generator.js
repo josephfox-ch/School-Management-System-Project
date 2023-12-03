@@ -1,9 +1,9 @@
-import { studentsData } from "../../../service/data.js";
+import { students } from "../../../service/data.js";
 
-function generateStudentCardsHTML(studentsData) {
+function generateStudentCardsHTML(students) {
   let cardsHTML = "";
 
-  studentsData.forEach((student) => {
+  students.forEach((student) => {
     cardsHTML += `
         <div class="col mb-3 mx-auto">
           <div class="card border-info" style="width: 18rem;">
@@ -42,4 +42,4 @@ function findAverageGradeOfStudent(arr) {
   return totalofGrades / arr.length;
 }
 
-export const studentsCards = generateStudentCardsHTML(studentsData);
+export const studentsCards = generateStudentCardsHTML(students);

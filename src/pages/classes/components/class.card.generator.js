@@ -1,4 +1,4 @@
-const classes = JSON.parse(localStorage.getItem("classes"));
+import { classes } from "../../../service/data.js";
 
 export function generateClassCardsHTML() {
   let cardsHTML = "";
@@ -14,7 +14,7 @@ export function generateClassCardsHTML() {
                 <a href="#" class="text-danger"><i class="fas fa-trash-alt"></i></a>
               </div>
               <h5 class="card-title text-danger">${classEl.className}</h5>
-              <h6 class="card-subtitle mb-2 text-warning">${classEl.instructor}</h6>
+              <h6 class="card-subtitle mb-2 text-warning">${classEl.teacher}</h6>
               <p class="card-text">${classEl.data}</p>
               <div class= " d-flex justify-content-around">
                 <a href="#" class="card-link text-info">Students</a>
@@ -26,6 +26,7 @@ export function generateClassCardsHTML() {
       `;
     });
   } else {
+    cardsHTML = "<p>No classes available</p>";
   }
 
   return cardsHTML;

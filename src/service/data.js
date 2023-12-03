@@ -1,4 +1,7 @@
-const teachersData = [
+export const classes=[];
+
+
+const teachers = [
   {
     instructor: "Mustafa Unlu",
     profession: "JavaScript Expert",
@@ -16,7 +19,7 @@ const teachersData = [
   },
 ];
 
-export const studentsData = [
+export const students = [
   {
     name: "Joseph FOX",
     class: "FullStack",
