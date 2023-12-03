@@ -1,9 +1,9 @@
-const teachers = JSON.parse(localStorage.getItem("teachers"));
+import { teachers } from "../../../service/data.js";
 
 export function generateTeacherCardsHTML() {
   let cardsHTML = "";
 
-  if (Array.isArray(teachers)) {
+  if (Array.isArray(teachers)&& teachers.length != 0) {
     teachers.forEach((teacher) => {
       cardsHTML += `
         <div class="col mb-3 mx-auto">
@@ -26,6 +26,8 @@ export function generateTeacherCardsHTML() {
       `;
     });
   } else {
+    cardsHTML =
+      ' <p class = "text-warning fw-bold" >&#9888; No Teachers Available ! </p>';
   }
 
   return cardsHTML;

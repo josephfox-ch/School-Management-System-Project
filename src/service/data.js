@@ -1,25 +1,19 @@
 import { LMSchool } from "./components/school.data.js";
 
 export const classes = LMSchool.classes;
-console.log("classes",classes);
+console.log("classes", classes);
 
-const teachers = [
-  {
-    instructor: "Mustafa Unlu",
-    profession: "JavaScript Expert",
-    data: "This is the class data  template for  checkpoint project.",
-  },
-  {
-    instructor: "Mustafa Unlu",
-    profession: "JavaScript Expert",
-    data: "This is the class data  template for  checkpoint project.",
-  },
-  {
-    instructor: "Mustafa Unlu",
-    profession: "JavaScript Expert",
-    data: "This is the class data  template for  checkpoint project.",
-  },
-];
+export const teachers = classes.map((classEl) => {
+  const teacher = classEl.teacher;
+
+  if (teacher) {
+    return teacher;
+  }
+
+  return [];
+});
+
+console.log("teachers", teachers);
 
 export const students = [
   {
