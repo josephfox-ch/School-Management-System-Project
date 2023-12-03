@@ -3,7 +3,7 @@ import { classes } from "../../../service/data.js";
 export function generateClassCardsHTML() {
   let cardsHTML = "";
 
-  if (Array.isArray(classes)) {
+  if (Array.isArray(classes) && classes.length != 0) {
     classes.forEach((classEl) => {
       cardsHTML += `
         <div class="col mb-3 mx-auto">
@@ -26,8 +26,10 @@ export function generateClassCardsHTML() {
       `;
     });
   } else {
-    cardsHTML = "<p>No classes available</p>";
+    cardsHTML =
+      ' <p class = "text-danger fw-bold" >&#9888; No Classes Available ! </p>';
   }
 
   return cardsHTML;
 }
+
