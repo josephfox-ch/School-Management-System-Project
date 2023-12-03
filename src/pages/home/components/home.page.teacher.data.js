@@ -5,7 +5,7 @@ const numberOfTeachers = new findNumbersOf();
 export const homePageTeachersDataFragment = () => {
   return `
     <div class="col mb-3 mx-auto">
-      <div class="card border-danger mb-3" style="max-width: 18rem;">
+      <div class="card border-warning mb-3" style="max-width: 18rem;">
         <div class="card-header">
           <h5 class="text-warning">Number of Teacher</h5>
         </div>

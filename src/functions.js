@@ -15,6 +15,7 @@ export function renderContent(contentId = "home") {
   renderHeader();
   app.innerHTML +=
     mainContentFragment(contentId).innerHTML + additionalContainer.innerHTML;
+
   renderFooter();
 }
 
@@ -63,16 +64,6 @@ export function findNumbersOf() {
 
 export function capitalizeFirstLetter(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
-}
-
-export class School {
-  constructor() {
-    this.classes = [];
-  }
-
-  addClass(newClass) {
-    this.classes.push(newClass);
-  }
 }
 
 export class Class {

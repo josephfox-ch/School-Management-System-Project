@@ -1,5 +1,7 @@
-export const classes=[];
+import { LMSchool } from "./components/school.data.js";
 
+export const classes = LMSchool.classes;
+console.log(classes);
 
 const teachers = [
   {

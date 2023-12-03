@@ -6,25 +6,23 @@ export function saveNewClassData() {
     const teacherNameInput = document.querySelector("#teacherNameInput");
     const classDataInput = document.getElementById("classDataTextArea");
 
-    let LMSchool = JSON.parse(localStorage.getItem("school"));
-    console.log("Local Storage Data:", LMSchool);
-
     let newClassInput = new Class();
     newClassInput.className = classNameInput.value;
     newClassInput.teacher = teacherNameInput.value;
     newClassInput.data = classDataInput.value;
 
-    if (LMSchool) {
-      LMSchool.push(newClassInput);
+    let updatedSchool = JSON.parse(localStorage.getItem("school")) || {
+      classes: [],
+    };
+
+    if (updatedSchool) {
+      updatedSchool.classes.push(newClassInput);
+      localStorage.setItem("school", JSON.stringify(updatedSchool));
+      console.log("checkpoint data saved successfully");
     } else {
-      LMSchool = [];
-      LMSchool.push(newClassInput);
+      console.error("error-unable to save data");
     }
-
-    localStorage.setItem("school", JSON.stringify(LMSchool));
-
-    console.log("checkpoint:data saved successfully");
   } catch (error) {
-    console.error("error!!- while saving data:", error);
+    console.error("error while saving data:", error);
   }
 }
