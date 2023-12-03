@@ -13,6 +13,8 @@ export function saveNewClassData() {
 
     let updatedSchool = JSON.parse(localStorage.getItem("school")) || {
       classes: [],
+      teachers: [],
+      students: [],
     };
 
     if (updatedSchool) {

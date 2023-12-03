@@ -3,15 +3,7 @@ import { LMSchool } from "./components/school.data.js";
 export const classes = LMSchool.classes;
 console.log("classes", classes);
 
-export const teachers = classes.map((classEl) => {
-  const teacher = classEl.teacher;
-
-  if (teacher) {
-    return teacher;
-  }
-
-  return [];
-});
+export const teachers = LMSchool.teachers;
 
 console.log("teachers", teachers);
 

@@ -3,7 +3,7 @@ import { teachers } from "../../../service/data.js";
 export function generateTeacherCardsHTML() {
   let cardsHTML = "";
 
-  if (Array.isArray(teachers)&& teachers.length != 0) {
+  if (Array.isArray(teachers) && teachers.length != 0) {
     teachers.forEach((teacher) => {
       cardsHTML += `
         <div class="col mb-3 mx-auto">

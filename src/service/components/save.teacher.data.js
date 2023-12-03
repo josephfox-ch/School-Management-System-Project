@@ -1,30 +1,31 @@
 import { Teacher } from "../../functions.js";
 
 export function saveNewTeacherData() {
- 
+  try {
+    const teacherInput = document.querySelector("#teacherNameInput");
+    const expertiseInput = document.getElementById("expertiseInput");
+    const teacherDataInput = document.getElementById("teacherDataTextArea");
 
-  const teacherInput = document.querySelector("#teacherNameInput");
-  const expertiseInput = document.getElementById("expertiseInput")
-  const teacherDataInput = document.getElementById("teacherDataTextArea");
+    let newTeacherInput = new Teacher();
 
-  let newTeacherInput = new Teacher();
+    newTeacherInput.teacherName = teacherInput.value;
+    newTeacherInput.expertise = expertiseInput.value;
+    newTeacherInput.data = teacherDataInput.value;
 
-  newTeacherInput.teacherName = teacherInput.value;
-  newTeacherInput.expertise =expertiseInput.value;
-  newTeacherInput.data = teacherDataInput.value;
+    let updatedSchool = JSON.parse(localStorage.getItem("school")) || {
+      classes: [],
+      teachers: [],
+      students: [],
+    };
 
-  let existingData = localStorage.getItem("teachers");
-  if (existingData) {
-    existingData = JSON.parse(existingData);
-
-    if (!Array.isArray(existingData)) {
-      existingData = []; 
+    if (updatedSchool) {
+      updatedSchool.teachers.push(newTeacherInput);
+      localStorage.setItem("school", JSON.stringify(updatedSchool));
+      console.log("checkpoint data saved successfully");
+    } else {
+      console.error("error-unable to save data");
     }
-  } else {
-    existingData = [];
+  } catch (error) {
+    console.error("error while saving data:", error);
   }
-
-  existingData.push(newTeacherInput);
-  localStorage.setItem("teachers", JSON.stringify(existingData));
-  console.log("checkpoint");
 }
