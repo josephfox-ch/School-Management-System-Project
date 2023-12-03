@@ -1,6 +1,7 @@
-import { findNumbersOf } from "../../../functions.js";
+import { findLengthOf } from "../../../functions.js";
+import { students } from "../../../service/data.js";
 
-const numberOfStudents = new findNumbersOf();
+const numberOfStudents = findLengthOf(students);
 
 export const homePageStudentsDataFragment = () => {
   return `
@@ -10,7 +11,7 @@ export const homePageStudentsDataFragment = () => {
           <h5 class="text-info">Number of Students</h5>
         </div>
         <div class="card-body">
-          <h5 class="card-title text-center">${numberOfStudents.students()}</h5>
+          <h5 class="card-title text-center">${numberOfStudents}</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
       </div>

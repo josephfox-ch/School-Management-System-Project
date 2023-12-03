@@ -1,6 +1,6 @@
-import { homePageClassesDataFragment } from "./home.page.class.data.js"
-import { homePageTeachersDataFragment } from "./home.page.teacher.data.js"
-import { homePageStudentsDataFragment } from "./home.page.student.data.js"
+import { homePageClassesDataFragment } from "./home.page.class.data.js";
+import { homePageTeachersDataFragment } from "./home.page.teacher.data.js";
+import { homePageStudentsDataFragment } from "./home.page.student.data.js";
 
 export const homeBodyContainerFragment = () => {
   return `
@@ -13,6 +13,3 @@ export const homeBodyContainerFragment = () => {
     </div>
   `;
 };
-
-
-

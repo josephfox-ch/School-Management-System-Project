@@ -4,6 +4,8 @@ import { mainContentFragment } from "./components/main-content/main-content.js";
 import { additionalContainer } from "./components/additional-content/additional-content.js";
 import { saveNewClassData } from "./service/components/save.class.data.js";
 import { saveNewTeacherData } from "./service/components/save.teacher.data.js";
+import { saveNewStudentData } from "./service/components/save.student.data.js";
+import { classes, teachers, students } from "./service/data.js";
 
 const app = document.getElementById("app");
 
@@ -39,27 +41,14 @@ export function saveDataToLocalStorage(data) {
     case "saveNewTeacher":
       saveNewTeacherData();
       break;
-    case "newStudentData":
+    case "saveNewStudent":
       saveNewStudentData();
       break;
   }
 }
 
-export function findNumbersOf() {
-  this.classes = function () {
-    const classesData = JSON.parse(localStorage.getItem("classes"));
-    return classesData ? classesData.length : 0;
-  };
-
-  this.teachers = function () {
-    const teachersData = JSON.parse(localStorage.getItem("teachers"));
-    return teachersData ? teachersData.length : 0;
-  };
-
-  this.students = function () {
-    const studentsData = JSON.parse(localStorage.getItem("students"));
-    return studentsData ? studentsData.length : 0;
-  };
+export function findLengthOf(arr) {
+  return arr ? arr.length : 0;
 }
 
 export function capitalizeFirstLetter(str) {
@@ -92,5 +81,6 @@ export class Student {
     this.studentName = studentName;
     this.className = className;
     this.grades = [];
+    this.data = [];
   }
 }

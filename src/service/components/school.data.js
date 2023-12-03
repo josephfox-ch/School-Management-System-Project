@@ -23,12 +23,17 @@ if (storedSchoolData) {
     storedSchoolData.classes.forEach((classEl) => {
       LMSchool.addClass(classEl);
     });
-  } else if (
-    storedSchoolData.teachers &&
-    storedSchoolData.teachers.length > 0
-  ) {
+  }
+
+  if (storedSchoolData.teachers && storedSchoolData.teachers.length > 0) {
     storedSchoolData.teachers.forEach((teacher) => {
       LMSchool.addTeacher(teacher);
+    });
+  }
+
+  if (storedSchoolData.students && storedSchoolData.students.length > 0) {
+    storedSchoolData.students.forEach((student) => {
+      LMSchool.addStudent(student);
     });
   }
 }
