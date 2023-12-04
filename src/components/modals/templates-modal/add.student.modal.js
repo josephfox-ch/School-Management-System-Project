@@ -34,21 +34,21 @@ addNewStudentModal.innerHTML = `
     </div>
     <div class="row g-3">
   <div class="col-sm-3">
-    <label for="inputZip1" class="form-label">Grade-1</label>
-    <input type="text" class="form-control" id="inputZip1">
+    <label for="inputGrade1" class="form-label">Grade-1</label>
+    <input type="text" class="form-control" id="inputGrade1">
   </div>
   <div class="col-sm-3">
-    <label for="inputZip2" class="form-label">Grade-2</label>
-    <input type="text" class="form-control" id="inputZip2">
+    <label for="inputGrade2" class="form-label">Grade-2</label>
+    <input type="text" class="form-control" id="inputGrade2">
   </div>
   
   <div class="col-sm-3">
-    <label for="inputZip3" class="form-label">Grade-3</label>
-    <input type="text" class="form-control" id="inputZip3">
+    <label for="inputGrade3" class="form-label">Grade-3</label>
+    <input type="text" class="form-control" id="inputGrade3">
   </div>
   <div class="col-sm-3">
-    <label for="inputZip3" class="form-label">Grade-4</label>
-    <input type="text" class="form-control" id="inputZip3">
+    <label for="inputGrade4" class="form-label">Grade-4</label>
+    <input type="text" class="form-control" id="inputGrade43">
   </div>
 </div>
 
