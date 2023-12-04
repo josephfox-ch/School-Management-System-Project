@@ -74,13 +74,17 @@ export class Teacher {
     this.expertise = expertise;
     this.data = [];
   }
+ 
 }
 
 export class Student {
   constructor(studentName, className) {
     this.studentName = studentName;
     this.className = className;
-    this.grades = [];
+    this.grades = {};
     this.data = [];
+  }
+  addGrades(assignment,grade){
+    this.grades[assignment] = grade;
   }
 }

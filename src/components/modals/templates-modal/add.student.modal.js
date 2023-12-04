@@ -31,22 +31,14 @@ addNewStudentModal.innerHTML = `
         <label for="studentDataTextAea" class="form-label">Student Data</label>
         <textarea class="form-control" id="studentDataTextArea" rows="3"></textarea>
       </div>
-      <div class="row g-3">
-        <div class="col-sm-3">
-          <label for="inputGrade1" class="form-label">Grade-1</label>
-          <input type="text" class="form-control grades-input" id="inputGrade1">
+      <div class="row">
+        <div class="col-sm-9">
+          <label for="assignmentInput" class="form-label input-sm">Assignment</label>
+          <input type="text" class="form-control input-sm grades-input" id="assignmentInput">
         </div>
-        <div class="col-sm-3">
-          <label for="inputGrade2" class="form-label">Grade-2</label>
-          <input type="text" class="form-control grades-input" id="inputGrade2">
-        </div>
-        <div class="col-sm-3">
-          <label for="inputGrade3" class="form-label">Grade-3</label>
-          <input type="text" class="form-control grades-input" id="inputGrade3">
-        </div>
-        <div class="col-sm-3">
-          <label for="inputGrade4" class="form-label">Grade-4</label>
-          <input type="text" class="form-control grades-input" id="inputGrade4">
+        <div class="col-sm-3 ms-auto">
+          <label for="gradeInput" class="form-label input-sm">Grade</label>
+          <input type="text" class="form-control input-sm grades-input" id="gradeInput">
         </div>
       </div>
     </div>
@@ -56,5 +48,3 @@ addNewStudentModal.innerHTML = `
     <button id="saveNewStudent" type="button" class="btn btn-outline-success saveChanges" data-bs-dismiss="modal">Save changes</button>
   </div>
 `;
-
-
