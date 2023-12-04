@@ -32,6 +32,31 @@ addNewStudentModal.innerHTML = `
     class="form-label">Student Data</label>
    <textarea class="form-control" id="studentDataTextArea" rows="3"></textarea>
     </div>
+    <div class="row g-3">
+  <div class="col-sm-3">
+    <label for="inputZip1" class="form-label">Grade-1</label>
+    <input type="text" class="form-control" id="inputZip1">
+  </div>
+  <div class="col-sm-3">
+    <label for="inputZip2" class="form-label">Grade-2</label>
+    <input type="text" class="form-control" id="inputZip2">
+  </div>
+  
+  <div class="col-sm-3">
+    <label for="inputZip3" class="form-label">Grade-3</label>
+    <input type="text" class="form-control" id="inputZip3">
+  </div>
+  <div class="col-sm-3">
+    <label for="inputZip3" class="form-label">Grade-4</label>
+    <input type="text" class="form-control" id="inputZip3">
+  </div>
+</div>
+
+   
+  </div>
+
+  </div>
+
       </div>
       
     <div class="modal-footer">
