@@ -18,7 +18,7 @@ export function renderContent(contentId = "home") {
   app.innerHTML +=
     mainContentFragment(contentId).innerHTML + additionalContainer.innerHTML;
 
-  renderFooter();
+   renderFooter();
 }
 
 function renderFooter() {
@@ -30,7 +30,6 @@ export function renderApp() {
 
   renderContent();
 
-  renderFooter();
 }
 
 export function saveDataToLocalStorage(data) {

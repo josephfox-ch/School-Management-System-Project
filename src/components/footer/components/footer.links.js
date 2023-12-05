@@ -1,14 +1,13 @@
 export function footerLinksFragment() {
-  return `<ul class="navbar-nav">
-    <li class="nav-item">
-      <a id="aboutLink"  class="nav-link text-white" data-content-id ="about" href="#">
-        About Us
+  return `<div class="collapse navbar-collapse">
+    <div class="navbar-nav ">
+      <a id="aboutLink" class="nav-link text-white" data-content-id="about" href="#">
+      <i class="fa-solid fa-users-line fa-2x mx-2 text-center"></i>About Us
       </a>
-    </li>
-    <li class="nav-item">
-      <a id="contactLink"  class="nav-link text-white" data-content-id ="contact" href="#">
-        Contact
+      <a id="contactLink" class="nav-link text-white" data-content-id="contact" href="#">
+        <i class="fa-solid fa-file-signature fa-2x mx-1 text-center"></i>Contact
       </a>
-    </li>
-  </ul>`;
+    </div>
+  </div>`;
 }
+
