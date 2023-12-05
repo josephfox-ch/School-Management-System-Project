@@ -1,3 +1,5 @@
+import { createOptionsFromClasses } from "../../../functions.js";
+
 export const addNewTeacherModal = document.createElement("div");
 
 addNewTeacherModal.innerHTML = `
@@ -11,6 +13,16 @@ addNewTeacherModal.innerHTML = `
       ></button>
     </div>
     <div class="modal-body">
+    <div class="form-check">
+      <label class="form-check-label" for="flexRadioDefault">
+        <select
+          id="classSelectForm"
+          class="form-select form-select-sm mb-2 bg-danger text-white"
+          aria-label="Small select example"
+        >
+          ${createOptionsFromClasses().innerHTML}
+        </select>
+      </label>
      <div class="input-group input-group-sm mb-3">
             <span class="input-group-text bg-warning text-white" id="inputGroup-sizing-sm">Instructor</span>
             <input id="teacherNameInput" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">

@@ -1,4 +1,4 @@
-import { createOptionsFromClasses } from "./student.class.option.js";
+import { createOptionsFromClasses } from "../../../functions.js";
 
 export const addNewStudentModal = document.createElement("div");
 
@@ -16,7 +16,7 @@ addNewStudentModal.innerHTML = `
     <div class="form-check">
       <label class="form-check-label" for="flexRadioDefault">
         <select
-          id="studentSelectForm"
+          id="classSelectForm"
           class="form-select form-select-sm mb-2 bg-danger text-white"
           aria-label="Small select example"
         >

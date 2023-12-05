@@ -3,7 +3,7 @@ import { Student } from "../../functions.js";
 export function saveNewStudentData() {
   console.log("checkpoint-student");
   try {
-    const selectedClass = document.querySelector("#studentSelectForm");
+    const selectedClass = document.querySelector("#classSelectForm");
     const studentInput = document.querySelector("#studentNameInput");
     const studentDataInput = document.getElementById("studentDataTextArea");
     const assignmentInput = document.querySelector("#assignmentInput");
