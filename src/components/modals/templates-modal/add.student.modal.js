@@ -3,7 +3,7 @@ import { createOptionsFromClasses } from "../../../functions.js";
 export const addNewStudentModal = document.createElement("div");
 
 addNewStudentModal.innerHTML = `
-  <div class="modal-header">
+  <div class="modal-header bg-info">
     <h5 class="modal-title">Add New Student</h5>
     <button
       type="button"
@@ -17,14 +17,14 @@ addNewStudentModal.innerHTML = `
       <label class="form-check-label" for="flexRadioDefault">
         <select
           id="classSelectForm"
-          class="form-select form-select-sm mb-2 bg-danger text-white"
+          class="form-select form-select-sm mb-2 bg-danger text-white fw-bold"
           aria-label="Small select example"
         >
           ${createOptionsFromClasses().innerHTML}
         </select>
       </label>
       <div class="input-group input-group-sm mb-3">
-        <span class="input-group-text bg-info text-white" id="inputGroup-sizing-sm">Student</span>
+        <span class="input-group-text bg-info fw-bold" id="inputGroup-sizing-sm">Student</span>
         <input id="studentNameInput" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
       </div>
       <div class="mb-3">

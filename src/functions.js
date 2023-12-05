@@ -101,3 +101,17 @@ export function createOptionsFromClasses() {
 
   return selectElement;
 }
+
+export function createOptionsFromTeachers(){
+  const selectElement = document.createElement("div");
+  if (teachers.length != 0) {
+    teachers.forEach((teacher) => {
+      const optionElement = document.createElement("option");
+      optionElement.value = teacher.teacherName;
+      optionElement.textContent = teacher.teacherName;
+      selectElement.appendChild(optionElement);
+    });
+  }
+
+  return selectElement;
+}
