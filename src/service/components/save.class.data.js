@@ -1,5 +1,4 @@
-import { userIconFragment } from "../../components/header/componenets/user-login-icon.js";
-import { Class ,generateUniqueId } from "../../functions.js";
+import { Class ,generateUniqueId,findTeacherByName } from "../../functions.js";
 
 export function saveNewClassData() {
   try {
@@ -11,12 +10,13 @@ export function saveNewClassData() {
     let newClassInput = new Class();
     newClassInput.id = generateUniqueId();
     newClassInput.className = classNameInputValue;
-    
+    let newClasstTeacher;
     if (teacherOptionsChecked) {
-      newClassInput.teacher = teachersSelectValue;
+       newClasstTeacher = teachersSelectValue;
     } else {
-      newClassInput.teacher = "";
+      newClasstTeacher = "";
     }
+   console.log("selectedTeacher",findTeacherByName(teacher)) 
 
     newClassInput.data = classDataInputValue;
 

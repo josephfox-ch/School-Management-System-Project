@@ -122,6 +122,10 @@ export function generateUniqueId() {
   return Date.now().toString(36) 
 }
 
-// const uniqueId = generateUniqueId();
-// console.log(uniqueId);
+export function findTeacherByName(teacherName){
+  const wantedTeacher = LMSchool.teachers.filter(teacher =>teacher.teacherName=teacherName)
+  if(wantedTeacher){
+    return wantedTeacher[0];
+  }
+ }
 
