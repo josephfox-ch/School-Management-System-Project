@@ -1,15 +1,24 @@
-import { Class } from "../../functions.js";
+import { userIconFragment } from "../../components/header/componenets/user-login-icon.js";
+import { Class ,generateUniqueId } from "../../functions.js";
 
 export function saveNewClassData() {
   try {
-    const classNameInput = document.getElementById("classNameInput");
-    const teacherNameInput = document.querySelector("#teacherNameInput");
-    const classDataInput = document.getElementById("classDataTextArea");
+    const classNameInputValue = document.getElementById("classNameInput").value;
+    const teachersSelectValue = document.getElementById("teachersSelectForm").value;
+    const classDataInputValue = document.getElementById("classDataTextArea").value;
+    const teacherOptionsChecked = document.getElementById("teacherOptions").checked;
 
     let newClassInput = new Class();
-    newClassInput.className = classNameInput.value;
-    newClassInput.teacher = teacherNameInput.value;
-    newClassInput.data = classDataInput.value;
+    newClassInput.id = generateUniqueId();
+    newClassInput.className = classNameInputValue;
+    
+    if (teacherOptionsChecked) {
+      newClassInput.teacher = teachersSelectValue;
+    } else {
+      newClassInput.teacher = "";
+    }
+
+    newClassInput.data = classDataInputValue;
 
     let updatedSchool = JSON.parse(localStorage.getItem("school")) || {
       classes: [],
@@ -20,9 +29,9 @@ export function saveNewClassData() {
     if (updatedSchool) {
       updatedSchool.classes.push(newClassInput);
       localStorage.setItem("school", JSON.stringify(updatedSchool));
-      console.log("checkpoint data saved successfully");
+      console.log("Checkpoint: Data saved successfully");
     } else {
-      console.error("error-unable to save data");
+      console.error("Error: Unable to save data");
     }
   } catch (error) {
     console.error("error while saving data:", error);

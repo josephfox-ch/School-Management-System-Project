@@ -18,7 +18,7 @@ export function generateTeacherCardsHTML() {
               <p class="card-text">${teacher.data}</p>
               <div class= " d-flex justify-content-around">
                 <a href="#" class="card-link text-info">Students</a>
-                <a href="#" class="card-link text-warning">Teachers</a>
+                <a href="#" class="card-link text-danger">Classes</a>
               </div>
             </div>
           </div>

@@ -33,7 +33,7 @@ addNewTeacherModal.innerHTML = `
         <input id="expertiseInput" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
       </div>
       <div class="mb-3">
-        <label for="teacherDataTextArea" class="form-label">Instructor Data</label>
+        <label for="teacherDataTextArea" class="form-label">Teacher Data</label>
         <textarea class="form-control" id="teacherDataTextArea" rows="3"></textarea>
       </div>
     </div>

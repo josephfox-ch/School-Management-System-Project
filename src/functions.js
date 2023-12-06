@@ -6,6 +6,7 @@ import { saveNewClassData } from "./service/components/save.class.data.js";
 import { saveNewTeacherData } from "./service/components/save.teacher.data.js";
 import { saveNewStudentData } from "./service/components/save.student.data.js";
 import { classes, teachers, students } from "./service/data.js";
+import { LMSchool } from "./service/components/school.data.js";
 
 const app = document.getElementById("app");
 
@@ -56,6 +57,7 @@ export function capitalizeFirstLetter(str) {
 
 export class Class {
   constructor(className, teacher) {
+    this.id = ""
     this.className = className;
     this.teacher = teacher;
     this.students = [];
@@ -115,3 +117,11 @@ export function createOptionsFromTeachers(){
 
   return selectElement;
 }
+
+export function generateUniqueId() {
+  return Date.now().toString(36) 
+}
+
+// const uniqueId = generateUniqueId();
+// console.log(uniqueId);
+
