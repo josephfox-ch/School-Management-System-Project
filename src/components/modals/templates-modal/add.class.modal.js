@@ -8,25 +8,28 @@ addNewClassModal.innerHTML = `
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
   </div>
   <div class="modal-body">
+  <div class="form-check">
     <div class="input-group input-group-sm mb-3">
       <span class="input-group-text bg-danger text-white fw-bold" id="inputGroup-sizing-sm">Add New Class</span>
       <input id="classNameInput" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
     </div>
-   
-    <label class="form-check-label" for="flexRadioDefault">
+    
+    <input class="form-check-input bg-warning " type="checkbox"  value="" id="flexCheckDefault">
+    <label class="form-check-label" for="flexCheckDefault">
       <select
-        id="classSelectForm"
+        id="teachersSelectForm"
         class="form-select form-select-sm mb-2 bg-warning fw-bold"
         aria-label="Small select example"
       >
         ${createOptionsFromTeachers().innerHTML}
       </select>
     </label>
-
+     
     <div class="mb-3">
       <label for="classDataTextArea" class="form-label">Class Data</label>
       <textarea class="form-control" id="classDataTextArea" rows="3"></textarea>
     </div>
+  </div>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>

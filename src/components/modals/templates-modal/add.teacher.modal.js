@@ -14,7 +14,8 @@ addNewTeacherModal.innerHTML = `
   </div>
   <div class="modal-body">
     <div class="form-check">
-      <label class="form-check-label" for="flexRadioDefault">
+    <input class="form-check-input bg-danger" type="checkbox"  value="" id="flexCheckDefault">
+      <label class="form-check-label" for="flexCheckDefault">
         <select
           id="classSelectForm"
           class="form-select form-select-sm mb-2 bg-danger text-white fw-bold"
