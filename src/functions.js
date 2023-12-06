@@ -19,7 +19,7 @@ export function renderContent(contentId = "home") {
   app.innerHTML +=
     mainContentFragment(contentId).innerHTML + additionalContainer.innerHTML;
 
-   renderFooter();
+  renderFooter();
 }
 
 function renderFooter() {
@@ -30,7 +30,6 @@ export function renderApp() {
   renderHeader();
 
   renderContent();
-
 }
 
 export function saveDataToLocalStorage(data) {
@@ -56,10 +55,10 @@ export function capitalizeFirstLetter(str) {
 }
 
 export class Class {
-  constructor(className, teacher) {
-    this.id = ""
+  constructor(className) {
+    this.id = "";
     this.className = className;
-    this.teacher = teacher;
+    this.teachers = [];
     this.students = [];
     this.data = [];
   }
@@ -75,7 +74,6 @@ export class Teacher {
     this.expertise = expertise;
     this.data = [];
   }
- 
 }
 
 export class Student {
@@ -85,7 +83,7 @@ export class Student {
     this.grades = {};
     this.data = [];
   }
-  addGrades(assignment,grade){
+  addGrades(assignment, grade) {
     this.grades[assignment] = grade;
   }
 }
@@ -104,7 +102,7 @@ export function createOptionsFromClasses() {
   return selectElement;
 }
 
-export function createOptionsFromTeachers(){
+export function createOptionsFromTeachers() {
   const selectElement = document.createElement("div");
   if (teachers.length != 0) {
     teachers.forEach((teacher) => {
@@ -119,13 +117,19 @@ export function createOptionsFromTeachers(){
 }
 
 export function generateUniqueId() {
-  return Date.now().toString(36) 
+  return Date.now().toString(36);
 }
 
-export function findTeacherByName(teacherName){
-  const wantedTeacher = LMSchool.teachers.filter(teacher =>teacher.teacherName=teacherName)
-  if(wantedTeacher){
-    return wantedTeacher[0];
-  }
- }
+export function findTeacherByName(teacherName) {
+  const wantedTeacher = LMSchool.teachers.find(
+    (teacher) => teacher.teacherName === teacherName
+  );
+  return wantedTeacher || null;
+}
 
+export function findClassByName(className) {
+  const wantedClass = LMSchool.classes.find(
+    (classItem) => classItem.className === className
+  );
+  return wantedClass || null;
+}

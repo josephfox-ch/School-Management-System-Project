@@ -1,23 +1,26 @@
-import { Class ,generateUniqueId,findTeacherByName } from "../../functions.js";
+import { Class, generateUniqueId, findTeacherByName } from "../../functions.js";
 
 export function saveNewClassData() {
   try {
     const classNameInputValue = document.getElementById("classNameInput").value;
-    const teachersSelectValue = document.getElementById("teachersSelectForm").value;
-    const classDataInputValue = document.getElementById("classDataTextArea").value;
-    const teacherOptionsChecked = document.getElementById("teacherOptions").checked;
+    const teachersSelectValue =
+      document.getElementById("teachersSelectForm").value;
+    const classDataInputValue =
+      document.getElementById("classDataTextArea").value;
+    const teacherOptionsChecked =
+      document.getElementById("teacherOptions").checked;
 
     let newClassInput = new Class();
     newClassInput.id = generateUniqueId();
     newClassInput.className = classNameInputValue;
     let newClasstTeacher;
     if (teacherOptionsChecked) {
-       newClasstTeacher = teachersSelectValue;
+      newClasstTeacher = teachersSelectValue;
     } else {
       newClasstTeacher = "";
     }
-   console.log("selectedTeacher",findTeacherByName(teacher)) 
-
+    newClasstTeacher = findTeacherByName(newClasstTeacher);
+    newClassInput.teachers.push(newClasstTeacher);
     newClassInput.data = classDataInputValue;
 
     let updatedSchool = JSON.parse(localStorage.getItem("school")) || {
