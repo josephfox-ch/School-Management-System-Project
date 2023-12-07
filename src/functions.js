@@ -60,7 +60,8 @@ export class Class {
     this.className = className;
     this.teachers = [];
     this.students = [];
-    this.data = [];
+    this.data =
+      "This section provides an opportunity to enter informative data about the cardholder for reference.";
   }
 
   addStudent(newStudent) {
@@ -73,7 +74,8 @@ export class Teacher {
     this.id = "";
     this.teacherName = teacherName;
     this.expertise = expertise;
-    this.data = [];
+    this.data =
+      "This section provides an opportunity to enter informative data about the cardholder for reference.";
   }
 }
 
@@ -83,7 +85,8 @@ export class Student {
     this.studentName = studentName;
     this.className = className;
     this.grades = {};
-    this.data = [];
+    this.data =
+      "This section provides an opportunity to enter informative data about the cardholder for reference.";
   }
   addGrades(assignment, grade) {
     this.grades[assignment] = grade;
@@ -171,4 +174,25 @@ export function checkId(item, container) {
     }
   }
   return false;
+}
+
+export function showAddingModal() {
+  const dynamicModal = new bootstrap.Modal(
+    document.getElementById("dynamicModal")
+  );
+  dynamicModal.show();
+}
+
+export function manageSaveEvents(){
+
+  const saveChangesButtons = [
+    ...document.getElementsByClassName("saveChanges"),
+  ];
+
+  saveChangesButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const dataType = event.target.id;
+      saveDataToLocalStorage(dataType);
+    });
+  });
 }
