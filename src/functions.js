@@ -32,8 +32,8 @@ export function renderApp() {
   renderContent();
 }
 
-export function saveDataToLocalStorage(data) {
-  switch (data) {
+export function saveDataToLocalStorage(dataType) {
+  switch (dataType) {
     case "saveNewClass":
       saveNewClassData();
       break;
@@ -70,6 +70,7 @@ export class Class {
 
 export class Teacher {
   constructor(teacherName, expertise) {
+    this.id = "";
     this.teacherName = teacherName;
     this.expertise = expertise;
     this.data = [];
@@ -78,6 +79,7 @@ export class Teacher {
 
 export class Student {
   constructor(studentName, className) {
+    this.id = "";
     this.studentName = studentName;
     this.className = className;
     this.grades = {};
@@ -121,15 +123,52 @@ export function generateUniqueId() {
 }
 
 export function findTeacherByName(teacherName) {
-  const wantedTeacher = LMSchool.teachers.find(
+  const wantedTeacher = teachers.find(
     (teacher) => teacher.teacherName === teacherName
   );
   return wantedTeacher || null;
 }
 
 export function findClassByName(className) {
-  const wantedClass = LMSchool.classes.find(
+  const wantedClass = classes.find(
     (classItem) => classItem.className === className
   );
   return wantedClass || null;
+}
+
+export function updateLocalStorage(newItem, targetContainer) {
+  let updatedSchool = JSON.parse(localStorage.getItem("school")) || {
+    classes: [],
+    teachers: [],
+    students: [],
+  };
+
+  if (updatedSchool && updatedSchool.hasOwnProperty(targetContainer)) {
+    if (checkId(newItem, updatedSchool[targetContainer])) {
+      updatedSchool[targetContainer] = updatedSchool[targetContainer].map(
+        (element) => {
+          if (element.id === newItem.id) {
+            return newItem;
+          }
+          return element;
+        }
+      );
+    } else {
+      updatedSchool[targetContainer].push(newItem);
+    }
+
+    localStorage.setItem("school", JSON.stringify(updatedSchool));
+    console.log("Checkpoint: Data saved successfully");
+  } else {
+    console.error("Error: Unable to save data");
+  }
+}
+
+export function checkId(item, container) {
+  for (let i = 0; i < container.length; i++) {
+    if (container[i].id === item.id) {
+      return true;
+    }
+  }
+  return false;
 }

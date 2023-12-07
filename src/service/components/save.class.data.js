@@ -1,41 +1,28 @@
-import { Class, generateUniqueId, findTeacherByName } from "../../functions.js";
+import {
+  Class,
+  generateUniqueId,
+  findTeacherByName,
+  updateLocalStorage,
+} from "../../functions.js";
 
 export function saveNewClassData() {
   try {
-    const classNameInputValue = document.getElementById("classNameInput").value;
-    const teachersSelectValue =
-      document.getElementById("teachersSelectForm").value;
-    const classDataInputValue =
-      document.getElementById("classDataTextArea").value;
-    const teacherOptionsChecked =
-      document.getElementById("teacherOptions").checked;
+    const classNameInput = document.getElementById("classNameInput");
+    const selectedTeacher = document.getElementById("teachersSelectForm").value;
+    const classDataInput = document.getElementById("classDataTextArea");
+    const teacherOptions = document.getElementById("teacherOptions");
 
     let newClassInput = new Class();
     newClassInput.id = generateUniqueId();
-    newClassInput.className = classNameInputValue;
-    let newClasstTeacher;
-    if (teacherOptionsChecked) {
-      newClasstTeacher = teachersSelectValue;
-    } else {
-      newClasstTeacher = "";
-    }
-    newClasstTeacher = findTeacherByName(newClasstTeacher);
-    newClassInput.teachers.push(newClasstTeacher);
-    newClassInput.data = classDataInputValue;
+    newClassInput.className = classNameInput.value;
+    newClassInput.data = classDataInput.value;
 
-    let updatedSchool = JSON.parse(localStorage.getItem("school")) || {
-      classes: [],
-      teachers: [],
-      students: [],
-    };
-
-    if (updatedSchool) {
-      updatedSchool.classes.push(newClassInput);
-      localStorage.setItem("school", JSON.stringify(updatedSchool));
-      console.log("Checkpoint: Data saved successfully");
-    } else {
-      console.error("Error: Unable to save data");
+    if (teacherOptions.checked) {
+      let teacher = findTeacherByName(selectedTeacher);
+      newClassInput.teachers.push(teacher);
     }
+    const CLASSES = "classes";
+    updateLocalStorage(newClassInput, CLASSES);
   } catch (error) {
     console.error("error while saving data:", error);
   }
