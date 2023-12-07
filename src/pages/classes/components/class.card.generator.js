@@ -5,18 +5,23 @@ export function generateClassCardsHTML() {
 
   if (Array.isArray(classes) && classes.length != 0) {
     classes.forEach((classEl) => {
+      let teacherName =
+        classEl.teachers.length > 0
+          ? classEl.teachers[0].teacherName
+          : "Teacher Info Not Available!";
+
       cardsHTML += `
         <div class="col mb-3 mx-auto">
           <div class="card border-danger" style="width: 18rem;">
             <div class="card-body">
-            <div class="d-flex justify-content-end mb-2">
+              <div class="d-flex justify-content-end mb-2">
                 <a href="#" class="text-primary mx-3"><i class="fas fa-edit"></i></a>
                 <a href="#" class="text-danger"><i class="fas fa-trash-alt"></i></a>
               </div>
               <h5 class="card-title text-danger">${classEl.className}</h5>
-              <h6 class="card-subtitle mb-2 text-warning">${classEl.teachers[0].teacherName}</h6>
+              <h6 class="card-subtitle mb-2 text-warning">${teacherName}</h6>
               <p class="card-text">${classEl.data}</p>
-              <div class= " d-flex justify-content-around">
+              <div class="d-flex justify-content-around">
                 <a href="#" class="card-link text-info">Students</a>
                 <a href="#" class="card-link text-warning">Teachers</a>
               </div>
@@ -27,7 +32,7 @@ export function generateClassCardsHTML() {
     });
   } else {
     cardsHTML =
-      ' <p class = "text-danger fw-bold" >&#9888; No Classes Available ! </p>';
+      '<p class="text-danger fw-bold">&#9888; No Classes Available ! </p>';
   }
 
   return cardsHTML;

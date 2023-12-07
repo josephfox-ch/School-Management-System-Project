@@ -18,6 +18,8 @@ export function saveNewClassData() {
     let teacher = findTeacherByName(selectedTeacher);
     if (teacherCheckbox.checked) {
       newClass.teachers.push(teacher);
+    }else{
+      
     }
 
     newClass.id = generateUniqueId();

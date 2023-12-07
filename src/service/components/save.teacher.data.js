@@ -26,6 +26,10 @@ export function saveNewTeacherData() {
       className: classItem.className,
     });
 
+    if(!expertiseInput.value){
+      newTeacher.expertise = "Expertise Info  Not Available!";
+    }
+
     if (teacherDataInput.value !== "") {
       newTeacher.data = teacherDataInput.value;
     }
