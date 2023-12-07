@@ -13,15 +13,22 @@ export function saveNewTeacherData() {
     const expertiseInput = document.getElementById("expertiseInput");
     const teacherDataInput = document.getElementById("teacherDataTextArea");
 
+    let newTeacher = new Teacher();
+
     let selectedClass = classSelectOptions.value;
     let classItem = findClassByName(selectedClass);
-
-    let newTeacher = new Teacher();
 
     newTeacher.id = generateUniqueId();
     newTeacher.teacherName = teacherNameInput.value;
     newTeacher.expertise = expertiseInput.value;
-    newTeacher.data = teacherDataInput.value;
+    newTeacher.classes.push({
+      classId: classItem.id,
+      className: classItem.className,
+    });
+
+    if (teacherDataInput.value !== "") {
+      newTeacher.data = teacherDataInput.value;
+    }
 
     if (classCheckbox.checked) {
       classItem.teachers.push(newTeacher);

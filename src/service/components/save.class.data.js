@@ -7,22 +7,28 @@ import {
 
 export function saveNewClassData() {
   try {
+    const teacherCheckbox = document.getElementById("teacherCheckbox");
+    const teacherSelectOptions = document.getElementById("teachersSelectForm");
     const classNameInput = document.getElementById("classNameInput");
-    const selectedTeacher = document.getElementById("teachersSelectForm").value;
     const classDataInput = document.getElementById("classDataTextArea");
-    const teacherOptions = document.getElementById("teacherOptions");
 
-    let newClassInput = new Class();
-    newClassInput.id = generateUniqueId();
-    newClassInput.className = classNameInput.value;
-    newClassInput.data = classDataInput.value;
+    let newClass = new Class();
 
-    if (teacherOptions.checked) {
-      let teacher = findTeacherByName(selectedTeacher);
-      newClassInput.teachers.push(teacher);
+    let selectedTeacher = teacherSelectOptions.value;
+    let teacher = findTeacherByName(selectedTeacher);
+    if (teacherCheckbox.checked) {
+      newClass.teachers.push(teacher);
     }
+
+    newClass.id = generateUniqueId();
+    newClass.className = classNameInput.value;
+
+    if (classDataInput.value !== "") {
+      newClass.data = classDataInput.value;
+    }
+
     const CLASSES = "classes";
-    updateLocalStorage(newClassInput, CLASSES);
+    updateLocalStorage(newClass, CLASSES);
   } catch (error) {
     console.error("error while saving data:", error);
   }

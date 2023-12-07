@@ -10,7 +10,7 @@ addNewClassModal.innerHTML = `
   <div class="modal-body">
     <form id="addNewClassForm">
       <div class="form-check">
-        <input class="form-check-input bg-warning" type="checkbox" value="" id="teacherOptions">
+        <input class="form-check-input bg-warning" type="checkbox" value="" id="teacherCheckbox">
         <label class="form-check-label" for="teacherOptions">
           <select
             id="teachersSelectForm"

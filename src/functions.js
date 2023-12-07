@@ -5,7 +5,7 @@ import { additionalContainer } from "./components/additional-content/additional-
 import { saveNewClassData } from "./service/components/save.class.data.js";
 import { saveNewTeacherData } from "./service/components/save.teacher.data.js";
 import { saveNewStudentData } from "./service/components/save.student.data.js";
-import { classes, teachers, students } from "./service/data.js";
+import { classes, teachers, students, CARD_DATA } from "./service/data.js";
 import { LMSchool } from "./service/components/school.data.js";
 
 const app = document.getElementById("app");
@@ -60,8 +60,7 @@ export class Class {
     this.className = className;
     this.teachers = [];
     this.students = [];
-    this.data =
-      "This section provides an opportunity to enter informative data about the cardholder for reference.";
+    this.data = CARD_DATA;
   }
 
   addStudent(newStudent) {
@@ -74,8 +73,8 @@ export class Teacher {
     this.id = "";
     this.teacherName = teacherName;
     this.expertise = expertise;
-    this.data =
-      "This section provides an opportunity to enter informative data about the cardholder for reference.";
+    this.classes = [];
+    this.data = CARD_DATA;
   }
 }
 
@@ -83,10 +82,9 @@ export class Student {
   constructor(studentName, className) {
     this.id = "";
     this.studentName = studentName;
-    this.className = className;
+    this.classes = [];
     this.grades = {};
-    this.data =
-      "This section provides an opportunity to enter informative data about the cardholder for reference.";
+    this.data = CARD_DATA;
   }
   addGrades(assignment, grade) {
     this.grades[assignment] = grade;
@@ -183,8 +181,7 @@ export function showAddingModal() {
   dynamicModal.show();
 }
 
-export function manageSaveEvents(){
-
+export function manageSavingEvents() {
   const saveChangesButtons = [
     ...document.getElementsByClassName("saveChanges"),
   ];
