@@ -26,7 +26,9 @@ export function saveNewStudentData() {
     newStudent.id = generateUniqueId();
 
     newStudent.studentName = studentInput.value;
-    newStudent.data = studentDataInput.value;
+    if (studentDataInput.value !== "") {
+      newStudent.data = studentDataInput.value;
+    }
 
     if (assignmentData && gradeData) {
       newStudent.addGrades(assignmentData, gradeData);
