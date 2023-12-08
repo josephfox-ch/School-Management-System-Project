@@ -79,7 +79,7 @@ export class Teacher {
 }
 
 export class Student {
-  constructor(studentName, className) {
+  constructor(studentName) {
     this.id = "";
     this.studentName = studentName;
     this.classes = [];
@@ -190,6 +190,7 @@ export function manageSavingEvents() {
     button.addEventListener("click", (event) => {
       const dataType = event.target.id;
       saveDataToLocalStorage(dataType);
+      location.reload()
     });
   });
 }
