@@ -14,7 +14,7 @@ function renderHeader() {
   app.innerHTML = headerFragment().innerHTML;
 }
 
-export function renderContent(contentId) {
+export function renderContent(contentId = "home") {
    console.log("renderContent fonksiyonu çalıştı.");
   renderHeader();
   console.log("header calisti")
@@ -162,7 +162,7 @@ export function updateLocalStorage(newItem, targetContainer) {
       updatedSchool[targetContainer].push(newItem);
     }
 
-    localStorage.setItem("school", JSON.stringify(updatedSchool));
+   localStorage.setItem("school", JSON.stringify(updatedSchool));
     console.log("Checkpoint: Data saved successfully");
   } else {
     console.error("Error: Unable to save data");
@@ -198,6 +198,7 @@ export function manageSavingEvents() {
       console.log(dataType)
       renderContent(dataType);
       console.log("rendercontent calismadi")
+      location.reload()
     });
   });
 }
