@@ -1,4 +1,5 @@
 import { classes } from "../../../service/data.js";
+import { editClass } from "../../../functions.js";
 
 export function generateClassCardsHTML() {
   let cardsHTML = "";
@@ -15,8 +16,12 @@ export function generateClassCardsHTML() {
           <div class="card border-danger" style="width: 18rem;">
             <div class="card-body">
               <div class="d-flex justify-content-end mb-2">
-                <a href="#" class="text-primary mx-3"><i class="fas fa-edit"></i></a>
-                <a href="#" class="text-danger"><i class="fas fa-trash-alt"></i></a>
+                <button id="${classEl.id}" class="edit-buttons btn btn-dark btn-sm">
+                  <i class="fas fa-edit"></i>
+                </button>
+                <button class="remove-buttons btn btn-danger btn-sm mx-2">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
               </div>
               <h5 class="card-title text-danger">${classEl.className}</h5>
               <h6 class="card-subtitle mb-2 text-warning">${teacherName}</h6>
@@ -29,11 +34,37 @@ export function generateClassCardsHTML() {
           </div>
         </div>
       `;
+
+     
+      // const cardContainer = document.createElement("div");
+      // cardContainer.innerHTML = cardsHTML;
+      // const editButton = document.querySelector(".edit-buttons");
+      // const removeButton = document.querySelector(".remove-buttons");
+      
+      // editButton.addEventListener("click", () => {
+      //   editClass(classEl.id);
+      // });
+      
+      // removeButton.addEventListener("click", () => {
+      //   const classIndex = classes.findIndex(c => c.id === classEl.id);
+      //   if (classIndex !== -1) {
+      //     classes.splice(classIndex, 1);
+      //     renderContent("class");
+      //   }
+      // });
+
+      
+      
+      
+
+     
     });
   } else {
     cardsHTML =
       '<p class="text-danger fw-bold">&#9888; No Classes Available ! </p>';
   }
+
+
 
   return cardsHTML;
 }

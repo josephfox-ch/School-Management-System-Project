@@ -14,12 +14,16 @@ function renderHeader() {
   app.innerHTML = headerFragment().innerHTML;
 }
 
-export function renderContent(contentId = "home") {
+export function renderContent(contentId) {
+   console.log("renderContent fonksiyonu çalıştı.");
   renderHeader();
+  console.log("header calisti")
+  console.log(contentId)
   app.innerHTML +=
     mainContentFragment(contentId).innerHTML + additionalContainer.innerHTML;
 
   renderFooter();
+  console.log("footer calisti")
 }
 
 function renderFooter() {
@@ -34,13 +38,13 @@ export function renderApp() {
 
 export function saveDataToLocalStorage(dataType) {
   switch (dataType) {
-    case "saveNewClass":
+    case "class":
       saveNewClassData();
       break;
-    case "saveNewTeacher":
+    case "teacher":
       saveNewTeacherData();
       break;
-    case "saveNewStudent":
+    case "student":
       saveNewStudentData();
       break;
   }
@@ -190,10 +194,14 @@ export function manageSavingEvents() {
     button.addEventListener("click", (event) => {
       const dataType = event.target.id;
       saveDataToLocalStorage(dataType);
-      location.reload()
+      console.log("savedata calisti")
+      console.log(dataType)
+      renderContent(dataType);
+      console.log("rendercontent calismadi")
     });
   });
 }
+
 
 export function findAverageGradeOfStudent(arr) {
   if (arr.length === 0) {
@@ -203,3 +211,10 @@ export function findAverageGradeOfStudent(arr) {
   let totalOfGrades = arr.reduce((total, grade) => total + grade, 0);
   return totalOfGrades / arr.length;
 }
+
+
+
+
+
+
+

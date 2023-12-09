@@ -35,6 +35,6 @@ export function mainContentFragment(content) {
   }
 
   mainContainer.innerHTML = contentHTML + customizedAddNewButton.innerHTML;
-
+  
   return mainContainer;
 }
