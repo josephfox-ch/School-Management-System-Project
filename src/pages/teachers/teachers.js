@@ -1,3 +1,11 @@
+import { teachersBodyContainer } from "./components/teachers.content.body.js";
+
 export const teachersContent = `<section id="classes-content">
-<h4>Teachers Content</h4>
+  <div class="container mt-5 mx-5 my-3">
+    <h4>Teachers</h4>
+  </div>
+
+${teachersBodyContainer}
+
+
 </section>`;

@@ -10,3 +10,18 @@ h6,
   font-weight: bold;
   font-family: Rowdies;
 }
+
+.card-link {
+  text-decoration: none;
+}
+
+#add-new-button {
+  cursor: cell;
+}
+.modal-header {
+  background-color: rgb(252, 243, 185);
+}
+#j-link{
+  text-decoration: none;
+  color:white;
+}
