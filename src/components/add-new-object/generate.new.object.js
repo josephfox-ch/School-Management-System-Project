@@ -1,22 +1,23 @@
 import { generateModalFragment } from "../modals/modal.manager.js";
-import { addNewClass } from "../modals/templates-modal/add.class.modal.js";
-import { addNewTeacher } from "../modals/templates-modal/add.teacher.modal.js";
-import { addNewStudent } from "../modals/templates-modal/add.student.modal.js";
+import { addNewClassModal } from "../modals/templates-modal/add.class.modal.js";
+import { addNewTeacherModal } from "../modals/templates-modal/add.teacher.modal.js";
+import { addNewStudentModal } from "../modals/templates-modal/add.student.modal.js";
+import { saveDataToLocalStorage } from "../../functions.js";
 
-export function generateNewObject() {
+export function generateNewObjectModal() {
   const pEl = document.getElementById("add-text");
   const action = pEl.getAttribute("data-action");
   switch (action) {
-    case "addNewClass":
-      generateModalFragment(addNewClass);
+    case "addNewClassModal":
+      generateModalFragment(addNewClassModal);
 
       break;
-    case "addNewTeacher":
-      generateModalFragment(addNewTeacher);
+    case "addNewTeacherModal":
+      generateModalFragment(addNewTeacherModal);
       break;
 
-    case "addNewStudent":
-      generateModalFragment(addNewStudent);
+    case "addNewStudentModal":
+      generateModalFragment(addNewStudentModal);
       break;
 
     default:
@@ -26,4 +27,16 @@ export function generateNewObject() {
     document.getElementById("dynamicModal")
   );
   dynamicModal.show();
+  const saveChangesButtons = [
+    ...document.getElementsByClassName("saveChanges"),
+  ];
+
+  saveChangesButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const dataType = event.target.id;
+      console.log("CHECKPOINT", dataType);
+      saveDataToLocalStorage(dataType);
+    });
+  });
+  
 }

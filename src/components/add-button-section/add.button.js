@@ -1,4 +1,5 @@
 import { addNewButtonIcon } from "./add.button.icon.js";
+import { capitalizeFirstLetter } from "../../functions.js";
 
 export function addNewButtonFragment(content) {
   const addNewButtonSection = document.createElement("section");
@@ -8,13 +9,10 @@ export function addNewButtonFragment(content) {
         ${addNewButtonIcon.innerHTML}
           <p id="add-text" data-action= "addNew${capitalizeFirstLetter(
             content
-          )}">Add New ${capitalizeFirstLetter(content)}</p>
+          )}Modal">Add New ${capitalizeFirstLetter(content)}</p>
         </div>
         `;
   }
   return addNewButtonSection;
 }
 
-function capitalizeFirstLetter(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}

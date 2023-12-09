@@ -1,17 +1,20 @@
-import { studentsData } from "../../../service/data.js";
+import { students } from "../../../service/data.js";
 
-function generateStudentCardsHTML(studentsData) {
+export function generateStudentCardsHTML() {
   let cardsHTML = "";
 
-  studentsData.forEach((student) => {
+  if (Array.isArray(students) && students.length !== 0) {
+  students.forEach((student) => {
     cardsHTML += `
         <div class="col mb-3 mx-auto">
-          <div class="card" style="width: 18rem;">
+          <div class="card border-info" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title">${student.name}</h5>
-              <h6 class="card-subtitle mb-2 text-body-secondary">${
-                student.class
-              }</h6>
+            <div class="d-flex justify-content-end mb-2">
+                <a href="#" class="text-primary mx-3"><i class="fas fa-edit"></i></a>
+                <a href="#" class="text-danger"><i class="fas fa-trash-alt"></i></a>
+              </div>
+              <h5 class="card-title text-info">${student.studentName}</h5>
+              <h6 class="card-subtitle mb-2 text-danger">${student.className}</h6>
               <p class="card-text">${student.data}</p>
               <div class="d-flex justify-content-start ">
               <a href="#" class="card-link">Average Grade:</a>
@@ -24,8 +27,12 @@ function generateStudentCardsHTML(studentsData) {
         </div>
       `;
   });
+} else {
+  cardsHTML =
+    ' <p class = "text-info fw-bold" >&#9888; No Students Available ! </p>';
+}
 
-  return cardsHTML;
+return cardsHTML;
 }
 
 function findAverageGradeOfStudent(arr) {
@@ -40,4 +47,3 @@ function findAverageGradeOfStudent(arr) {
   return totalofGrades / arr.length;
 }
 
-export const studentsCards = generateStudentCardsHTML(studentsData);

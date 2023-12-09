@@ -1,6 +1,8 @@
-import { studentsCards } from "./student.card.generator.js";
+import { generateStudentCardsHTML } from "./student.card.generator.js";
 
-export const studentsBodyContainer = `<div class="container d-flex justify-content-center  my-2">
-<div class="row flex-wrap">
-  ${studentsCards}
-</div>`;
+export const studentsBodyContainerFragment = () => {
+  return `<div class="container d-flex justify-content-center  my-2">
+  <div class="row flex-wrap">
+    ${generateStudentCardsHTML()}
+  </div>`;
+};

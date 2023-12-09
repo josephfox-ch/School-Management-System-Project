@@ -1,9 +1,7 @@
 import { renderApp, renderContent } from "./functions.js";
-import { generateNewObject } from "./components/add-new-object/generate.new.object.js";
+import { generateNewObjectModal } from "./components/add-new-object/generate.new.object.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  renderApp();
-
   document.getElementById("app").addEventListener("click", (event) => {
     const target = event.target;
 
@@ -16,8 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
       document
         .getElementById("add-new-button")
         .addEventListener("click", () => {
-          generateNewObject();
+          generateNewObjectModal();
         });
     }
   });
+
+  renderApp();
 });
