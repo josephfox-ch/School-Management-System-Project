@@ -10,7 +10,7 @@ export function generateTeacherCardsHTML() {
           <div class="card border-warning" style="width: 18rem;">
             <div class="card-body">
             <div class="d-flex justify-content-end mb-2">
-                <a href="#" class="text-primary mx-3"><i class="fas fa-edit "></i></a>
+                <a href="#" class=" edit-buttons text-primary mx-3"><i class="fas fa-edit "></i></a>
                 <a href="#" class="text-danger"><i class="fas fa-trash-alt "></i></a>
               </div>
               <h5 class="card-title text-warning">${teacher.teacherName}</h5>
@@ -18,7 +18,7 @@ export function generateTeacherCardsHTML() {
               <p class="card-text">${teacher.data}</p>
               <div class= " d-flex justify-content-around">
                 <a href="#" class="card-link text-info">Students</a>
-                <a href="#" class="card-link text-warning">Teachers</a>
+                <a href="#" class="card-link text-danger">Classes</a>
               </div>
             </div>
           </div>

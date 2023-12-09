@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const linkClass = "nav-link";
 
-    if (target.tagName === "A" && target.classList.contains(linkClass)) {
+    if (target.tagName === "A" && target.classList.contains(linkClass) || target.tagName === "I" ) {
       const contentId = target.dataset.contentId;
       renderContent(contentId);
 
@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
   });
+
 
   renderApp();
 });

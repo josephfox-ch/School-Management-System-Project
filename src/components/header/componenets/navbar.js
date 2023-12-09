@@ -4,7 +4,7 @@ import { userIconFragment } from "./user-login-icon.js";
 
 export const navbarFragment = function () {
   return `
-    <nav class="navbar navbar-expand bg-body-tertiary">
+    <nav id="header-navbar" class="navbar navbar-expand ">
       <div class="container-fluid">
         ${navbarBrandFragment()}
        ${navLinksFragment()} 

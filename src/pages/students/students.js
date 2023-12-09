@@ -1,9 +1,10 @@
 import { studentsBodyContainerFragment } from "./components/students.content.body.js";
+import { studentsIcon } from "../../components/iconsHTML/icons.js";
 
 export const studentsContentFragment = () => {
-  return `<section id="classes-content">
+  return `<section id="students-content">
   <div class="container mt-5 mx-5 my-3">
-    <h4 class ="text-info">Students</h4>
+    ${studentsIcon}
   </div>
 
 ${studentsBodyContainerFragment()}

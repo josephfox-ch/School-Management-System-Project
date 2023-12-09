@@ -1,14 +1,16 @@
+import { footerAboutIcon,footerContactIcon } from "../../iconsHTML/icons.js";
+
 export function footerLinksFragment() {
-  return `<ul class="navbar-nav">
-    <li class="nav-item">
-      <a id="aboutLink"  class="nav-link text-white" data-content-id ="about" href="#">
-        About Us
+  return `<div class="collapse navbar-collapse">
+    <div class="navbar-nav ">
+      <a id="aboutLink" class="nav-link text-white" data-content-id="about" href="#">
+      ${footerAboutIcon}
+      About Us
       </a>
-    </li>
-    <li class="nav-item">
-      <a id="contactLink"  class="nav-link text-white" data-content-id ="contact" href="#">
+      <a id="contactLink" class="nav-link text-white" data-content-id="contact" href="#">
+      ${footerContactIcon}
         Contact
       </a>
-    </li>
-  </ul>`;
+    </div>
+  </div>`;
 }

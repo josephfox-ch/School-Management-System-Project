@@ -1,29 +1,37 @@
-import { Class } from "../../functions.js";
+import {
+  Class,
+  generateUniqueId,
+  findTeacherByName,
+  updateLocalStorage,
+} from "../../functions.js";
 
 export function saveNewClassData() {
   try {
+    const teacherCheckbox = document.getElementById("teacherCheckbox");
+    const teacherSelectOptions = document.getElementById("teachersSelectForm");
     const classNameInput = document.getElementById("classNameInput");
-    const teacherNameInput = document.querySelector("#teacherNameInput");
     const classDataInput = document.getElementById("classDataTextArea");
 
-    let newClassInput = new Class();
-    newClassInput.className = classNameInput.value;
-    newClassInput.teacher = teacherNameInput.value;
-    newClassInput.data = classDataInput.value;
+    let newClass = new Class();
 
-    let updatedSchool = JSON.parse(localStorage.getItem("school")) || {
-      classes: [],
-      teachers: [],
-      students: [],
-    };
-
-    if (updatedSchool) {
-      updatedSchool.classes.push(newClassInput);
-      localStorage.setItem("school", JSON.stringify(updatedSchool));
-      console.log("checkpoint data saved successfully");
-    } else {
-      console.error("error-unable to save data");
+    let selectedTeacher = teacherSelectOptions.value;
+    
+    if (teacherCheckbox.checked) {
+      let teacher = findTeacherByName(selectedTeacher);
+      newClass.teachers.push(teacher);
+    }else{
+      
     }
+
+    newClass.id = generateUniqueId();
+    newClass.className = classNameInput.value;
+
+    if (classDataInput.value !== "") {
+      newClass.data = classDataInput.value;
+    }
+
+    const CLASSES = "classes";
+    updateLocalStorage(newClass, CLASSES);
   } catch (error) {
     console.error("error while saving data:", error);
   }

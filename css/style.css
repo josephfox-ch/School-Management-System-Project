@@ -1,8 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Rowdies&display=swap");
 
-.fa-user-circle {
-  color: black;
+#header-navbar {
+  background-color: rgb(5, 21, 67);
 }
+
+#lms {
+  color: rgb(247, 242, 240);
+}
+
 h4,
 h5,
 h6,
@@ -12,8 +17,7 @@ h6,
 }
 
 .nav-link:hover {
-  text-decoration:underline;
-  
+  text-decoration: underline;
 }
 
 .card-link {
@@ -22,6 +26,11 @@ h6,
 
 #add-new-button {
   cursor: cell;
+}
+
+#footer-navbar {
+  color: rgb(247, 242, 240);
+  background-color: rgb(5, 21, 67);
 }
 
 #j-link {
