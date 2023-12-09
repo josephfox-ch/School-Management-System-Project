@@ -1,5 +1,5 @@
 import { classes } from "../../../service/data.js";
-import { editClass } from "../../../functions.js";
+
 
 export function generateClassCardsHTML() {
   let cardsHTML = "";

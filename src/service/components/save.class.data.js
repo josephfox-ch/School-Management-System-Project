@@ -15,8 +15,9 @@ export function saveNewClassData() {
     let newClass = new Class();
 
     let selectedTeacher = teacherSelectOptions.value;
-    let teacher = findTeacherByName(selectedTeacher);
+    
     if (teacherCheckbox.checked) {
+      let teacher = findTeacherByName(selectedTeacher);
       newClass.teachers.push(teacher);
     }else{
       
