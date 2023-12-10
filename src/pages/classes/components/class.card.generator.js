@@ -17,10 +17,10 @@ export function generateClassCardsHTML() {
             <div class="card border-danger" style="width: 18rem;">
               <div class="card-body">
                 <div class="d-flex justify-content-end mb-2">
-                  <button id="${classEl.id}" data-action="editClass" class="edit-button btn btn-primary btn-sm">
+                  <button id="${classEl.id}" data-action="class" class="edit-button btn btn-primary btn-sm">
                   Edit
                   </button>
-                  <button id="${classEl.id}" data-action="removeClass" class="remove-button btn btn-danger btn-sm mx-2">
+                  <button id="${classEl.id}" data-action="class" class="remove-button btn btn-danger btn-sm mx-2">
                   Remove
                   </button>
                 </div>

@@ -10,10 +10,10 @@ export function generateTeacherCardsHTML() {
           <div class="card border-warning" style="width: 18rem;">
             <div class="card-body">
             <div class="d-flex justify-content-end mb-2">
-            <button id="${teacher.id}" data-action="editTeacher" class="edit-button btn btn-primary btn-sm">
+            <button id="${teacher.id}" data-action="teacher" class="edit-button btn btn-primary btn-sm">
             Edit
             </button>
-            <button id="${teacher.id}" data-action="removeTeacher" class="remove-button btn btn-danger btn-sm mx-2">
+            <button id="${teacher.id}" data-action="teacher" class="remove-button btn btn-danger btn-sm mx-2">
             Remove
             </button>
               </div>

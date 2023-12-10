@@ -16,10 +16,10 @@ export function generateStudentCardsHTML() {
           <div class="card border-info" style="width: 18rem;">
             <div class="card-body">
             <div class="d-flex justify-content-end mb-2">
-            <button id="${student.id}" data-action="editStudent" class="edit-button btn btn-primary btn-sm">
+            <button id="${student.id}" data-action="student" class="edit-button btn btn-primary btn-sm">
             Edit
             </button>
-            <button id="${student.id}" data-action="removeStudent" class="remove-button btn btn-danger btn-sm mx-2">
+            <button id="${student.id}" data-action="student" class="remove-button btn btn-danger btn-sm mx-2">
             Remove
             </button>
               </div>

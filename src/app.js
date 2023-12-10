@@ -1,5 +1,6 @@
-import { renderApp, renderContent, editItem, removeItem } from "./functions.js";
+import { renderApp, renderContent,} from "./functions.js";
 import { generateNewObjectModal } from "./components/add-new-object/generate.new.object.js";
+import { editItem,removeItem } from "./utils.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const appElement = document.getElementById("app");

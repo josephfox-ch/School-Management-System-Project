@@ -186,12 +186,23 @@ export function findAverageGradeOfStudent(arr) {
   return totalOfGrades / arr.length;
 }
 
-export function editItem(action, itemId) {
-  console.log("edit-function-onclick");
-  console.log(action, itemId);
+export function editClass(classId){
+  console.log("edit-class",classId)
+}
+export function editTeacher(teacherId){
+  console.log("edit-teacher",teacherId)
+}
+export function editStudent(studentId){
+  console.log("edit-student",studentId)
 }
 
-export function removeItem(action, itemId) {
-  console.log(action, itemId);
-  console.log("remove Function");
+export function removeClass(classId){
+  console.log("remove-class",classId)
 }
+export function removeTeacher(teacherId){
+  console.log("remove-teacher",teacherId)
+}
+export function removeStudent(studentId){
+  console.log("remove-student",studentId)
+}
+
