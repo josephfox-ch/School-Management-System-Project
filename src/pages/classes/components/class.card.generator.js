@@ -24,8 +24,8 @@ export function generateClassCardsHTML() {
                   Remove
                   </button>
                 </div>
-                <h5 class="card-title text-dark">${classEl.className}</h5>
-                <h6 class="card-subtitle mb-2 text-warning">${teacherName}</h6>
+                <h5 class="card-title">${classEl.className}</h5>
+                <h6 class="card-subtitle mb-2">${teacherName}</h6>
                 <p class="card-text">${classEl.data}</p>
                 <div class="d-flex justify-content-around">
                   <a href="#" class="card-link text-info">Students</a>

@@ -17,7 +17,7 @@ export function generateTeacherCardsHTML() {
             Remove
             </button>
               </div>
-              <h5 class="card-title text-warning">${teacher.teacherName}</h5>
+              <h5 class="card-title ">${teacher.teacherName}</h5>
               <h6 class="card-subtitle mb-2">${teacher.expertise}</h6>
               <p class="card-text">${teacher.data}</p>
               <div class= " d-flex justify-content-around">

@@ -23,8 +23,8 @@ export function generateStudentCardsHTML() {
             Remove
             </button>
               </div>
-              <h5 class="card-title text-info">${student.studentName}</h5>
-              <h6 class="card-subtitle mb-2 text-danger">${className}</h6>
+              <h5 class="card-title">${student.studentName}</h5>
+              <h6 class="card-subtitle mb-2">${className}</h6>
               <p class="card-text">${student.data}</p>
               <div class="d-flex justify-content-start ">
               <a href="#" class="card-link">Average Grade:</a>

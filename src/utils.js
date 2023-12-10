@@ -54,3 +54,22 @@ export function removeItem(action, itemId) {
   }
   
 }
+
+export function changeButtonColors(content){
+  let buttonColorClass = "";
+
+  switch (content) {
+    case "class":
+      buttonColorClass = "text-danger";
+      break;
+    case "teacher":
+      buttonColorClass = "text-warning";
+      break;
+    case "student":
+      buttonColorClass = "text-info";
+      break;
+    default:
+      break;
+  }
+  return buttonColorClass;
+}
