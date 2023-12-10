@@ -172,8 +172,6 @@ export function manageSavingEvents() {
       saveDataToLocalStorage(dataType);
       console.log("savedata calisti");
       console.log(dataType);
-      renderContent(dataType);
-      console.log("rendercontent calismadi");
       location.reload();
     });
   });
@@ -186,4 +184,12 @@ export function findAverageGradeOfStudent(arr) {
 
   let totalOfGrades = arr.reduce((total, grade) => total + grade, 0);
   return totalOfGrades / arr.length;
+}
+
+export function editItem(itemId) {
+  console.log("edit-function-onclick");
+}
+
+export function removeItem(itemId) {
+  console.log("remove Function");
 }
