@@ -186,10 +186,12 @@ export function findAverageGradeOfStudent(arr) {
   return totalOfGrades / arr.length;
 }
 
-export function editItem(itemId) {
+export function editItem(action, itemId) {
   console.log("edit-function-onclick");
+  console.log(action, itemId);
 }
 
-export function removeItem(itemId) {
+export function removeItem(action, itemId) {
+  console.log(action, itemId);
   console.log("remove Function");
 }

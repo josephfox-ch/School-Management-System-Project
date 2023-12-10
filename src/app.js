@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   appElement.addEventListener("click", (event) => {
     const target = event.target;
+    const action = target.dataset.action;
     const linkClass = "nav-link";
 
     if (
@@ -24,11 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (target.classList.contains("edit-button")) {
       console.log("Event target", target);
-      editItem(target.id);
+      editItem(action, target.id);
     }
     if (target.classList.contains("remove-button")) {
       console.log("Event target", target);
-      removeItem(target.id);
+      removeItem(action, target.id);
     }
   });
 
