@@ -2,9 +2,6 @@ import { headerFragment } from "./components/header/header.js";
 import { footerFragment } from "./components/footer/footer.js";
 import { mainContentFragment } from "./components/main-content/main-content.js";
 import { additionalContainer } from "./components/additional-content/additional-content.js";
-import { saveNewClassData } from "./service/components/save.class.data.js";
-import { saveNewTeacherData } from "./service/components/save.teacher.data.js";
-import { saveNewStudentData } from "./service/components/save.student.data.js";
 import { classes, teachers, students, CARD_DATA } from "./service/data.js";
 import { LMSchool } from "./service/components/school.data.js";
 
@@ -15,15 +12,15 @@ function renderHeader() {
 }
 
 export function renderContent(contentId = "home") {
-   console.log("renderContent fonksiyonu çalıştı.");
+  console.log("renderContent fonksiyonu çalıştı.");
   renderHeader();
-  console.log("header calisti")
-  console.log(contentId)
+  console.log("header calisti");
+  console.log(contentId);
   app.innerHTML +=
     mainContentFragment(contentId).innerHTML + additionalContainer.innerHTML;
 
   renderFooter();
-  console.log("footer calisti")
+  console.log("footer calisti");
 }
 
 function renderFooter() {
@@ -34,28 +31,6 @@ export function renderApp() {
   renderHeader();
 
   renderContent();
-}
-
-export function saveDataToLocalStorage(dataType) {
-  switch (dataType) {
-    case "class":
-      saveNewClassData();
-      break;
-    case "teacher":
-      saveNewTeacherData();
-      break;
-    case "student":
-      saveNewStudentData();
-      break;
-  }
-}
-
-export function findLengthOf(arr) {
-  return arr ? arr.length : 0;
-}
-
-export function capitalizeFirstLetter(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 export class Class {
@@ -162,7 +137,7 @@ export function updateLocalStorage(newItem, targetContainer) {
       updatedSchool[targetContainer].push(newItem);
     }
 
-   localStorage.setItem("school", JSON.stringify(updatedSchool));
+    localStorage.setItem("school", JSON.stringify(updatedSchool));
     console.log("Checkpoint: Data saved successfully");
   } else {
     console.error("Error: Unable to save data");
@@ -194,15 +169,14 @@ export function manageSavingEvents() {
     button.addEventListener("click", (event) => {
       const dataType = event.target.id;
       saveDataToLocalStorage(dataType);
-      console.log("savedata calisti")
-      console.log(dataType)
+      console.log("savedata calisti");
+      console.log(dataType);
       renderContent(dataType);
-      console.log("rendercontent calismadi")
-      location.reload()
+      console.log("rendercontent calismadi");
+      location.reload();
     });
   });
 }
-
 
 export function findAverageGradeOfStudent(arr) {
   if (arr.length === 0) {
@@ -212,10 +186,3 @@ export function findAverageGradeOfStudent(arr) {
   let totalOfGrades = arr.reduce((total, grade) => total + grade, 0);
   return totalOfGrades / arr.length;
 }
-
-
-
-
-
-
-
