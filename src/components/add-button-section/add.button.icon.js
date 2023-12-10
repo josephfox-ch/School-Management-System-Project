@@ -1,6 +1,8 @@
 export const addNewButtonIcon = document.createElement("div");
 addNewButtonIcon.innerHTML = `
-    <a style ="link" id ="add-new-button" href="#" >
-        <img class="text-white" src="./assets/images/plus-circle-icon.png" alt="Add New">
-    </a>
+
+<button id="add-new-button" class=" btn btn-danger btn-sm mx-2">
+<i id="add-new-button" class="fas fa-light fa-circle-plus fa-4x"></i>
+</button>
+ 
 `;

@@ -3,6 +3,7 @@ import { footerFragment } from "./components/footer/footer.js";
 import { mainContentFragment } from "./components/main-content/main-content.js";
 import { additionalContainer } from "./components/additional-content/additional-content.js";
 import { classes, teachers, students, CARD_DATA } from "./service/data.js";
+import { saveDataToLocalStorage } from "./utils.js";
 import { LMSchool } from "./service/components/school.data.js";
 
 const app = document.getElementById("app");
