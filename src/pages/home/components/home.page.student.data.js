@@ -1,4 +1,4 @@
-import { findLengthOf } from "../../../functions.js";
+import { findLengthOf } from "../../../utils.js";
 import { students } from "../../../service/data.js";
 
 const numberOfStudents = findLengthOf(students);

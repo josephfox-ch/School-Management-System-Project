@@ -1,5 +1,5 @@
 import { addNewButtonIcon } from "./add.button.icon.js";
-import { capitalizeFirstLetter } from "../../functions.js";
+import { capitalizeFirstLetter } from "../../utils.js";
 
 export function addNewButtonFragment(content) {
   const addNewButtonSection = document.createElement("section");
