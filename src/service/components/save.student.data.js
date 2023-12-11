@@ -6,7 +6,6 @@ import {
 } from "../../functions.js";
 
 export function saveNewStudentData() {
-  console.log("checkpoint-student");
   try {
     const classCheckbox = document.getElementById("classSelectCheckbox");
     const classSelectOptions = document.querySelector("#classSelectForm");
@@ -16,9 +15,6 @@ export function saveNewStudentData() {
     const gradeInput = document.querySelector("#gradeInput");
 
     let newStudent = new Student();
-
-    let selectedClass = classSelectOptions.value;
-    let classItem = findClassByName(selectedClass);
 
     let assignmentData = assignmentInput.value;
     let gradeData = gradeInput.value;
@@ -35,6 +31,8 @@ export function saveNewStudentData() {
     }
 
     if (classCheckbox.checked) {
+      let selectedClass = classSelectOptions.value;
+      let classItem = findClassByName(selectedClass);
       newStudent.classes.push({
         classId: classItem.id,
         className: classItem.className,
@@ -42,8 +40,6 @@ export function saveNewStudentData() {
       classItem.students.push(newStudent);
       updateLocalStorage(classItem, "classes");
     }
-
-    console.log(selectedClass, studentInput, studentDataInput);
 
     const STUDENTS = "students";
 
