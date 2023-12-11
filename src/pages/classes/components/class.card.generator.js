@@ -8,7 +8,7 @@ export function generateClassCardsHTML() {
   if (Array.isArray(classes) && classes.length != 0) {
     classes.forEach((classEl) => {
       let teacherName =
-        classEl.teachers.length > 0
+        classEl.teachers.length > 0 
           ? classEl.teachers[0].teacherName
           : "Teacher Info Not Available!";
 

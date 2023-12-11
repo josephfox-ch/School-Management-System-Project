@@ -3,7 +3,9 @@ import { footerFragment } from "./components/footer/footer.js";
 import { mainContentFragment } from "./components/main-content/main-content.js";
 import { additionalContainer } from "./components/additional-content/additional-content.js";
 import { classes, teachers, students, CARD_DATA } from "./service/data.js";
-import { saveDataToLocalStorage } from "./utils.js";
+import {
+  saveDataToLocalStorage,
+} from "./utils.js";
 import { LMSchool } from "./service/components/school.data.js";
 
 const app = document.getElementById("app");
@@ -13,15 +15,10 @@ function renderHeader() {
 }
 
 export function renderContent(contentId = "home") {
-  console.log("renderContent fonksiyonu çalıştı.");
   renderHeader();
-  console.log("header calisti");
-  console.log(contentId);
   app.innerHTML +=
     mainContentFragment(contentId).innerHTML + additionalContainer.innerHTML;
-
   renderFooter();
-  console.log("footer calisti");
 }
 
 function renderFooter() {
@@ -104,17 +101,15 @@ export function generateUniqueId() {
 }
 
 export function findTeacherByName(teacherName) {
-  const wantedTeacher = teachers.find(
+  const foundTeacher = teachers.find(
     (teacher) => teacher.teacherName === teacherName
   );
-  return wantedTeacher || null;
+  return foundTeacher || null;
 }
 
 export function findClassByName(className) {
-  const wantedClass = classes.find(
-    (classItem) => classItem.className === className
-  );
-  return wantedClass || null;
+  const foundClass = classes.find((cls) => cls.className === className);
+  return foundClass || null;
 }
 
 export function updateLocalStorage(newItem, targetContainer) {
@@ -170,8 +165,6 @@ export function manageSavingEvents() {
     button.addEventListener("click", (event) => {
       const dataType = event.target.id;
       saveDataToLocalStorage(dataType);
-      console.log("savedata calisti");
-      console.log(dataType);
       location.reload();
     });
   });
@@ -186,23 +179,40 @@ export function findAverageGradeOfStudent(arr) {
   return totalOfGrades / arr.length;
 }
 
-export function editClass(classId){
-  console.log("edit-class",classId)
+export function editClass(classId) {
+  console.log("edit-class", classId);
 }
-export function editTeacher(teacherId){
-  console.log("edit-teacher",teacherId)
+export function editTeacher(teacherId) {
+  console.log("edit-teacher", teacherId);
 }
-export function editStudent(studentId){
-  console.log("edit-student",studentId)
-}
-
-export function removeClass(classId){
-  console.log("remove-class",classId)
-}
-export function removeTeacher(teacherId){
-  console.log("remove-teacher",teacherId)
-}
-export function removeStudent(studentId){
-  console.log("remove-student",studentId)
+export function editStudent(studentId) {
+  console.log("edit-student", studentId);
 }
 
+export function removeTeacher(teacherId) {
+  console.log("remove-teacher", teacherId);
+}
+export function removeStudent(studentId) {
+  console.log("remove-student", studentId);
+}
+
+export function removeClass(classId) {
+  LMSchool.classes = LMSchool.classes.filter(
+    (classItem) => classItem.id !== classId
+  );
+
+  LMSchool.teachers.forEach((teacher) => {
+    teacher.classes = teacher.classes.filter(
+      (classItem) => classItem.classId !== classId
+    );
+  });
+
+  LMSchool.students.forEach((student) => {
+    student.classes = student.classes.filter(
+      (classItem) => classItem.classId !== classId
+    );
+  });
+
+  localStorage.setItem("school", JSON.stringify(LMSchool));
+  location.reload();
+}
