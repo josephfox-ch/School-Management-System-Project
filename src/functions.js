@@ -3,8 +3,10 @@ import { footerFragment } from "./components/footer/footer.js";
 import { mainContentFragment } from "./components/main-content/main-content.js";
 import { additionalContainer } from "./components/additional-content/additional-content.js";
 import { classes, teachers, students, CARD_DATA } from "./service/data.js";
-import { saveDataToLocalStorage, updateLMSchool } from "./utils.js";
+import { saveDataToLocalStorage, updateLMSchool,showAddingModal } from "./utils.js";
 import { LMSchool } from "./service/components/school.data.js";
+import { addNewClassModal } from "./components/modals/templates-modal/add.class.modal.js";
+import { generateModalFragment } from "./components/modals/modal.manager.js";
 
 const app = document.getElementById("app");
 
@@ -171,8 +173,16 @@ export function findAverageGradeOfStudent(arr) {
 }
 
 export function editClass(classId) {
-  console.log("edit-class", classId);
+  const classToEdit = classes.find((classEl) => classEl.id === classId);
+
+  if (classToEdit) {
+
+    generateModalFragment(addNewClassModal);
+    showAddingModal();
+
+  }
 }
+
 export function editTeacher(teacherId) {
   console.log("edit-teacher", teacherId);
 }

@@ -10,7 +10,7 @@ export function addNewButtonFragment(content) {
     addNewButtonSection.innerHTML = `
       <div class="container text-center my-3">
         ${addNewButtonIcon.innerHTML}
-        <p id="add-text" data-action="addNew${capitalizeFirstLetter(
+        <p class ="fw-bold mt-2" id="add-text" data-action="addNew${capitalizeFirstLetter(
           content
         )}Modal">Add New ${capitalizeFirstLetter(content)}</p>
       </div>
