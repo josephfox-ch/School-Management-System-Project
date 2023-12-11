@@ -190,8 +190,21 @@ export function editStudent(studentId) {
 }
 
 export function removeTeacher(teacherId) {
-  console.log("remove-teacher", teacherId);
+  LMSchool.teachers = LMSchool.teachers.filter(
+    (teacher) => teacher.id !== teacherId
+  );
+
+  LMSchool.classes.forEach((cls) => {
+    cls.teachers = cls.teachers.filter(
+      (teacher) => teacher.Id !== teacherId
+    );
+  });
+
+ localStorage.setItem("school", JSON.stringify(LMSchool));
+  location.reload();
 }
+
+
 export function removeStudent(studentId) {
   console.log("remove-student", studentId);
 }
