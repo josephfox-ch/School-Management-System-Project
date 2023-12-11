@@ -3,11 +3,17 @@ import { footerFragment } from "./components/footer/footer.js";
 import { mainContentFragment } from "./components/main-content/main-content.js";
 import { additionalContainer } from "./components/additional-content/additional-content.js";
 import { classes, teachers, students, CARD_DATA } from "./service/data.js";
-import { saveDataToLocalStorage, updateLMSchool,showAddingModal } from "./utils.js";
+import {
+  saveDataToLocalStorage,
+  updateLMSchool,
+  showAddingModal,
+} from "./utils.js";
 import { LMSchool } from "./service/components/school.data.js";
 import { addNewClassModal } from "./components/modals/templates-modal/add.class.modal.js";
 import { generateModalFragment } from "./components/modals/modal.manager.js";
 import { editClassModal } from "./components/modals/edit-modals/edit.class.modal.js";
+import { editTeacherModal } from "./components/modals/edit-modals/edit.teacher.modal.js";
+import { editStudentModal } from "./components/modals/edit-modals/edit.student.modal.js";
 
 const app = document.getElementById("app");
 
@@ -177,24 +183,34 @@ export function editClass(classId) {
   const classToEdit = classes.find((classEl) => classEl.id === classId);
 
   if (classToEdit) {
-
     generateModalFragment(editClassModal);
     showAddingModal();
 
-    document.getElementById("teacherCheckbox").checked = classToEdit.teachers.length > 0;
-    document.getElementById("teachersSelectForm").value = classToEdit.teachers[0]?.teacherName || "";
-    document.getElementById("classNameInput").value = classToEdit.className || "";
+    document.getElementById("teacherCheckbox").checked =
+      classToEdit.teachers.length > 0;
+    document.getElementById("teachersSelectForm").value =
+      classToEdit.teachers[0]?.teacherName || "";
+    document.getElementById("classNameInput").value =
+      classToEdit.className || "";
     document.getElementById("classDataTextArea").value = classToEdit.data || "";
-
-
   }
 }
 
 export function editTeacher(teacherId) {
-  console.log("edit-teacher", teacherId);
+  const teacherToEdit = teachers.find((teacher) => teacher.id === teacherId);
+
+  if (teacherToEdit) {
+    generateModalFragment(editTeacherModal);
+    showAddingModal();
+  }
 }
 export function editStudent(studentId) {
-  console.log("edit-student", studentId);
+  const studentToEdit = students.find((student) => student.id === studentId);
+
+  if (studentToEdit) {
+    generateModalFragment(editStudentModal);
+    showAddingModal();
+  }
 }
 
 export function removeTeacher(teacherId) {
