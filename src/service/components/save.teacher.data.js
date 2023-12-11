@@ -4,6 +4,7 @@ import {
   updateLocalStorage,
   generateUniqueId,
 } from "../../functions.js";
+import { capitalizeInitials } from "../../utils.js";
 
 export function saveNewTeacherData() {
   try {
@@ -16,8 +17,8 @@ export function saveNewTeacherData() {
     let newTeacher = new Teacher();
 
     newTeacher.id = generateUniqueId();
-    newTeacher.teacherName = teacherNameInput.value;
-    newTeacher.expertise = expertiseInput.value;
+    newTeacher.teacherName = capitalizeInitials(teacherNameInput.value);
+    newTeacher.expertise = capitalizeInitials(expertiseInput.value);
 
     if (!expertiseInput.value) {
       newTeacher.expertise = "Expertise Info  Not Available!";

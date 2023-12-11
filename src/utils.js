@@ -19,6 +19,20 @@ export function findLengthOf(arr) {
   return arr ? arr.length : 0;
 }
 
+export function capitalizeInitials(str){
+  let capitalStr = "";
+for (let i = 0; i < str.length; i++) {
+  let currentChart = str[i];
+  if (i == 0 || str[i - 1] == " ") {
+    capitalStr += currentChart.toUpperCase();
+  } else {
+    capitalStr += currentChart;
+  }
+}
+return capitalStr;
+}
+
+
 export function saveDataToLocalStorage(dataType) {
   switch (dataType) {
     case "class":

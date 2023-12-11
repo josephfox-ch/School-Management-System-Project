@@ -4,6 +4,7 @@ import {
   findTeacherByName,
   updateLocalStorage,
 } from "../../functions.js";
+import { capitalizeInitials } from "../../utils.js";
 
 export function saveNewClassData() {
   try {
@@ -14,18 +15,15 @@ export function saveNewClassData() {
 
     let newClass = new Class();
 
-    
-    
     if (teacherCheckbox.checked) {
       let selectedTeacher = teacherSelectOptions.value;
       let teacher = findTeacherByName(selectedTeacher);
       newClass.teachers.push(teacher);
-    }else{
-      
+    } else {
     }
 
     newClass.id = generateUniqueId();
-    newClass.className = classNameInput.value;
+    newClass.className = capitalizeInitials(classNameInput.value);
 
     if (classDataInput.value !== "") {
       newClass.data = classDataInput.value;

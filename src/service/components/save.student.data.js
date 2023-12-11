@@ -4,6 +4,7 @@ import {
   generateUniqueId,
   findClassByName,
 } from "../../functions.js";
+import { capitalizeInitials } from "../../utils.js";
 
 export function saveNewStudentData() {
   try {
@@ -16,12 +17,12 @@ export function saveNewStudentData() {
 
     let newStudent = new Student();
 
-    let assignmentData = assignmentInput.value;
+    let assignmentData = capitalizeInitials(assignmentInput.value);
     let gradeData = gradeInput.value;
 
     newStudent.id = generateUniqueId();
 
-    newStudent.studentName = studentInput.value;
+    newStudent.studentName = capitalizeInitials(studentInput.value);
     if (studentDataInput.value !== "") {
       newStudent.data = studentDataInput.value;
     }
