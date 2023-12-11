@@ -7,6 +7,7 @@ import { saveDataToLocalStorage, updateLMSchool,showAddingModal } from "./utils.
 import { LMSchool } from "./service/components/school.data.js";
 import { addNewClassModal } from "./components/modals/templates-modal/add.class.modal.js";
 import { generateModalFragment } from "./components/modals/modal.manager.js";
+import { editClassModal } from "./components/modals/edit-modals/edit.class.modal.js";
 
 const app = document.getElementById("app");
 
@@ -177,8 +178,14 @@ export function editClass(classId) {
 
   if (classToEdit) {
 
-    generateModalFragment(addNewClassModal);
+    generateModalFragment(editClassModal);
     showAddingModal();
+
+    document.getElementById("teacherCheckbox").checked = classToEdit.teachers.length > 0;
+    document.getElementById("teachersSelectForm").value = classToEdit.teachers[0]?.teacherName || "";
+    document.getElementById("classNameInput").value = classToEdit.className || "";
+    document.getElementById("classDataTextArea").value = classToEdit.data || "";
+
 
   }
 }
