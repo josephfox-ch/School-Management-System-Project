@@ -5,6 +5,7 @@ import { additionalContainer } from "./components/additional-content/additional-
 import { classes, teachers, students, CARD_DATA } from "./service/data.js";
 import { saveDataToLocalStorage, updateLMSchool } from "./utils.js";
 import { LMSchool } from "./service/components/school.data.js";
+import { alertDiv } from "./components/alertsHTML/alertsHTML.js";
 
 const app = document.getElementById("app");
 
@@ -145,13 +146,6 @@ export function checkId(item, container) {
     }
   }
   return false;
-}
-
-export function showAddingModal() {
-  const dynamicModal = new bootstrap.Modal(
-    document.getElementById("dynamicModal")
-  );
-  dynamicModal.show();
 }
 
 export function manageSavingEvents() {

@@ -85,3 +85,10 @@ export function updateLMSchool() {
   localStorage.setItem("school", JSON.stringify(LMSchool));
   location.reload();
 }
+
+export function showAddingModal() {
+  const dynamicModal = new bootstrap.Modal(
+    document.getElementById("dynamicModal")
+  );
+  dynamicModal.show();
+}

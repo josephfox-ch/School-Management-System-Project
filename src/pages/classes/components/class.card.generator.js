@@ -8,7 +8,7 @@ export function generateClassCardsHTML() {
   if (Array.isArray(classes) && classes.length != 0) {
     classes.forEach((classEl) => {
       let teacherName =
-        classEl.teachers.length > 0 
+        classEl.teachers.length > 0
           ? classEl.teachers[0].teacherName
           : "Teacher Info Not Available!";
 
@@ -20,7 +20,7 @@ export function generateClassCardsHTML() {
                   <button id="${classEl.id}" data-action="class" class="edit-button btn btn-primary btn-sm">
                   Edit
                   </button>
-                  <button id="${classEl.id}" data-action="class" class="remove-button btn btn-danger btn-sm mx-2">
+                  <button id="${classEl.id}" data-action="class" class="remove-button btn btn-danger btn-sm mx-2" >
                   Remove
                   </button>
                 </div>
