@@ -15,18 +15,11 @@ export function saveNewTeacherData() {
 
     let newTeacher = new Teacher();
 
-    let selectedClass = classSelectOptions.value;
-    let classItem = findClassByName(selectedClass);
-
     newTeacher.id = generateUniqueId();
     newTeacher.teacherName = teacherNameInput.value;
     newTeacher.expertise = expertiseInput.value;
-    newTeacher.classes.push({
-      classId: classItem.id,
-      className: classItem.className,
-    });
 
-    if(!expertiseInput.value){
+    if (!expertiseInput.value) {
       newTeacher.expertise = "Expertise Info  Not Available!";
     }
 
@@ -35,6 +28,12 @@ export function saveNewTeacherData() {
     }
 
     if (classCheckbox.checked) {
+      let selectedClass = classSelectOptions.value;
+      let classItem = findClassByName(selectedClass);
+      newTeacher.classes.push({
+        classId: classItem.id,
+        className: classItem.className,
+      });
       classItem.teachers.push(newTeacher);
       updateLocalStorage(classItem, "classes");
     }
