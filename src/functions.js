@@ -3,9 +3,7 @@ import { footerFragment } from "./components/footer/footer.js";
 import { mainContentFragment } from "./components/main-content/main-content.js";
 import { additionalContainer } from "./components/additional-content/additional-content.js";
 import { classes, teachers, students, CARD_DATA } from "./service/data.js";
-import {
-  saveDataToLocalStorage,
-} from "./utils.js";
+import { saveDataToLocalStorage, updateLMSchool } from "./utils.js";
 import { LMSchool } from "./service/components/school.data.js";
 
 const app = document.getElementById("app");
@@ -195,18 +193,18 @@ export function removeTeacher(teacherId) {
   );
 
   LMSchool.classes.forEach((cls) => {
-    cls.teachers = cls.teachers.filter(
-      (teacher) => teacher.Id !== teacherId
-    );
+    cls.teachers = cls.teachers.filter((teacher) => teacher.Id !== teacherId);
   });
 
- localStorage.setItem("school", JSON.stringify(LMSchool));
-  location.reload();
+  updateLMSchool();
 }
 
-
 export function removeStudent(studentId) {
-  console.log("remove-student", studentId);
+  LMSchool.students = LMSchool.students.filter(
+    (student) => student.id !== studentId
+  );
+
+  updateLMSchool();
 }
 
 export function removeClass(classId) {
@@ -225,7 +223,5 @@ export function removeClass(classId) {
       (classItem) => classItem.classId !== classId
     );
   });
-
-  localStorage.setItem("school", JSON.stringify(LMSchool));
-  location.reload();
+  updateLMSchool();
 }
