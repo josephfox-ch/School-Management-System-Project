@@ -1,15 +1,13 @@
-import { saveNewClassData } from "./service/components/save.class.data.js";
-import { saveNewTeacherData } from "./service/components/save.teacher.data.js";
-import { saveNewStudentData } from "./service/components/save.student.data.js";
-import {
-  editClass,
-  editStudent,
-  editTeacher,
-  removeClass,
-  removeStudent,
-  removeTeacher,
-} from "./functions.js";
-import { LMSchool } from "./service/components/school.data.js";
+import { saveNewClassData } from "./components/save-items/save.class.js";
+import { saveNewTeacherData } from "./components/save-items/save.teacher.js";
+import { saveNewStudentData } from "./components/save-items/save.student.js";
+import { LMSchool } from "./components/school/school.js";
+import { editClass } from "./components/edit-items/edit.class.js";
+import { editTeacher } from "./components/edit-items/edit.teacher.js";
+import { editStudent } from "./components/edit-items/edit.student.js";
+import { removeClass } from "./components/remove-items/remove.class.js";
+import { removeTeacher } from "./components/remove-items/remove.teacher.js";
+import { removeStudent } from "./components/remove-items/remove.student.js";
 
 export function capitalizeFirstLetter(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
@@ -19,19 +17,18 @@ export function findLengthOf(arr) {
   return arr ? arr.length : 0;
 }
 
-export function capitalizeInitials(str){
+export function capitalizeInitials(str) {
   let capitalStr = "";
-for (let i = 0; i < str.length; i++) {
-  let currentChart = str[i];
-  if (i == 0 || str[i - 1] == " ") {
-    capitalStr += currentChart.toUpperCase();
-  } else {
-    capitalStr += currentChart;
+  for (let i = 0; i < str.length; i++) {
+    let currentChart = str[i];
+    if (i == 0 || str[i - 1] == " ") {
+      capitalStr += currentChart.toUpperCase();
+    } else {
+      capitalStr += currentChart;
+    }
   }
+  return capitalStr;
 }
-return capitalStr;
-}
-
 
 export function saveDataToLocalStorage(dataType) {
   switch (dataType) {
@@ -105,4 +102,17 @@ export function showAddingModal() {
     document.getElementById("dynamicModal")
   );
   dynamicModal.show();
+}
+
+export function generateUniqueId() {
+  return Date.now().toString(36);
+}
+
+export function checkId(item, container) {
+  for (let i = 0; i < container.length; i++) {
+    if (container[i].id === item.id) {
+      return true;
+    }
+  }
+  return false;
 }

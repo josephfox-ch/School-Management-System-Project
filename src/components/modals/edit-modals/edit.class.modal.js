@@ -1,4 +1,4 @@
-import { addNewClassModal } from "../templates-modal/add.class.modal.js";
+import { addNewClassModal } from "../add-modals/add.class.modal.js";
 
 export const editClassModal = addNewClassModal.cloneNode(true);
 

@@ -1,4 +1,4 @@
-import { createOptionsFromTeachers } from "../../../functions.js";
+import { createOptionsFromTeachers } from "../../teacher/teacher.utils.js";
 
 export const addNewClassModal = document.createElement("div");
 

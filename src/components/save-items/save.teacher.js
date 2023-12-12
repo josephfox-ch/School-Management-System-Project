@@ -1,10 +1,7 @@
-import {
-  Teacher,
-  findClassByName,
-  updateLocalStorage,
-  generateUniqueId,
-} from "../../functions.js";
-import { capitalizeInitials } from "../../utils.js";
+import { Teacher } from "../teacher/teacher.js";
+import { updateLocalStorage } from "../localStorage/local.storage.js";
+import { findClassByName } from "../class/class.utils.js";
+import { capitalizeInitials, generateUniqueId } from "../../utils.js";
 
 export function saveNewTeacherData() {
   try {

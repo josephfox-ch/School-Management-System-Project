@@ -1,4 +1,4 @@
-import { createOptionsFromClasses } from "../../../functions.js";
+import { createOptionsFromClasses } from "../../class/class.utils.js";
 
 export const addNewStudentModal = document.createElement("div");
 
