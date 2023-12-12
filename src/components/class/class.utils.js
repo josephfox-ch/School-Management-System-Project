@@ -23,3 +23,11 @@ export function createOptionsFromClasses() {
 
   return selectElement;
 }
+
+export function getValuesOfClassForm(){
+  const teacherCheckbox = document.getElementById("teacherCheckbox");
+    const teacherSelectOptions = document.getElementById("teachersSelectForm");
+    const classNameInput = document.getElementById("classNameInput");
+    const classDataInput = document.getElementById("classDataTextArea");
+   
+}

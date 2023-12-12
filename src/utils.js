@@ -64,7 +64,6 @@ export function removeItem(action, itemId) {
   switch (action) {
     case "class":
       removeClass(itemId);
-      console.log(action, itemId);
       break;
     case "teacher":
       removeTeacher(itemId);
