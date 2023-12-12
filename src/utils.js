@@ -2,9 +2,9 @@ import { saveNewClassData } from "./components/save-items/save.class.js";
 import { saveNewTeacherData } from "./components/save-items/save.teacher.js";
 import { saveNewStudentData } from "./components/save-items/save.student.js";
 import { LMSchool } from "./components/school/school.js";
-import { editClass } from "./components/edit-items/edit.class.js";
-import { editTeacher } from "./components/edit-items/edit.teacher.js";
-import { editStudent } from "./components/edit-items/edit.student.js";
+import { showEditClassForm } from "./components/show-edit-forms/edit.class.js";
+import { showEditTeacherForm } from "./components/show-edit-forms/edit.teacher.js";
+import { showEditStudentForm } from "./components/show-edit-forms/edit.student.js";
 import { removeClass } from "./components/remove-items/remove.class.js";
 import { removeTeacher } from "./components/remove-items/remove.teacher.js";
 import { removeStudent } from "./components/remove-items/remove.student.js";
@@ -47,13 +47,13 @@ export function saveDataToLocalStorage(dataType) {
 export function editItem(action, itemId) {
   switch (action) {
     case "class":
-      editClass(itemId);
+      showEditClassForm(itemId);
       break;
     case "teacher":
-      editTeacher(itemId);
+      showEditTeacherForm(itemId);
       break;
     case "student":
-      editStudent(itemId);
+      showEditStudentForm(itemId);
       break;
   }
 }

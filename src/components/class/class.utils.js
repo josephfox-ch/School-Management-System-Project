@@ -5,6 +5,11 @@ export function findClassByName(className) {
   return foundClass || null;
 }
 
+export function findClassById(classId) {
+  const foundClass = classes.find((cls) => cls.id === classId);
+  return foundClass || null;
+}
+
 export function createOptionsFromClasses() {
   const selectElement = document.createElement("div");
   if (classes.length != 0) {

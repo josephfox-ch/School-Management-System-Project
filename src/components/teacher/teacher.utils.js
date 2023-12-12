@@ -7,6 +7,11 @@ export function findTeacherByName(teacherName) {
   return foundTeacher || null;
 }
 
+export function findTeacherById(teacherId) {
+  const foundTeacher = teachers.find((teacher) => teacher.id === teacherId);
+  return foundTeacher || null;
+}
+
 export function createOptionsFromTeachers() {
   const selectElement = document.createElement("div");
   if (teachers.length != 0) {

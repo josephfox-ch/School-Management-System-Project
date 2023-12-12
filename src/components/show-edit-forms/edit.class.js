@@ -1,21 +1,22 @@
-import { classes } from "../../service/data.js";
 import { generateModalFragment } from "../modals/modal.js";
 import { editClassModal } from "../modals/edit-modals/edit.class.modal.js";
 import { showAddingModal } from "../../utils.js";
+import { findClassById } from "../class/class.utils.js";
 
-export function editClass(classId) {
-  const classToEdit = classes.find((classEl) => classEl.id === classId);
+export function showEditClassForm(classId) {
+  const classToBeEdited = findClassById(classId);
 
-  if (classToEdit) {
+  if (classToBeEdited) {
     generateModalFragment(editClassModal);
     showAddingModal();
 
     document.getElementById("teacherCheckbox").checked =
-      classToEdit.teachers.length > 0;
+      classToBeEdited.teachers.length > 0;
     document.getElementById("teachersSelectForm").value =
-      classToEdit.teachers[0]?.teacherName || "";
+      classToBeEdited.teachers[0]?.teacherName || "";
     document.getElementById("classNameInput").value =
-      classToEdit.className || "";
-    document.getElementById("classDataTextArea").value = classToEdit.data || "";
+      classToBeEdited.className || "";
+    document.getElementById("classDataTextArea").value =
+      classToBeEdited.data || "";
   }
 }
