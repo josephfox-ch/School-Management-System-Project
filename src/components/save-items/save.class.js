@@ -4,6 +4,7 @@ import { findTeacherByName } from "../teacher/teacher.utils.js";
 import { capitalizeInitials, generateUniqueId } from "../../utils.js";
 
 export function saveNewClassData() {
+  console.log("save item-class works")
   try {
     const teacherCheckbox = document.getElementById("teacherCheckbox");
     const teacherSelectOptions = document.getElementById("teachersSelectForm");

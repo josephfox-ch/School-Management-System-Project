@@ -36,7 +36,7 @@ export function manageSavingEvents() {
     button.addEventListener("click", (event) => {
       const dataType = event.target.id;
       saveDataToLocalStorage(dataType);
-      location.reload();
+      // location.reload();
     });
   });
 }

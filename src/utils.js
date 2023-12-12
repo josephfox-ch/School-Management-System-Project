@@ -8,6 +8,7 @@ import { showEditStudentForm } from "./components/show-edit-forms/edit.student.j
 import { removeClass } from "./components/remove-items/remove.class.js";
 import { removeTeacher } from "./components/remove-items/remove.teacher.js";
 import { removeStudent } from "./components/remove-items/remove.student.js";
+import { manageSavingEvents } from "./functions.js";
 
 export function capitalizeFirstLetter(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
@@ -56,6 +57,7 @@ export function editItem(action, itemId) {
       showEditStudentForm(itemId);
       break;
   }
+  manageSavingEvents()
 }
 
 export function removeItem(action, itemId) {
