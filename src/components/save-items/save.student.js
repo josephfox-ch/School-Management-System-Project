@@ -3,7 +3,8 @@ import { findClassByName } from "../class/class.utils.js";
 import { updateLocalStorage } from "../localStorage/local.storage.js";
 import { capitalizeInitials, generateUniqueId } from "../../utils.js";
 
-export function saveNewStudent() {
+export function saveNewStudent(itemId) {
+  console.log("studentIemID",itemId)
   try {
     const classCheckbox = document.getElementById("classSelectCheckbox");
     const classSelectOptions = document.querySelector("#classSelectForm");

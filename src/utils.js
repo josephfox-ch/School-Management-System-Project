@@ -31,16 +31,16 @@ export function capitalizeInitials(str) {
   return capitalStr;
 }
 
-export function saveToLocalStorage(dataType) {
+export function saveToLocalStorage(dataType,itemId) {
   switch (dataType) {
     case "class":
-      saveNewClass();
+      saveNewClass(itemId);
       break;
     case "teacher":
-      saveNewTeacher();
+      saveNewTeacher(itemId);
       break;
     case "student":
-      saveNewStudent();
+      saveNewStudent(itemId);
       break;
   }
 }
@@ -57,7 +57,7 @@ export function editItem(action, itemId) {
       showEditStudentForm(itemId);
       break;
   }
-  manageSavingEvents()
+  manageSavingEvents(itemId)
 }
 
 export function removeItem(action, itemId) {

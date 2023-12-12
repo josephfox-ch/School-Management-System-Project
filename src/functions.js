@@ -27,15 +27,20 @@ export function renderApp() {
   renderContent();
 }
 
-export function manageSavingEvents() {
+export function manageSavingEvents(itemId) {
   const saveChangesButtons = [
     ...document.getElementsByClassName("saveChanges"),
   ];
 
   saveChangesButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
-      const dataType = event.target.id;
-      saveToLocalStorage(dataType);
+      const target = event.target;
+      const dataType = target.dataset.action;
+      console.log(dataType)
+      let  id = target.dataset.id 
+      id = itemId
+      console.log("eventTarget",event.target.id)
+      saveToLocalStorage(dataType,id);
       // location.reload();
     });
   });

@@ -48,6 +48,6 @@ addNewStudentModal.innerHTML = `
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
-    <button id="student" type="button" class="btn btn-outline-success saveChanges" data-bs-dismiss="modal">Save changes</button>
+    <button data-action ="student" type="button" class="btn btn-outline-success saveChanges" data-bs-dismiss="modal">Save changes</button>
   </div>
 `;

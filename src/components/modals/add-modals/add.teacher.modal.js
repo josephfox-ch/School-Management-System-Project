@@ -44,7 +44,7 @@ addNewTeacherModal.innerHTML = `
     <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">
       Close
     </button>
-    <button id="teacher" type="button" class="btn btn-outline-success saveChanges" data-bs-dismiss="modal">
+    <button data-action ="teacher" type="button" class="btn btn-outline-success saveChanges" data-bs-dismiss="modal">
       Save changes
     </button>
   </div>
