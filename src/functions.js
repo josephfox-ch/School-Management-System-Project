@@ -2,7 +2,7 @@ import { headerFragment } from "./components/header/header.js";
 import { footerFragment } from "./components/footer/footer.js";
 import { mainContentFragment } from "./components/main-content/main-content.js";
 import { additionalContainer } from "./components/additional-content/additional-content.js";
-import { saveDataToLocalStorage } from "./utils.js";
+import { saveToLocalStorage } from "./utils.js";
 
 const app = document.getElementById("app");
 
@@ -35,7 +35,7 @@ export function manageSavingEvents() {
   saveChangesButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
       const dataType = event.target.id;
-      saveDataToLocalStorage(dataType);
+      saveToLocalStorage(dataType);
       // location.reload();
     });
   });

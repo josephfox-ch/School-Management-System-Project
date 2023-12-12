@@ -1,6 +1,6 @@
-import { saveNewClassData } from "./components/save-items/save.class.js";
-import { saveNewTeacherData } from "./components/save-items/save.teacher.js";
-import { saveNewStudentData } from "./components/save-items/save.student.js";
+import { saveNewClass } from "./components/save-items/save.class.js";
+import { saveNewTeacher } from "./components/save-items/save.teacher.js";
+import { saveNewStudent } from "./components/save-items/save.student.js";
 import { LMSchool } from "./components/school/school.js";
 import { showEditClassForm } from "./components/show-edit-forms/edit.class.js";
 import { showEditTeacherForm } from "./components/show-edit-forms/edit.teacher.js";
@@ -31,16 +31,16 @@ export function capitalizeInitials(str) {
   return capitalStr;
 }
 
-export function saveDataToLocalStorage(dataType) {
+export function saveToLocalStorage(dataType) {
   switch (dataType) {
     case "class":
-      saveNewClassData();
+      saveNewClass();
       break;
     case "teacher":
-      saveNewTeacherData();
+      saveNewTeacher();
       break;
     case "student":
-      saveNewStudentData();
+      saveNewStudent();
       break;
   }
 }
