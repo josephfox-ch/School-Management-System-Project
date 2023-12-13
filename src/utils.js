@@ -9,9 +9,9 @@ import { removeClass } from "./components/remove-items/remove.class.js";
 import { removeTeacher } from "./components/remove-items/remove.teacher.js";
 import { removeStudent } from "./components/remove-items/remove.student.js";
 import { manageSavingEvents } from "./functions.js";
-import { showClassListOfElement } from "./components/show-list/show.class.list.of.element.js";
-import {showTeacherListOfElement} from "./components/show-list/show.teacher.list.of.element.js.js"
-import { showStudentListOfElement } from "./components/show-list/show.student.list.of.element.js";
+import { showClassListOfElement } from "./components/show-item-list/show.class.list.of.element.js";
+import{showTeacherListOfElement} from "./components/show-item-list/show.teacher.list.of.element.js"
+import { showStudentListOfElement } from "./components/show-item-list/show.student.list.of.element.js";
 
 export function capitalizeFirstLetter(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);

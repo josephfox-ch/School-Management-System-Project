@@ -2,7 +2,7 @@
 export const teacherListModal = document.createElement("div");
 
  teacherListModal.innerHTML = `
-  <div class="modal-header bg-danger">
+  <div class="modal-header bg-waning">
     <h5 class="modal-title text-white">Teacher List of Class AWS</h5>
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
   </div>
