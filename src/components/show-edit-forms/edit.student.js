@@ -17,8 +17,15 @@ export function showEditStudentForm(studentId) {
       studentToBeEdited.studentName || "";
     document.getElementById("studentDataTextArea").value =
       studentToBeEdited.data || "";
-    document.getElementById("assignmentInput1").value =
-      studentToBeEdited.assignment || "";
-    document.getElementById("gradeInput1").value = studentToBeEdited.grade || "";
+
+    const assignmentKeys = Object.keys(studentToBeEdited.grades);
+    const assignmentGrades = Object.values(studentToBeEdited.grades);
+
+    assignmentKeys.forEach((assignment, index) => {
+      document.getElementById(`assignment${index + 1}Input`).value = assignment;
+    });
+    assignmentGrades.forEach((grade, index) => {
+      document.getElementById(`grade${index + 1}Input`).value = grade;
+    });
   }
 }

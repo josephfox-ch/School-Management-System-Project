@@ -26,21 +26,21 @@ export function getValuesOfStudentForm() {
   const classSelectOptions = document.querySelector("#classSelectForm");
   const studentNameInput = document.querySelector("#studentNameInput");
   const studentDataInput = document.querySelector("#studentDataTextArea");
-  const assignmentInput1 = document.querySelector("#assignmentInput1");
-  const gradeInput1 = document.querySelector("#gradeInput1");
-  const assignmentInput2 = document.querySelector("#assignmentInput2");
-  const gradeInput2 = document.querySelector("#gradeInput2");
-  const assignmentInput3 = document.querySelector("#assignmentInput3");
-  const gradeInput3 = document.querySelector("#gradeInput3");
+  const assignment1Input = document.querySelector("#assignment1Input");
+  const gradeInput1 = document.querySelector("#grade1Input");
+  const assignment2Input = document.querySelector("#assignment2Input");
+  const gradeInput2 = document.querySelector("#grade2Input");
+  const assignment3Input3 = document.querySelector("#assignment3Input");
+  const gradeInput3 = document.querySelector("#grade3Input");
 
   const values = {
     classCheckbox: classCheckbox.checked,
     classSelectValue: classSelectOptions.value,
     studentName: studentNameInput.value,
     studentData: studentDataInput.value,
-    assignment1: assignmentInput1.value,
-    assignment2: assignmentInput2.value,
-    assignment3: assignmentInput3.value,
+    assignment1: assignment1Input.value,
+    assignment2: assignment2Input.value,
+    assignment3: assignment3Input3.value,
     grade1: gradeInput1.value,
     grade2: gradeInput2.value,
     grade3: gradeInput3.value,
