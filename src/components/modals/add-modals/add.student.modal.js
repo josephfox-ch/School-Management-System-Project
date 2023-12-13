@@ -35,14 +35,34 @@ addNewStudentModal.innerHTML = `
         </div>
         <div class="row">
           <div class="col-sm-9">
-            <label for="assignmentInput" class="form-label input-sm">Assignment</label>
+            <label for="assignmentInput1" class="form-label input-sm">Assignment</label>
             <input type="text" class="form-control input-sm grades-input" id="assignmentInput">
           </div>
           <div class="col-sm-3 ms-auto">
-            <label for="gradeInput" class="form-label input-sm">Grade</label>
+            <label for="gradeInput1" class="form-label input-sm">Grade</label>
             <input type="text" class="form-control input-sm grades-input" id="gradeInput">
           </div>
         </div>
+        <div class="row">
+        <div class="col-sm-9">
+          <label for="assignmentInput2" class="form-label input-sm">Assignment</label>
+          <input type="text" class="form-control input-sm grades-input" id="assignmentInput">
+        </div>
+        <div class="col-sm-3 ms-auto">
+          <label for="gradeInput2" class="form-label input-sm">Grade</label>
+          <input type="text" class="form-control input-sm grades-input" id="gradeInput">
+        </div>
+      </div>
+      <div class="row">
+      <div class="col-sm-9">
+        <label for="assignmentInput3" class="form-label input-sm">Assignment</label>
+        <input type="text" class="form-control input-sm grades-input" id="assignmentInput">
+      </div>
+      <div class="col-sm-3 ms-auto">
+        <label for="gradeInput3" class="form-label input-sm">Grade</label>
+        <input type="text" class="form-control input-sm grades-input" id="gradeInput">
+      </div>
+    </div>
       </div>
     </form>
   </div>
