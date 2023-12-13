@@ -12,8 +12,7 @@ function renderHeader() {
 
 export function renderContent(contentId = "home") {
   renderHeader();
-  app.innerHTML +=
-    mainContentFragment(contentId).innerHTML + additionalContainer.innerHTML;
+  app.innerHTML += mainContentFragment(contentId).innerHTML;
   renderFooter();
 }
 
@@ -36,11 +35,11 @@ export function manageSavingEvents(itemId) {
     button.addEventListener("click", (event) => {
       const target = event.target;
       const dataType = target.dataset.action;
-      console.log(dataType)
-      let  id = target.dataset.id 
-      id = itemId
-      console.log("eventTarget",event.target.id)
-      saveToLocalStorage(dataType,id);
+      console.log(dataType);
+      let id = target.dataset.id;
+      id = itemId;
+      console.log("eventTarget", event.target.id);
+      saveToLocalStorage(dataType, id);
       // location.reload();
     });
   });

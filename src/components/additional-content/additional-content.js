@@ -2,13 +2,17 @@ import { additionalSectBodyFragment } from "./components/additional-content-body
 
 function additionalSectionFragment() {
   const additionalContainer = document.createElement("section");
-  additionalContainer.innerHTML = ` <div class="mb-5" id="additional-content">
-    <div class="card">
-      <div class="card-body p-4">
-        ${additionalSectBodyFragment()}
-      </div>
-    </div>
-  </div>`;
+  additionalContainer.innerHTML = ` <div class=" card text-center m-5 ">
+  <div class="card-header">
+  <h5 class="card-title">HiCoder 23/24 LMS</h5>
+  </div>
+  <div class="card-body">
+    ${additionalSectBodyFragment()}
+  </div>
+  <div class="card-footer text-body-secondary">
+    2 days ago
+  </div>
+</div>`;
   return additionalContainer;
 }
 
