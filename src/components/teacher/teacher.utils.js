@@ -25,3 +25,21 @@ export function createOptionsFromTeachers() {
 
   return selectElement;
 }
+
+export function getValuesOfTeacherForm() {
+  const classCheckbox = document.getElementById("classSelectCheckbox");
+  const classSelectOptions = document.querySelector("#classSelectForm");
+  const teacherNameInput = document.querySelector("#teacherNameInput");
+  const expertiseInput = document.getElementById("expertiseInput");
+  const teacherDataInput = document.getElementById("teacherDataTextArea");
+
+  const values = {
+    classCheckbox: classCheckbox.checked,
+    classSelectValue: classSelectOptions.value,
+    teacherName: teacherNameInput.value,
+    teacherData: teacherDataInput.value,
+    expertise: expertiseInput.value,
+  };
+
+  return values;
+}
