@@ -26,9 +26,6 @@ classListModal.innerHTML = `
   <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">
     Close
   </button>
-  <button data-action="class" type="button" class="btn btn-outline-success saveChanges" data-bs-dismiss="modal">
-    Save changes
-  </button>
 </div>
 `;
 

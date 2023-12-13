@@ -5,7 +5,7 @@ export function teacherListModalFragment(name, list) {
 
   teacherListModal.innerHTML = `
     <div class="modal-header bg-warning">
-      <h5 class="modal-title text-white ">Teacher List of Class ${name}</h5>
+      <h5 class="modal-title text-white ">Teacher List of  ${name} Class</h5>
       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body">
@@ -24,9 +24,6 @@ export function teacherListModalFragment(name, list) {
     <div class="modal-footer">
       <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">
         Close
-      </button>
-      <button data-action="class" type="button" class="btn btn-outline-success saveChanges" data-bs-dismiss="modal">
-        Save changes
       </button>
     </div>
   `;
