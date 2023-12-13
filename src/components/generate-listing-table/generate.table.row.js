@@ -1,12 +1,15 @@
 export function generateTableElement(tdList){
-  const tableRow =  document.createElement("tr");
-tdList.forEach((element,index) => 
-  tableRow.innerHTML+= `
-  <th scope="row">${index+1}</th>
+  const tableBody = document.createElement("tbody");
+
+  tdList.forEach((element, index) => {
+    const tableRow = document.createElement("tr");
+    tableRow.innerHTML = `
+      <th scope="row">${index+1}</th>
       <td>${element}</td>
       <td></td>
-      <td></td>
-`);
-return tableRow;
+    `;
+    tableBody.appendChild(tableRow);
+  });
 
+  return tableBody;
 }

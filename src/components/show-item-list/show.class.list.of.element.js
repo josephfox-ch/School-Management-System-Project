@@ -5,7 +5,7 @@ import { findTeacherById } from "../teacher/teacher.utils.js"
 
 export function showClassListOfElement(eId){
 const teacher = findTeacherById(eId);
-const teacherClassList = teacher.classes.map(element =>element.className)
+const teacherClassList = teacher.classes.map(cls =>cls.className)
 const teacherName = teacher.teacherName;
 console.log(teacherClassList)
 generateModalFragment(classListModalFragment(teacherName,teacherClassList))
