@@ -35,31 +35,31 @@ addNewStudentModal.innerHTML = `
         </div>
         <div class="row">
           <div class="col-sm-9">
-            <label for="assignmentInput1" class="form-label input-sm">Assignment</label>
+            <label for="assignment1Input" class="form-label input-sm">Assignment</label>
             <input type="text" class="form-control input-sm grades-input" id="assignment1Input">
           </div>
           <div class="col-sm-3 ms-auto">
-            <label for="gradeInput1" class="form-label input-sm">Grade</label>
+            <label for="grade1Input" class="form-label input-sm">Grade</label>
             <input type="text" class="form-control input-sm grades-input" id="grade1Input">
           </div>
         </div>
         <div class="row">
         <div class="col-sm-9">
-          <label for="assignmentInput2" class="form-label input-sm">Assignment</label>
+          <label for="assignment2Input" class="form-label input-sm">Assignment</label>
           <input type="text" class="form-control input-sm grades-input" id="assignment2Input">
         </div>
         <div class="col-sm-3 ms-auto">
-          <label for="gradeInput2" class="form-label input-sm">Grade</label>
+          <label for="grade2Input" class="form-label input-sm">Grade</label>
           <input type="text" class="form-control input-sm grades-input" id="grade2Input">
         </div>
       </div>
       <div class="row">
       <div class="col-sm-9">
-        <label for="assignmentInput3" class="form-label input-sm">Assignment</label>
+        <label for="assignment3Input" class="form-label input-sm">Assignment</label>
         <input type="text" class="form-control input-sm grades-input" id="assignment3Input">
       </div>
       <div class="col-sm-3 ms-auto">
-        <label for="gradeInput3" class="form-label input-sm">Grade</label>
+        <label for="grade3Input" class="form-label input-sm">Grade</label>
         <input type="text" class="form-control input-sm grades-input" id="grade3Input">
       </div>
     </div>

@@ -1,4 +1,5 @@
 import { students } from "../../service/data.js";
+import { capitalizeInitials } from "../../utils.js";
 
 export function findAverageGradeOfStudent(arr) {
   if (arr.length === 0) {
@@ -27,23 +28,23 @@ export function getValuesOfStudentForm() {
   const studentNameInput = document.querySelector("#studentNameInput");
   const studentDataInput = document.querySelector("#studentDataTextArea");
   const assignment1Input = document.querySelector("#assignment1Input");
-  const gradeInput1 = document.querySelector("#grade1Input");
+  const grade1Input = document.querySelector("#grade1Input");
   const assignment2Input = document.querySelector("#assignment2Input");
-  const gradeInput2 = document.querySelector("#grade2Input");
-  const assignment3Input3 = document.querySelector("#assignment3Input");
-  const gradeInput3 = document.querySelector("#grade3Input");
+  const grade2Input = document.querySelector("#grade2Input");
+  const assignment3Input = document.querySelector("#assignment3Input");
+  const grade3Input = document.querySelector("#grade3Input");
 
   const values = {
     classCheckbox: classCheckbox.checked,
     classSelectValue: classSelectOptions.value,
-    studentName: studentNameInput.value,
+    studentName: capitalizeInitials(studentNameInput.value),
     studentData: studentDataInput.value,
-    assignment1: assignment1Input.value,
-    assignment2: assignment2Input.value,
-    assignment3: assignment3Input3.value,
-    grade1: gradeInput1.value,
-    grade2: gradeInput2.value,
-    grade3: gradeInput3.value,
+    assignment1: capitalizeInitials(assignment1Input.value),
+    assignment2: capitalizeInitials(assignment2Input.value),
+    assignment3: capitalizeInitials(assignment3Input.value),
+    grade1: parseFloat(grade1Input.value),
+    grade2: parseFloat(grade2Input.value),
+    grade3: parseFloat(grade3Input.value),
   };
 
   return values;

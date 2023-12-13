@@ -1,7 +1,7 @@
 import { Student } from "../student/student.js";
 import { findClassByName } from "../class/class.utils.js";
 import { updateLocalStorage } from "../localStorage/local.storage.js";
-import { capitalizeInitials, generateUniqueId } from "../../utils.js";
+import { generateUniqueId } from "../../utils.js";
 import { getValuesOfStudentForm } from "../student/student.utils.js";
 
 export function saveNewStudent(itemId) {
@@ -14,7 +14,7 @@ export function saveNewStudent(itemId) {
 
       let newStudent = new Student();
       newStudent.id = generateUniqueId();
-      newStudent.studentName = capitalizeInitials(formValues.studentName);
+      newStudent.studentName = formValues.studentName;
 
       if (formValues.studentData !== "") {
         newStudent.data = formValues.studentData;
