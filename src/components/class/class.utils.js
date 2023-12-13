@@ -24,10 +24,18 @@ export function createOptionsFromClasses() {
   return selectElement;
 }
 
-export function getValuesOfClassForm(){
+export function getValuesOfClassForm() {
   const teacherCheckbox = document.getElementById("teacherCheckbox");
-    const teacherSelectOptions = document.getElementById("teachersSelectForm");
-    const classNameInput = document.getElementById("classNameInput");
-    const classDataInput = document.getElementById("classDataTextArea");
-   
+  const teacherSelectOptions = document.getElementById("teachersSelectForm");
+  const classNameInput = document.getElementById("classNameInput");
+  const classDataInput = document.getElementById("classDataTextArea");
+
+  const values = {
+    teacherCheckbox: teacherCheckbox.checked,
+    teacherSelectValue: teacherSelectOptions.value,
+    className: classNameInput.value,
+    classData: classDataInput.value
+  };
+
+  return values;
 }
