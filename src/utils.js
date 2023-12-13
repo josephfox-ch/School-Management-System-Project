@@ -9,6 +9,9 @@ import { removeClass } from "./components/remove-items/remove.class.js";
 import { removeTeacher } from "./components/remove-items/remove.teacher.js";
 import { removeStudent } from "./components/remove-items/remove.student.js";
 import { manageSavingEvents } from "./functions.js";
+import { showClassListOfElement } from "./components/show-list/show.class.list.of.element.js";
+import {showTeacherListOfElement} from "./components/show-list/show.teacher.list.of.element.js.js"
+import { showStudentListOfElement } from "./components/show-list/show.student.list.of.element.js";
 
 export function capitalizeFirstLetter(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
@@ -119,5 +122,16 @@ export function checkId(item, container) {
 }
 
 export function listElementsOfItem(action,eId){
-  console.log("list-items works",action,eId)
+
+    switch (action) {
+      case "class":
+        showClassListOfElement(eId);
+        break;
+      case "teacher":
+        showTeacherListOfElement(eId);
+        break;
+        case "student":
+        showStudentListOfElement(eId);
+        break;
+    }
 }
