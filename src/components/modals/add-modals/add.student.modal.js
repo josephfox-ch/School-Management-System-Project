@@ -36,31 +36,31 @@ addNewStudentModal.innerHTML = `
         <div class="row">
           <div class="col-sm-9">
             <label for="assignmentInput1" class="form-label input-sm">Assignment</label>
-            <input type="text" class="form-control input-sm grades-input" id="assignmentInput">
+            <input type="text" class="form-control input-sm grades-input" id="assignmentInput1">
           </div>
           <div class="col-sm-3 ms-auto">
             <label for="gradeInput1" class="form-label input-sm">Grade</label>
-            <input type="text" class="form-control input-sm grades-input" id="gradeInput">
+            <input type="text" class="form-control input-sm grades-input" id="gradeInput1">
           </div>
         </div>
         <div class="row">
         <div class="col-sm-9">
           <label for="assignmentInput2" class="form-label input-sm">Assignment</label>
-          <input type="text" class="form-control input-sm grades-input" id="assignmentInput">
+          <input type="text" class="form-control input-sm grades-input" id="assignmentInput2">
         </div>
         <div class="col-sm-3 ms-auto">
           <label for="gradeInput2" class="form-label input-sm">Grade</label>
-          <input type="text" class="form-control input-sm grades-input" id="gradeInput">
+          <input type="text" class="form-control input-sm grades-input" id="gradeInput2">
         </div>
       </div>
       <div class="row">
       <div class="col-sm-9">
         <label for="assignmentInput3" class="form-label input-sm">Assignment</label>
-        <input type="text" class="form-control input-sm grades-input" id="assignmentInput">
+        <input type="text" class="form-control input-sm grades-input" id="assignmentInput3">
       </div>
       <div class="col-sm-3 ms-auto">
         <label for="gradeInput3" class="form-label input-sm">Grade</label>
-        <input type="text" class="form-control input-sm grades-input" id="gradeInput">
+        <input type="text" class="form-control input-sm grades-input" id="gradeInput3">
       </div>
     </div>
       </div>

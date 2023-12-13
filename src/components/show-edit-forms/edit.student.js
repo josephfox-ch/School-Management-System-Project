@@ -17,8 +17,8 @@ export function showEditStudentForm(studentId) {
       studentToBeEdited.studentName || "";
     document.getElementById("studentDataTextArea").value =
       studentToBeEdited.data || "";
-    document.getElementById("assignmentInput").value =
+    document.getElementById("assignmentInput1").value =
       studentToBeEdited.assignment || "";
-    document.getElementById("gradeInput").value = studentToBeEdited.grade || "";
+    document.getElementById("gradeInput1").value = studentToBeEdited.grade || "";
   }
 }
