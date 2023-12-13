@@ -3,6 +3,7 @@ import { findClassByName } from "../class/class.utils.js";
 import { updateLocalStorage } from "../localStorage/local.storage.js";
 import { generateUniqueId } from "../../utils.js";
 import { getValuesOfStudentForm } from "../student/student.utils.js";
+import { updateStudent } from "../update-items/update.student.js";
 
 export function saveNewStudent(itemId) {
   try {
