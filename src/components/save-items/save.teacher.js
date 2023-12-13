@@ -2,44 +2,42 @@ import { Teacher } from "../teacher/teacher.js";
 import { updateLocalStorage } from "../localStorage/local.storage.js";
 import { findClassByName } from "../class/class.utils.js";
 import { capitalizeInitials, generateUniqueId } from "../../utils.js";
-
+import { getValuesOfTeacherForm } from "../teacher/teacher.utils.js";
+import { updateTeacher } from "../update-items/update.teacher.js";
 export function saveNewTeacher(itemId) {
-  console.log("teacherItemID",itemId)
-  console.log("save-items-teacher works")
   try {
-    const classCheckbox = document.getElementById("classSelectCheckbox");
-    const classSelectOptions = document.querySelector("#classSelectForm");
-    const teacherNameInput = document.querySelector("#teacherNameInput");
-    const expertiseInput = document.getElementById("expertiseInput");
-    const teacherDataInput = document.getElementById("teacherDataTextArea");
+    if (itemId) {
+      updateTeacher(itemId);
+    } else {
+      const TEACHERS = "teachers";
+      const formValues = getValuesOfTeacherForm();
+      let newTeacher = new Teacher();
+      newTeacher.id = generateUniqueId();
 
-    let newTeacher = new Teacher();
+      newTeacher.teacherName = capitalizeInitials(formValues.teacherName);
+      newTeacher.expertise = capitalizeInitials(formValues.expertise);
 
-    newTeacher.id = generateUniqueId();
-    newTeacher.teacherName = capitalizeInitials(teacherNameInput.value);
-    newTeacher.expertise = capitalizeInitials(expertiseInput.value);
+      if (!formValues.expertise) {
+        newTeacher.expertise = "Expertise Info  Not Available!";
+      }
 
-    if (!expertiseInput.value) {
-      newTeacher.expertise = "Expertise Info  Not Available!";
+      if (formValues.teacherData!== "") {
+        newTeacher.data = formValues.teacherData;
+      }
+
+      if (formValues.classCheckbox) {
+        let selectedClass = formValues.classSelectValue;
+        let classItem = findClassByName(selectedClass);
+        newTeacher.classes.push({
+          classId: classItem.id,
+          className: classItem.className,
+        });
+        classItem.teachers.push(newTeacher);
+        updateLocalStorage(classItem, "classes");
+      }
+
+      updateLocalStorage(newTeacher, TEACHERS);
     }
-
-    if (teacherDataInput.value !== "") {
-      newTeacher.data = teacherDataInput.value;
-    }
-
-    if (classCheckbox.checked) {
-      let selectedClass = classSelectOptions.value;
-      let classItem = findClassByName(selectedClass);
-      newTeacher.classes.push({
-        classId: classItem.id,
-        className: classItem.className,
-      });
-      classItem.teachers.push(newTeacher);
-      updateLocalStorage(classItem, "classes");
-    }
-
-    const TEACHERS = "teachers";
-    updateLocalStorage(newTeacher, TEACHERS);
   } catch (error) {
     console.error("error while saving data:", error);
   }
