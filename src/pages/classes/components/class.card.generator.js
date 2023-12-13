@@ -28,8 +28,8 @@ export function generateClassCardsHTML() {
                 <h6 class="card-subtitle mb-2">${teacherName}</h6>
                 <p class="card-text">${classEl.data}</p>
                 <div class="d-flex justify-content-around">
-                  <a href="#" class="card-link text-info">Students</a>
-                  <a href="#" class="card-link text-warning">Teachers</a>
+                  <a href="#" data-action= "student" id="${classEl.id}" class="card-link list-items text-info">Students</a>
+                  <a href="#" data-action= "teacher" id="${classEl.id}" class="card-link list-items text-warning">Teachers</a>
                 </div>
               </div>
             </div>

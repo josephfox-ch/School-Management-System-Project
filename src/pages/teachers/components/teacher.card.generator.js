@@ -21,8 +21,8 @@ export function generateTeacherCardsHTML() {
               <h6 class="card-subtitle mb-2">${teacher.expertise}</h6>
               <p class="card-text">${teacher.data}</p>
               <div class= " d-flex justify-content-around">
-                <a href="#" class="card-link text-info">Students</a>
-                <a href="#" class="card-link text-danger">Classes</a>
+                <a href="#" data-action= "student" id="${teacher.id}" class="card-link list-items text-info">Students</a>
+                <a href="#" data-action= "class" id="${teacher.id}" class="card-link list-items text-danger">Classes</a>
               </div>
             </div>
           </div>

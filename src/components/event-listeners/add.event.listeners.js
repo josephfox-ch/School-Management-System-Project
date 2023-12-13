@@ -1,5 +1,5 @@
 import { renderContent } from "../../functions.js";
-import { editItem,removeItem } from "../../utils.js";
+import { editItem,removeItem,listElementsOfItem } from "../../utils.js";
 import{generateNewModal} from "../modals/modal.utils.js"
 
 export function addEventListeners(){
@@ -32,6 +32,10 @@ const appElement = document.getElementById("app");
     if (target.classList.contains("remove-button")) {
       console.log("Event target", target);
       removeItem(action, target.id);
+    }
+    if (target.classList.contains("list-items")) {
+      console.log("Event target", target);
+      listElementsOfItem(action, target.id);
     }
   });
 }
