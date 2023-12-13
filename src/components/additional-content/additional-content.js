@@ -4,7 +4,7 @@ function additionalSectionFragment() {
   const additionalContainer = document.createElement("section");
   additionalContainer.innerHTML = ` <div class=" card text-center m-5 ">
   <div class="card-header">
-  <h5 class="card-title">HiCoder 23/24 LMS</h5>
+  <h5 class="card-title">HiCoders 23/24 LMS</h5>
   </div>
   <div class="card-body">
     ${additionalSectBodyFragment()}
