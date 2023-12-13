@@ -13,6 +13,7 @@ function additionalSectionFragment() {
     2 days ago
   </div>
 </div>`;
+
   return additionalContainer;
 }
 
