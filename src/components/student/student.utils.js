@@ -21,4 +21,30 @@ export function findStudentById(studentId) {
   return foundStudent || null;
 }
 
+export function getValuesOfStudentForm() {
+  const classCheckbox = document.getElementById("classSelectCheckbox");
+  const classSelectOptions = document.querySelector("#classSelectForm");
+  const studentNameInput = document.querySelector("#studentNameInput");
+  const studentDataInput = document.querySelector("#studentDataTextArea");
+  const assignmentInput1 = document.querySelector("#assignmentInput1");
+  const gradeInput1 = document.querySelector("#gradeInput1");
+  const assignmentInput2 = document.querySelector("#assignmentInput2");
+  const gradeInput2 = document.querySelector("#gradeInput2");
+  const assignmentInput3 = document.querySelector("#assignmentInput3");
+  const gradeInput3 = document.querySelector("#gradeInput3");
 
+  const values = {
+    classCheckbox: classCheckbox.checked,
+    classSelectValue: classSelectOptions.value,
+    studentName: studentNameInput.value,
+    studentData: studentDataInput.value,
+    assignment1: assignmentInput1.value,
+    assignment2: assignmentInput2.value,
+    assignment3: assignmentInput3.value,
+    grade1: gradeInput1.value,
+    grade2: gradeInput2.value,
+    grade3: gradeInput3.value,
+  };
+
+  return values;
+}
