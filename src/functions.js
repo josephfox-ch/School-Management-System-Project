@@ -40,7 +40,7 @@ export function manageSavingEvents(itemId) {
       id = itemId;
       console.log("eventTarget", event.target.id);
       saveToLocalStorage(dataType, id);
-      // location.reload();
+      location.reload();
     });
   });
 }
