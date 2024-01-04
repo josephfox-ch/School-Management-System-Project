@@ -10,15 +10,19 @@ export function generateTeacherCardsHTML() {
           <div class="card border-warning" style="width: 18rem;">
             <div class="card-body">
             <div class="d-flex justify-content-end mb-2">
-                <a href="#" class=" edit-buttons text-primary mx-3"><i class="fas fa-edit "></i></a>
-                <a href="#" class="text-danger"><i class="fas fa-trash-alt "></i></a>
+            <button id="${teacher.id}" data-action="teacher" class="edit-button btn btn-primary btn-sm">
+            Edit
+            </button>
+            <button id="${teacher.id}" data-action="teacher" class="remove-button btn btn-danger btn-sm mx-2">
+            Remove
+            </button>
               </div>
-              <h5 class="card-title text-warning">${teacher.teacherName}</h5>
+              <h5 class="card-title ">${teacher.teacherName}</h5>
               <h6 class="card-subtitle mb-2">${teacher.expertise}</h6>
               <p class="card-text">${teacher.data}</p>
               <div class= " d-flex justify-content-around">
-                <a href="#" class="card-link text-info">Students</a>
-                <a href="#" class="card-link text-danger">Classes</a>
+                <a href="#" data-action= "student" id="${teacher.id}" class="card-link list-items text-info">Students</a>
+                <a href="#" data-action= "class" id="${teacher.id}" class="card-link list-items text-danger">Classes</a>
               </div>
             </div>
           </div>

@@ -1,11 +1,11 @@
-import { findLengthOf } from "../../../functions.js";
+import { findLengthOf } from "../../../utils.js";
 import { students } from "../../../service/data.js";
 
 const numberOfStudents = findLengthOf(students);
 
 export const homePageStudentsDataFragment = () => {
   return `
-    <div class="col mb-3 mx-auto">
+    <div class="col-lg-4 col-sm-12 mb-3 ms-auto">
       <div class="card border-info mb-3" style="max-width: 18rem;">
         <div class="card-header">
           <h5 class="text-info">Number of Students</h5>

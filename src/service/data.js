@@ -1,4 +1,4 @@
-import { LMSchool } from "./components/school.data.js";
+import { LMSchool } from "../components/school/school.js"; 
 
 export const classes = LMSchool.classes;
 console.log("classes", classes);

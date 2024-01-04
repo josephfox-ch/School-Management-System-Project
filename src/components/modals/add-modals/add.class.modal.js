@@ -1,4 +1,4 @@
-import { createOptionsFromTeachers } from "../../../functions.js";
+import { createOptionsFromTeachers } from "../../teacher/teacher.utils.js";
 
 export const addNewClassModal = document.createElement("div");
 
@@ -37,7 +37,7 @@ addNewClassModal.innerHTML = `
     <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">
       Close
     </button>
-    <button id="class" type="button" class="btn btn-outline-success saveChanges"data-bs-dismiss="modal">
+    <button data-action ="class" type="button" class="btn btn-outline-success saveChanges"data-bs-dismiss="modal">
       Save changes
     </button>
   </div>

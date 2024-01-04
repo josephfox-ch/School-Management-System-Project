@@ -1,4 +1,4 @@
-import { createOptionsFromClasses } from "../../../functions.js";
+import { createOptionsFromClasses } from "../../class/class.utils.js";
 
 export const addNewStudentModal = document.createElement("div");
 
@@ -35,19 +35,39 @@ addNewStudentModal.innerHTML = `
         </div>
         <div class="row">
           <div class="col-sm-9">
-            <label for="assignmentInput" class="form-label input-sm">Assignment</label>
-            <input type="text" class="form-control input-sm grades-input" id="assignmentInput">
+            <label for="assignment1Input" class="form-label input-sm">Assignment</label>
+            <input type="text" class="form-control input-sm grades-input" id="assignment1Input">
           </div>
           <div class="col-sm-3 ms-auto">
-            <label for="gradeInput" class="form-label input-sm">Grade</label>
-            <input type="text" class="form-control input-sm grades-input" id="gradeInput">
+            <label for="grade1Input" class="form-label input-sm">Grade</label>
+            <input type="text" class="form-control input-sm grades-input" id="grade1Input">
           </div>
         </div>
+        <div class="row">
+        <div class="col-sm-9">
+          <label for="assignment2Input" class="form-label input-sm">Assignment</label>
+          <input type="text" class="form-control input-sm grades-input" id="assignment2Input">
+        </div>
+        <div class="col-sm-3 ms-auto">
+          <label for="grade2Input" class="form-label input-sm">Grade</label>
+          <input type="text" class="form-control input-sm grades-input" id="grade2Input">
+        </div>
+      </div>
+      <div class="row">
+      <div class="col-sm-9">
+        <label for="assignment3Input" class="form-label input-sm">Assignment</label>
+        <input type="text" class="form-control input-sm grades-input" id="assignment3Input">
+      </div>
+      <div class="col-sm-3 ms-auto">
+        <label for="grade3Input" class="form-label input-sm">Grade</label>
+        <input type="text" class="form-control input-sm grades-input" id="grade3Input">
+      </div>
+    </div>
       </div>
     </form>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
-    <button id="student" type="button" class="btn btn-outline-success saveChanges" data-bs-dismiss="modal">Save changes</button>
+    <button data-action ="student" type="button" class="btn btn-outline-success saveChanges" data-bs-dismiss="modal">Save changes</button>
   </div>
 `;

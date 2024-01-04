@@ -1,24 +1,7 @@
-import { renderApp, renderContent } from "./functions.js";
-import { generateNewObjectModal } from "./components/add-new-object/generate.new.object.js";
+import { addEventListeners } from "./components/event-listeners/add.event.listeners.js";
+import { renderApp } from "./functions.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("app").addEventListener("click", (event) => {
-    const target = event.target;
-
-    const linkClass = "nav-link";
-
-    if (target.tagName === "A" && target.classList.contains(linkClass) || target.tagName === "I" ) {
-      const contentId = target.dataset.contentId;
-      renderContent(contentId);
-
-      document
-        .getElementById("add-new-button")
-        .addEventListener("click", () => {
-          generateNewObjectModal();
-        });
-    }
-  });
-
-
+  addEventListeners();
   renderApp();
 });

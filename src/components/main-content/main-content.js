@@ -5,6 +5,7 @@ import { studentsContentFragment } from "/src/pages/students/students.js";
 import { aboutContent } from "/src/pages/about/about.js";
 import { contactContent } from "/src/pages/contact/contact.js";
 import { addNewButtonFragment } from "../add-button-section/add.button.js";
+import { additionalContainer } from "../additional-content/additional-content.js";
 
 const mainContainer = document.createElement("main");
 
@@ -34,7 +35,10 @@ export function mainContentFragment(content) {
       break;
   }
 
-  mainContainer.innerHTML = contentHTML + customizedAddNewButton.innerHTML;
-  
+  mainContainer.innerHTML =
+    contentHTML +
+    customizedAddNewButton.innerHTML +
+    additionalContainer.innerHTML;
+
   return mainContainer;
 }
